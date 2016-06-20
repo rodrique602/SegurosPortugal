@@ -1,0 +1,131 @@
+﻿@model IEnumerable<Portugal_Insurance___PayPal.Models.Precios>
+
+@{
+    ViewBag.Title = "Precios";
+}
+
+<h2>Precios</h2>
+<!--<h3> </h3>-->
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/colors/green.css" title="green" media="screen" />
+
+
+</head>
+<body>
+    <div>
+        <p>
+            @Html.ActionLink("Crear Nuevo", "Create")
+        </p>
+    </div>
+    <div>
+        <h2>Tabla de precios Full Coverage por año</h2>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">
+                    No more tables.
+                </h1>
+                <h3 class="text-center">
+                    Resize the browser screen to see how the table changes
+                </h3>
+            </div>
+            <div id="no-more-tables">
+                <table id="preciosTable" class="col-md-12 table-bordered table-striped table-condensed cf">
+                    <thead class="cf">
+                        <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                        <tr class="success">
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.precioID)
+                            </th>
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.type)
+                            </th>
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.coverageType)
+                            </th>
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.dias)
+                            </th>
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.valorMinimo)
+                            </th>
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.valorMaximo)
+                            </th>
+                            <th class="numeric">
+                                @Html.DisplayNameFor(model => model.total)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.precioID)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.type)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.coverageType)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.dias)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.valorMinimo)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.valorMaximo)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.DisplayFor(modelItem => item.total)
+                                </td>
+                                <td data-title="" class="numeric">
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.precioID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.precioID })
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <p class="bg-success" style="padding:10px;margin-top:20px">
+            <small><a href="http://elvery.net/demo/responsive-tables/#no-more-tables" target="_blank">Link</a> BACK TO TOP</small></p>
+        </div>
+    </div>
+</body>
+</html>

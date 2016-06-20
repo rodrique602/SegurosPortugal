@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                atHtml.ActionLink("Application name", "Index", "Home", null, new { atclass = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>atHtml.ActionLink("Home", "Index", "Home")</li>
+                    <li>atHtml.ActionLink("About", "About", "Home")</li>
+                    <li>atHtml.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                atHtml.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>-->
+    <!--Desde aqui insertamos el codigo para la barra de navegacion el header del template -->
+    <!-- Start Header Section -->
+    <!-- End Header Section -->
+    <!--Hasta aqui insertamos el codigo para la barra de navegacion el header del template -->
+    @RenderBody()
+
+    <!-- Start Header Section -->
+    <!--Not sure why this hidden header is here so i am going to commment it for now because it is interfeering with my headerLogo-->
+    <!--<div class="hidden-header"></div>-->
+    <!-- Full Body Container -->
+    <div id="container">
+
+
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+
+            <!-- Start Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <!-- Start Contact Info -->
+                            <ul class="contact-details">
+                                <li>
+                                    <a href="#"><i class="mapMarkerIcon fa fa-map-marker"></i> Local 1, Puerto Peñasco Sonora, Mexico</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="envelopeIcon fa fa-envelope-o"></i> info@segurosportugal.com</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="phoneIcon fa fa-phone"></i> +01 638 383 2390</a>
+                                </li>
+                            </ul>
+                            <!-- End Contact Info -->
+                        </div><!-- .col-md-6 -->
+                        <div class="col-md-5">
+                            <!-- Start Social Links -->
+                            <ul class="social-list">
+                                <li>
+                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
+                                </li>
+                            </ul>
+
+                            <!--Have to figure out HOW TO PUT log in and register links in navbar
+                                THIS WAY ISN'T WORKING MAKES MY NAVBAR TOO THICK NEED TO TAKE DIV OUT OF OTHER DIV-->
+                            <!--<div class="float-right">
+                                <section id="login">
+                                    @Html.Partial("_LoginPartial")
+                                </section>
+                            </div>-->
+                            <!-- End Social Links -->
+                        </div><!-- .col-md-6 -->
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </div><!-- .top-bar -->
+            <!-- End Top Bar -->
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a class="navbar-brand" href="/Home/Index">
+                            <img alt="" id="segurosHeaderLogo" src="~/Content/images/Seguros_Portugal_Logo.jpg"><!--/Content/images/slider/segurosheader.jpg-->
+                        </a>
+
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Stat Search -->
+                        <!--<div class="search-side">
+                            <a href="#" class="show-search"><i class="fa fa-search"></i></a>
+                            <div class="search-form">
+                                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
+                                    <input type="text" value="" name="s" id="s" placeholder="Search the site...">
+                                </form>
+                            </div>
+                        </div>-->
+                        <!-- End Search -->
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+                                <a href="/Home/Index" id="homeBtn" class="btn btn-primary btn3d" role="button"><span class="glyphicon glyphicon-home"></span>Home</a>
+                                <ul>
+                                    <!--<li>
+                                        <a class="active" href="/Home/Index">Home</a>
+                                    </li>-->
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Home/About" id="aboutBtn" class="btn btn-warning btn3d" role="button"><span class="fa fa-users"></span>About Us</a>
+                                <ul>
+                                    <!--<li>
+                                        <a href="/Home/About">About</a>
+                                    </li>-->
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Home/Services" id="servicesBtn" class="btn btn-success btn3d" role="button"><span class="glyphicon glyphicon-briefcase"></span>Services</a>
+                                <ul>
+                                    <!--<li>
+                                        <a href="/Home/Services">Servicios</a>
+                                    </li>-->
+                                    <!--<li>
+                                        <a href="services.html">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="right-sidebar.html">Right Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="left-sidebar.html">Left Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html">404 Page</a>
+                                    </li>-->
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Home/Contact" id="contactBtn" class="btn btn-info btn3d" role="button"><span class="fa fa-phone-square"></span>Contact Us</a>
+                            </li>
+                            <li>
+                                <!-- Deemphasize a button by making it look like a link while maintaining button behavior-->
+                                <a href="/Precios/Index" id="preciosBtn" class="btn btn-danger btn3d" role="button"><span class="glyphicon glyphicon-tags"></span>Precios</a>
+                            </li>
+                        </ul>
+
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Logo & Naviagtion -->
+
+        </header>
+        <!-- End Header Section -->
+        <!-- Start Footer Section -->
+        <footer>
+            <div class="container">
+                <div class="row footer-widgets">
+
+
+                    <!-- Start Subscribe & Social Links Widget -->
+                    <div class="col-md-3 col-xs-12">
+                        <div class="footer-widget mail-subscribe-widget">
+                            <h4>Get in touch<span class="head-line"></span></h4>
+                            <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
+                            <form class="subscribe">
+                                <input type="text" placeholder="mail@example.com">
+                                <input type="submit" class="btn-system" value="Send">
+                            </form>
+                        </div>
+                        <div class="footer-widget social-widget">
+                            <h4>Follow Us<span class="head-line"></span></h4>
+                            <ul class="social-icons">
+                                <li>
+                                    <a class="facebook" href="#"><i class="btn3d fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="twitter" href="#"><i class="btn3d fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="google" href="#"><i class="btn3d fa fa-google-plus"></i></a>
+                                </li>
+                                <li>
+                                    <a class="skype" href="#"><i class="btn3d fa fa-skype"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- .col-md-3 -->
+                    <!-- End Subscribe & Social Links Widget -->
+                    <!-- Start Twitter Widget -->
+                    <div class="col-md-3 col-xs-12">
+                        <div class="footer-widget twitter-widget">
+                            <h4>Twitter Feed<span class="head-line"></span></h4>
+                            <ul>
+                                <li>
+                                    <p><a href="#">atGrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                                    <span>28 February 2014</span>
+                                </li>
+                                <li>
+                                    <p><a href="#">atGrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
+                                    <span>26 February 2014</span>
+                                </li>
+                                <li>
+                                    <p><a href="#">atGrayGrids </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                                    <span>28 February 2014</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- .col-md-3 -->
+                    <!-- End Twitter Widget -->
+                    <!-- Start Flickr Widget -->
+                    <div class="col-md-3 col-xs-12">
+                        <div class="footer-widget flickr-widget">
+                            <h4>Flicker Feed<span class="head-line"></span></h4>
+                            <ul class="flickr-list">
+                                <li>
+                                    <a href="/Content/images/flickr-01.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-01.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-02.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-02.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-03.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-03.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-04.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-04.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-05.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-05.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-06.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-06.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-07.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-07.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-08.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-08.jpg">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Content/images/flickr-09.jpg" class="lightbox">
+                                        <img alt="" src="/Content/images/flickr-09.jpg">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- .col-md-3 -->
+                    <!-- End Flickr Widget -->
+                    <!-- Start Contact Widget -->
+                    <div class="col-md-3 col-xs-12">
+                        <div class="footer-widget contact-widget">
+                            <h4><img src="/Content/images/slider/segurosheader.jpg" id="segurosFooterLogo" class="img-responsive" alt="Footer Logo" /></h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                            <ul>
+                                <li><span>Phone Number:</span> +01 638 383 2390</li>
+                                <li><span>Email:</span> info@segurosportugal.com.mx</li>
+                                <li><span>Website:</span> www.portugalinsurance.com.mx</li>
+                            </ul>
+                        </div>
+                    </div><!-- .col-md-3 -->
+                    <!-- End Contact Widget -->
+
+
+                </div><!-- .row -->
+                <!-- Start Copyright -->
+                <div class="copyright-section">
+                    <div class="row">
+                        <div class="col-md-6" style="color:white;">
+                            <p>&copy; 2015 Insurance Alejandro Portugal -  All Rights Reserved <a href="http://www.portugalinsurance.com.mx">Portugal Insurance</a> </p>
+                        </div><!-- .col-md-6 -->
+                        <div class="col-md-6">
+                            <ul class="footer-nav">
+                                <li>
+                                    <a href="#">Sitemap</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div><!-- .col-md-6 -->
+                    </div><!-- .row -->
+                </div>
+                <!-- End Copyright -->
+
+            </div>
+        </footer>
+        <!-- End Footer Section -->
+    </div>
+    <!--End of Container-->
+    <!--Desde aqui utilizamos Scripts.Render para cargar todos los JavaScripts
+    que vienen con la template de Margo-->
+    <!-- Margo JS  -->
+    @Scripts.Render("~/Scripts/jquery-2.1.1.min.js")
+    @Scripts.Render("~/Scripts/jquery.migrate.js")
+    @Scripts.Render("~/Scripts/modernizrr.js")
+    @Scripts.Render("~/asset/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/jquery.fitvids.js")
+    @Scripts.Render("~/Scripts/owl.carousel.min.js")
+    @Scripts.Render("~/Scripts/nivo-lightbox.min.js")
+    @Scripts.Render("~/Scripts/jquery.isotope.min.js")
+    @Scripts.Render("~/Scripts/jquery.appear.js")
+    @Scripts.Render("~/Scripts/count-to.js")
+    @Scripts.Render("~/Scripts/jquery.textillate.js")
+    @Scripts.Render("~/Scripts/jquery.lettering.js")
+    @Scripts.Render("~/Scripts/jquery.easypiechart.min.js")
+    @Scripts.Render("~/Scripts/jquery.nicescroll.min.js")
+    @Scripts.Render("~/Scripts/jquery.parallax.js")
+    @Scripts.Render("~/Scripts/mediaelement-and-player.js")
+    @Scripts.Render("~/Scripts/script.js")
+
+
+
+    <!--HASTA AQUI-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

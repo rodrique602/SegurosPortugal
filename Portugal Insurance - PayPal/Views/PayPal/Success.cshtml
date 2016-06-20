@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+</head>
+<body>
+    <div class="feat_prod_box_details">
+
+        <div class="contact_form">
+            <div class="form_subtitle">Order Information</div>
+
+            <div class="form_row">
+                <label class="contact"><strong>Transaction Id:</strong></label>
+                @ViewBag.result.TransactionId
+            </div>
+
+            <div class="form_row">
+                <label class="contact"><strong>First Name:</strong></label>
+                @ViewBag.result.PayerFirstName
+            </div>
+
+            <div class="form_row">
+                <label class="contact"><strong>Last Name:</strong></label>
+                @ViewBag.result.PayerLastName
+            </div>
+
+            <div class="form_row">
+                <label class="contact"><strong>Email:</strong></label>
+                @ViewBag.result.PayerEmail
+            </div>
+
+            <div class="form_row">
+                <label class="contact"><strong>Payment Gross:</strong></label>
+                @ViewBag.result.GrossTotal
+            </div>
+
+            <div class="form_row">
+                <label class="contact"><strong>Payment Fee</strong></label>
+                @ViewBag.result.PaymentFee
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+</html>

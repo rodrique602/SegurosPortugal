@@ -1,0 +1,109 @@
+﻿@model Portugal_Insurance___PayPal.Models.Precios
+
+@{
+    ViewBag.Title = "EditarPrecio";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create New Precio</title>
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/colors/green.css" title="green" media="screen" />
+
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" id="editarPrecioForm">
+            <h4>Modificar Precio</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.precioID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.precioID)
+                </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.type, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.type)
+                        @Html.ValidationMessageFor(model => model.type)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.coverageType, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.coverageType)
+                        @Html.ValidationMessageFor(model => model.coverageType)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.dias, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dias)
+                        @Html.ValidationMessageFor(model => model.dias)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.valorMinimo, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.valorMinimo)
+                        @Html.ValidationMessageFor(model => model.valorMinimo)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.valorMaximo, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.valorMaximo)
+                        @Html.ValidationMessageFor(model => model.valorMaximo)
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.total, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.total)
+                        @Html.ValidationMessageFor(model => model.total)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Guardar Cambios" class="btn btn-primary btn3d" style="margin-left: 2%;"/>
+                    </div>
+                </div>
+            </div>
+        <div style=" margin-left: 48.5%;">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</body>
+</html>

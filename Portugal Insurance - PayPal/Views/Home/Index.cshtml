@@ -1,0 +1,1281 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!doctype html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+
+<head>
+
+    <!-- Basic -->
+    <title>Margo | Home</title>
+
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <!--<link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/jade.css" title="jade" media="screen" />-->
+
+    <link rel="stylesheet" type="text/css" href="~/Content/css/colors/green.css" title="green" media="screen" />
+
+    <!--<link rel="stylesheet" type="text/css" href="css/colors/blue.css" title="blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/beige.css" title="beige" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/cyan.css" title="cyan" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/orange.css" title="orange" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/peach.css" title="peach" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/pink.css" title="pink" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/purple.css" title="purple" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/sky-blue.css" title="sky-blue" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />-->
+    <!-- Margo JS
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.migrate.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizrr.js"></script>
+    <script type="text/javascript" src="~/asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.appear.js"></script>
+    <script type="text/javascript" src="~/Scripts/count-to.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.textillate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.lettering.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>-->
+    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--Using the CarQuery API in website is easy. Just follow the setup below.
+    1. Include the jQuery (if you aren’t already) and the CarQuery javascript libraries in the
+    <head>
+        of your document. Make sure to include the jQuery library before the carquery js file like below.-->
+
+    <script type="text/javascript" src="http://www.carqueryapi.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.3.js"></script>
+
+    <!--End of Step 1-->
+    <!--2. Set the document ready function to initialize the car query objects. This should be done in the document head,
+     but must be done after the javascript libraries from step 1 are included.-->
+    <script type="text/javascript">
+        $(document).ready(
+        function () {
+            //Create a variable for the CarQuery object.  You can call it whatever you like.
+            var carquery = new CarQuery();
+
+            //Run the carquery init function to get things started:
+            carquery.init();
+
+            //Optionally, you can pre-select a vehicle by passing year / make / model / trim to the init function:
+            //carquery.init('2000', 'dodge', 'Viper', 11636);
+
+            //Optional: Pass sold_in_us:true to the setFilters method to show only US models.
+            carquery.setFilters({ sold_in_us: true });
+
+            //Optional: initialize the year, make, model, and trim drop downs by providing their element IDs
+            //carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models', 'car-model-trims');
+            carquery.initYearMakeModelTrim('caryears', 'carmakes', 'carmodels', 'car-model-trims');
+
+            //Optional: set the onclick event for a button to show car data.
+            $('#cq-show-data').click(function () { carquery.populateCarData('car-model-data'); });
+
+            //Optional: initialize the make, model, trim lists by providing their element IDs.
+            carquery.initMakeModelTrimList('make-list', 'model-list', 'trim-list', 'trim-data-list');
+
+            //Optional: set minimum and/or maximum year options.
+            carquery.year_select_min = 1970;
+            carquery.year_select_max = 2016;
+
+            //Optional: initialize search interface elements.
+            //The IDs provided below are the IDs of the text and select inputs that will be used to set the search criteria.
+            //All values are optional, and will be set to the default values provided below if not specified.
+            var searchArgs =
+            ({
+                body_id: "cq-body"
+               , default_search_text: "Keyword Search"
+               , doors_id: "cq-doors"
+               , drive_id: "cq-drive"
+               , engine_position_id: "cq-engine-position"
+               , engine_type_id: "cq-engine-type"
+               , fuel_type_id: "cq-fuel-type"
+               , min_cylinders_id: "cq-min-cylinders"
+               , min_mpg_hwy_id: "cq-min-mpg-hwy"
+               , min_power_id: "cq-min-power"
+               , min_top_speed_id: "cq-min-top-speed"
+               , min_torque_id: "cq-min-torque"
+               , min_weight_id: "cq-min-weight"
+               , min_year_id: "cq-min-year"
+               , max_cylinders_id: "cq-max-cylinders"
+               , max_mpg_hwy_id: "cq-max-mpg-hwy"
+               , max_power_id: "cq-max-power"
+               , max_top_speed_id: "cq-max-top-speed"
+               , max_weight_id: "cq-max-weight"
+               , max_year_id: "cq-max-year"
+               , search_controls_id: "cq-search-controls"
+               , search_input_id: "cq-search-input"
+               , search_results_id: "cq-search-results"
+               , search_result_id: "cq-search-result"
+               , seats_id: "cq-seats"
+               , sold_in_us_id: "cq-sold-in-us"
+            });
+            carquery.initSearchInterface(searchArgs);
+
+            //If creating a search interface, set onclick event for the search button.  Make sure the ID used matches your search button ID.
+            $('#cq-search-btn').click(function () { carquery.search(); });
+        });
+    </script>
+
+    <!--End of Step 2-->
+    <!--Step 3 starts below in the body-->
+
+</head>
+
+<body>
+
+    <!-- Full Body Container -->
+    <div id="container">
+
+        <!-- Start Home Page Slider -->
+        <section id="home">
+            <!-- Carousel -->
+            <div id="main-slide" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+                    <li data-target="#main-slide" data-slide-to="1"></li>
+                    <li data-target="#main-slide" data-slide-to="2"></li>
+                    <li data-target="#main-slide" data-slide-to="3"></li>
+                    <li data-target="#main-slide" data-slide-to="4"></li>
+                </ol>
+                <!--/ Indicators end-->
+                <!-- Carousel inner -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="img-responsive" src="/Content/images/slider/car.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <!--<h2 class="animated2">
+                                    <span>Bienvenidos A <strong>Seguros Portugal</strong></span>
+                                </h2>
+                                <h3 class="animated3">
+                                    <span>The ultimate aim of your business</span>
+                                </h3>
+                                <p class="animated4">
+                                    <a href="#" class="slider btn btn-system btn-large">Check Now</a>
+                                </p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Carousel item end -->
+                    <div class="item">
+                        <img class="img-responsive" src="/Content/images/slider/condo.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <!--<h2 class="animated4">
+                                    <span><strong>Margo</strong> for the highest</span>
+                                </h2>
+                                <h3 class="animated5">
+                                    <span>The Key of your Success</span>
+                                </h3>
+                                <p class="animated6">
+                                    <a href="#" class="slider btn btn-system btn-large">Buy Now</a>
+                                </p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Carousel item end -->
+                    <div class="item">
+                        <img class="img-responsive" src="/Content/images/slider/home.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <!--<h2 class="animated7 white">
+                                    <span>The way of <strong>Success</strong></span>
+                                </h2>
+                                <h3 class="animated8 white">
+                                    <span>Why you are waiting</span>
+                                </h3>
+                                <div class="">
+                                    <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Carousel item end -->
+                    <div class="item">
+                        <img class="img-responsive" src="/Content/images/slider/boat.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <!--<h2 class="animated7 white">
+                                    <span>The way of <strong>Success</strong></span>
+                                </h2>
+                                <h3 class="animated8 white">
+                                    <span>Why you are waiting</span>
+                                </h3>
+                                <div class="">
+                                    <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Carousel item end -->
+                    <div class="item">
+                        <img class="img-responsive" src="/Content/images/slider/business1.jpg" alt="slider">
+                        <div class="slider-content">
+                            <div class="col-md-12 text-center">
+                                <!--<h2 class="animated7 white">
+                                    <span>The way of <strong>Success</strong></span>
+                                </h2>
+                                <h3 class="animated8 white">
+                                    <span>Why you are waiting</span>
+                                </h3>
+                                <div class="">
+                                    <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Carousel item end -->
+                </div>
+                <!-- Carousel inner end-->
+                <!-- Controls -->
+                <a class="left carousel-control" href="#main-slide" data-slide="prev">
+                    <span><i class="fa fa-angle-left"></i></span>
+                </a>
+                <a class="right carousel-control" href="#main-slide" data-slide="next">
+                    <span><i class="fa fa-angle-right"></i></span>
+                </a>
+            </div>
+            <!-- /carousel -->
+        </section>
+        <!-- End Home Page Slider -->
+
+        <div class="container" id="obtainQuickQuoteBtnContainer">
+            <!--<h2>Obtain a Quote NOW!!</h2>-->
+            <!-- Trigger the modal with a button -->
+            <div id="modalBtn">
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <button type="button" class="btn btn-danger btn-lg btn3d" id="obtainQuickQuoteBtn"><span><i class="quickQuoteModalIcon glyphicon glyphicon-modal-window icon-mini-effect icon-effect-1"></i></span>OBTAIN A QUICK QUOTE NOW!!</button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding:35px 50px;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h5><span class="glyphicon glyphicon-road"></span> QUICK QUOTE</h5>
+                        </div>
+
+                        <!--Aqui insertamos el codigo para el paso 3 de el CarQuery API y agregamos un DropDown
+                            para seleccionarel tipo de poliza que el cliente guste cotizar-->
+                        <div class="modal-body">
+                            <!-- <form role="form">-->
+                            <!-- PayPal Logo -->
+                            <table border="0" cellpadding="10" cellspacing="0" align="center">
+                                <tr>
+                                    <td align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript: window.open
+                                            ('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700');return false;">
+                                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_now_accepting_pp_2line_w.png" border="0" alt="Now Accepting PayPal">
+                                        </a>
+                                        <div style="text-align:center">
+                                            <a href="https://www.paypal.com/webapps/mpp/how-paypal-works">
+                                                <font size="2" face="Arial" color="#0079CD">How PayPal Works</font>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- PayPal Logo -->
+                            @using (Html.BeginForm("Details", "Precios", FormMethod.Get))
+                            {
+
+                                    <!--Aqui inicia el Car Query API DropDowns-->
+                                <div id="carQueryApiDropDowns" class="container">
+                                    <div class="row clearfix">
+                                        <div class="col-md-12 column">
+                                            <div class="form-group">
+                                                <!--<select name="car-years" id="car-years"></select>
+                                                <select name="car-makes" id="car-makes"></select>
+                                                <select name="car-models" id="car-models"></select>-->
+                                                <select name="caryears" id="caryears"></select>
+                                                <select name="carmakes" id="carmakes"></select>
+                                                <select name="carmodels" id="carmodels"></select>
+                                                <!--<select name="car-model-trims" id="car-model-trims"></select>-->
+                                                <!--3a. To populate an element with data on the selected model, call the populateCarData method on the element ID as in the example below.
+                                                        This example creates an HTML button which populates the ‘car-model-data’ element when it is clicked.-->
+                                                <!--<input id="cq-show-data" type="button" class="btn btn-primary" value="Show Data" />-->
+                                                <!--<div id="car-model-data"></div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @Html.DropDownList("CoverageTypes", "Select Coverage Type");
+
+
+                            <!--DropDownList(string name, IEnumerable<SelectListItem> selectList, string optionLabel);-->
+
+                        <!--Fin de Paso 3 de CarQuery API-->
+                                <div class="form-group">
+                                    <label for="vinNumber"><span><i class="autoIcon btn3d fa fa-automobile icon-mini-effect icon-effect-1"></i></span></label>
+                                    <input type="text" class="form-control" id="vinNumberTB" name="vinNumberTB" placeholder="Enter Vehicle Identification Number#">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicleValue"><span class="vehicleValueIcon btn3d glyphicon glyphicon-usd icon-mini-effect icon-effect-1"></span></label>
+                                    <input type="text" class="form-control" id="vehicleValueTB" name="vehicleValueTB" placeholder="Enter Vehicle Value">
+                                </div>
+                                <div class="form-group">
+                                    <label for="startingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
+                                    <input type="date" placeholder="Enter Policy Starting Date" class="form-control" id="startingDateTB" name="startingDateTB">
+                                </div>
+                                <div class="form-group" id="Coverage_Days">
+                                    @Html.DropDownList("Coverage_Days", new List<SelectListItem>
+                                    {
+                                        new SelectListItem{ Text = "Select Number of Coverage Days", Value = "0", Selected = true},
+                                        new SelectListItem{ Text = "Annual", Value = "0"},
+                                        new SelectListItem{ Text = "1 Day",  Value = "1"},
+                                        new SelectListItem{ Text = "2 Days", Value = "2"},
+                                        new SelectListItem{ Text = "3 Days", Value = "3"},
+                                        new SelectListItem{ Text = "4 Days", Value = "4"},
+                                        new SelectListItem{ Text = "5 Days", Value = "5"},
+                                        new SelectListItem{ Text = "6 Days", Value = "6"},
+                                        new SelectListItem{ Text = "7 Days", Value = "7"},
+                                        new SelectListItem{ Text = "8 Days", Value = "8"},
+                                        new SelectListItem{ Text = "9 Days", Value = "9"},
+                                        new SelectListItem{ Text = "10 Days", Value = "10"},
+                                        new SelectListItem{ Text = "11 Days", Value = "11"},
+                                        new SelectListItem{ Text = "12 Days", Value = "12"},
+                                        new SelectListItem{ Text = "13 Days", Value = "13"},
+                                        new SelectListItem{ Text = "14 Days", Value = "14"},
+                                        new SelectListItem{ Text = "15 Days", Value = "15"},
+                                    })
+                                </div>
+                                <div>
+                                    <!--ViewBag.Dias = Coverage_Days.SelectedItem.Value-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="endingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
+                                    <input type="date" class="form-control" id="endingDateTB" name="endingDateTB" placeholder="Enter Policy endind date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="usrname"><span class="userNameIcon btn3d glyphicon glyphicon-user icon-mini-effect icon-effect-1"></span></label>
+                                    <input type="text" class="form-control" id="usrNameTB" name="usrNameTB" placeholder="Enter email">
+                                </div>
+                                <!--<div class="form-group">
+                                    <label for="psw"><span class="eye-openPswdIcon glyphicon glyphicon-eye-open icon-mini-effect icon-effect-1"></span></label>
+                                    <input type="text" class="form-control" id="pswTB" name="pswTB" placeholder="Enter password">
+                                </div>-->
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="" checked>Remember me</label>
+                                </div>
+                                 <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                <button type="submit" id="obtainQuoteNowModalBtn" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-ok"></span> Obtain Quote Now!!</button>
+
+                                <!--<a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>-->
+
+                            <!-- </form>-->
+                            }
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                            <p>Not a member? <a href="#">Sign Up</a></p>
+                            <p>Forgot <a href="#">Password?</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            $(document).ready(function () {
+                $("#obtainQuickQuoteBtn").click(function () {
+                    $("#myModal").modal();
+                });
+            });
+        </script>
+
+    </div>
+
+
+    <!--4. If you have called carquery.initMakeModelTrimList in Step 2, create the HTML table and div elements that will be populated by the CarQuery API.
+       Be sure to set the element IDs according to the values used in the carquery.initYearMakeModel call in step 2.
+    <table>
+        <tr>
+            <td valign="top"><div id="make-list" /></td>
+            <td valign="top"><div id="model-list" /></td>
+            <td valign="top"><div id="trim-list" /></td>
+        </tr>
+        <tr>
+            <td colspan="3"><div id="trim-data-list" /></td>
+        </tr>
+    </table>-->
+    <!--5. If you have called carquery.initSearchInterface in Step 2, create the HTML elements that will be populated by the CarQuery API.
+       Be sure to set the element IDs according to the values used in the carquery.initSearchInterface call in step 2.
+       Below is an example of creating the required elements, but you can lay them out however you like.
+    <div id="cq-search-controls">
+        <div style="float:inherit; width:300px;">
+            <fieldset>
+                <center><input type="button" id="cq-search-btn" value="Search CarQuery" /></center>
+                <hr />
+                Keyword: <input id="cq-search-input" type="text" />
+                <hr />
+                Year Range: <select id="cq-min-year"></select> to <select id="cq-max-year"></select>
+                <br /><hr />
+                <input id="cq-sold-in-us" name="us-only-filter" type="checkbox" /><label for="us-only-filter">Show Only US Models</label>
+                <br /><hr />
+                Engine Position: <select id="cq-engine-position"></select>
+                <br /><hr />
+                Engine Type: <select id="cq-engine-type"></select>
+                <br /><hr />
+                Engine Cylinders: <select id="cq-min-cylinders"></select> to <select id="cq-max-cylinders"></select>
+                <br /><hr />
+                Engine Power (hp): <input type="text" id="cq-min-power" style="width:30px" /> to <input type="text" id="cq-max-power" style="width:30px" />
+                <br /><hr />
+                Engine Torque (lb-ft): <input type="text" id="cq-min-torque" style="width:30px" /> to <input type="text" id="cq-max-torque" style="width:30px" />
+                <br /><hr />
+                Engine Fuel Type: <select id="cq-fuel-type"></select>
+                <br /><hr />
+                Top Speed (mph): <input type="text" id="cq-min-top-speed" style="width:30px" /> to <input type="text" id="cq-max-top-speed" style="width:30px" />
+                <br /><hr />
+                Drivetrain: <select id="cq-drive"></select>
+                <br /><hr />
+                Seats: <select id="cq-seats"></select>
+                <br /><hr />
+                Doors: <select id="cq-doors"></select>
+                <br /><hr />
+                Weight (lbs): <input type="text" id="cq-min-weight" style="width:30px" /> to <input type="text" id="cq-max-weight" style="width:30px" />
+            </fieldset>
+        </div>
+        <div style="float:left;width:300px;">
+            <fieldset>
+                <div id="cq-search-results">Search Results:</div>
+            </fieldset>
+        </div>
+    </div>
+    <div id="cq-search-result" style="display:none"></div>-->
+    <!--Start Services Section 1-->
+    <div class="section service">
+        <div class="container">
+            <div class="row">
+
+                <!-- Start Service Icon 1-->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="01">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-home icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Home Owners Insurance</h4>
+                        <p>Protect your Quality of life by Insuring your Home and your Belongings.</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 1 -->
+                <!-- Start Service Icon 2-->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="02">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-building icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Condo Owners Insurance</h4>
+                        <p>Protect your valued Condominium investment and possessions.</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 2 -->
+                <!-- Start Service Icon 3-->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="03">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-automobile icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Mexican Car Insurance</h4>
+                        <p>Obtain your Car Insurance Quote Istantly Click Here!!</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 3 -->
+                <!-- Start Service Icon 4-->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="04">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-ship icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Boat Insurance</h4>
+                        <p>Protect your beloved Boat with Boat Owners Insurance.</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 4 -->
+            </div>
+        </div>
+        <!-- End Services Icons -->
+    </div>
+    <!--End Services Section 1-->
+    <!--Start Services Section 2-->
+    <div class="section service">
+        <div class="container">
+            <div class="row">
+
+                <!-- Start Service Icon 5 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="05">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-heartbeat icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Health / Life Insurance</h4>
+                        <p>Please contact us to better assist you..</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 5 -->
+                <!-- Start Service Icon 6 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="06">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-paypal icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Fast Secure Checkout Via Pay Pal</h4>
+                        <p>Make your purchase fast and secure by paying with your Pay Pal Account.</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 6 -->
+                <!-- Start Service Icon 7 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="07">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-credit-card icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>No Pay Pal Account No Problem!</h4>
+                        <p>Fast Secure Checkout Via Pay Pal Credit Card Payment.</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 7 -->
+                <!-- Start Service Icon 8 -->
+                <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeInDown" data-animation-delay="08">
+                    <div class="service-icon">
+                        <i class="btn3d fa fa-truck icon-large-effect icon-effect-1"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>Bussiness Insurance</h4>
+                        <p>Please contact us to better assist you.</p>
+                    </div>
+                </div>
+                <!-- End Service Icon 8 -->
+            </div>
+        </div>
+        <!-- End Services Icons -->
+    </div>
+    <!--End Services Section 2-->
+    <!--HERE WE INSERT THE PRICING TABLES FOR HOME, CONDO AND CAR INSURANCE AS WE HAVE ON THE PAMPHLET-->
+
+    <!--<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <div class="container" id="HomePriceTblContainer">
+        <hr>
+        <div class="row content">
+            <div class="col-lg-12" data-animation="fadeInDown" data-animation-delay="03">
+                <div class="col-sm-4 text-justify">
+                    <div class="Home plan featured">
+                        <h2 class="bronze-text" style="text-align: center; margin-bottom: 70px;">Home Owners Insurance</h2>
+                        <p class="bronze-text price"></p>
+
+                        <div id="homePlanFeaturedP">
+                        <p>Multiple Family Policy</p>
+                        <p>Replacemente Cost Coverage</p>
+                        <p>
+                            This policy covers your house, garage and their contents
+                            against the following risk: fire damage, lighting, theft,
+                            broken glass, and family liability.
+                        </p>
+                        <p>The Coverage and Premiums are listed below.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-justify" data-animation="fadeInDown" data-animation-delay="06">
+                    <div class="Condo plan featured">
+                        <h2 class="gold-text" style="text-align: center; margin-bottom: 80px;">Condo Insurance</h2>
+                        <p class="gold-text price"></p>
+                        <p>
+                            Multiple condo Family Policy
+                            replacement Cost Coverage.
+                        </p>
+                        <p>
+                            This Policy covers your condominium from fire, wind damage,
+                            lightning, theft and family liability.
+                        </p>
+                        <p>The Coverage and Premiums are listed below.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 text-justify" data-animation="fadeInDown" data-animation-delay="08">
+                    <div class="plan featured">
+
+                        <h2 style="text-align: center;">Mexican Car Insurance</h2>
+                        <p class="price"></p>
+                        <p>Automobile Policies</p>
+                        <p>
+                            Type 1:
+                            Liability insurance policy covers you with your drivers license
+                            number, driving any vehicle(ATC and road vehicles) anywhere
+                            in Mexico. The Premium is $180.00 per two drivers and $100.00
+                            for one license.
+                        </p>
+                        <p>
+                            Type 2:
+                            Liability insurance policies, wich covers your Vehicle anywhere
+                            in Mexico. The Premium is $90.00 per year.
+                        </p>
+                        <p>
+                            Type 3:
+                            Liability insurance policy, wich covers your Vehicle and trailr
+                            or tow. The Premium is $150.00 per year.
+                        </p>
+                        <p>
+                            Type 4:
+                            Full coverage insurance anywhere in Mexico, the annual Premium
+                            is according to the cars value.
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>-->
+
+    <div class="container" id="priceTblContainer">
+        <hr>
+        <div class="row content">
+            <div class="col-lg-12" data-animation="fadeInDown" data-animation-delay="03">
+                <div class="col-sm-4 text-center">
+                    <div class="plan featured">
+                        <p class="icon bronze">
+                            <i class="btn3d fa fa-home icon-small" id="homeOwnerTblIcon"></i>
+                        </p>
+
+                        <h2 class="bronze-text">Home Owners Insurance</h2>
+                        <p class="bronze-text price"></p>
+                        <p>Multiple Family Policy</p>
+                        <p>Replacement Cost Coverage</p>
+                        <p>
+                            This policy covers your house, garage and their contents
+                            against the following risk: fire damage, lighting, theft,
+                            broken glass, and family liability.
+                        </p>
+                        <p>The Coverage and Premiums are listed below.</p>
+
+                        <div class="table-responsive">
+                            <table id="homeOwnersPriceTable" class="table table-hover table-responsive table-bordered">
+                                <thead class="cf">
+                                    <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                                    <tr class=" btn-danger">
+                                        <th>Type</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BUILDING</td>
+                                        <td data-title="" class="numeric">$25,000</td>
+                                        <td data-title="" class="numeric">$30,000</td>
+                                        <td data-title="" class="numeric">$40,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$80,000</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">CONTENTS</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$8,000</td>
+                                        <td data-title="" class="numeric">$10,000</td>
+                                        <td data-title="" class="numeric">$25,000</td>
+                                        <td data-title="" class="numeric">$35,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BURGLARY</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$7,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BROKEN GLASS</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">FAMILY LIABILITY</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">ANNUAL PREMIUM</td>
+                                        <td data-title="" class="numeric">$69.00</td>
+                                        <td data-title="" class="numeric">$83.00</td>
+                                        <td data-title="" class="numeric">$100.00</td>
+                                        <td data-title="" class="numeric">$140.00</td>
+                                        <td data-title="" class="numeric">$177.00</td>
+                                    </tr>
+
+                                    <tr class="">
+                                        <td data-title="" class="numeric">EARTHQUAKE</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="table-responsive">
+                            <table id="homeOwnersPriceTable" class="table table-hover table-responsive table-bordered">
+                                <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                                <thead class="cf">
+                                    <tr class=" btn-danger">
+                                        <th>Type</th>
+                                        <th>6</th>
+                                        <th>7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                        <th>10</th>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BUILDING</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$125,000</td>
+                                        <td data-title="" class="numeric">$150,000</td>
+                                        <td data-title="" class="numeric">$175,000</td>
+                                        <td data-title="" class="numeric">$200,000</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">CONTENTS</td>
+                                        <td data-title="" class="numeric">$40,000</td>
+                                        <td data-title="" class="numeric">$45,000</td>
+                                        <td data-title="" class="numeric">$45,000</td>
+                                        <td data-title="" class="numeric">$45,000</td>
+                                        <td data-title="" class="numeric">$50,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BURGLARY</td>
+                                        <td data-title="" class="numeric">$8,000</td>
+                                        <td data-title="" class="numeric">$8,000</td>
+                                        <td data-title="" class="numeric">$10,000</td>
+                                        <td data-title="" class="numeric">$10,000</td>
+                                        <td data-title="" class="numeric">$12,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BROKEN GLASS</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">FAMILY LIABILITY</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">ANNUAL PREMIUM</td>
+                                        <td data-title="" class="numeric">$211.00</td>
+                                        <td data-title="" class="numeric">$231.00</td>
+                                        <td data-title="" class="numeric">$265.00</td>
+                                        <td data-title="" class="numeric">$281.00</td>
+                                        <td data-title="" class="numeric">$339.41</td>
+                                    </tr>
+
+                                    <tr class="">
+                                        <td data-title="" class="numeric">EARTHQUAKE</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="table-responsive">
+                            <table id="homeOwnersPriceTable" class="table table-hover table-responsive table-bordered">
+                                <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                                <thead class="cf">
+                                    <tr class=" btn-danger">
+                                        <th>Type</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BUILDING</td>
+                                        <td data-title="" class="numeric">$250,000</td>
+                                        <td data-title="" class="numeric">$300,000</td>
+                                        <td data-title="" class="numeric">$400,000</td>
+                                        <td data-title="" class="numeric">$500,000</td>
+                                        <td data-title="" class="numeric">$600,000</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">CONTENTS</td>
+                                        <td data-title="" class="numeric">$55,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$150,000</td>
+                                        <td data-title="" class="numeric">$200,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BURGLARY</td>
+                                        <td data-title="" class="numeric">$12,000</td>
+                                        <td data-title="" class="numeric">$15,000</td>
+                                        <td data-title="" class="numeric">$25,000</td>
+                                        <td data-title="" class="numeric">$30,000</td>
+                                        <td data-title="" class="numeric">$30,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">BROKEN GLASS</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">FAMILY LIABILITY</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                        <td data-title="" class="numeric">$100,000</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">ANNUAL PREMIUM</td>
+                                        <td data-title="" class="numeric">$326.77</td>
+                                        <td data-title="" class="numeric">$432.00</td>
+                                        <td data-title="" class="numeric">$611.00</td>
+                                        <td data-title="" class="numeric">$761.00</td>
+                                        <td data-title="" class="numeric">$814.30</td>
+                                    </tr>
+
+                                    <tr class="">
+                                        <td data-title="" class="numeric">EARTHQUAKE</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a class="btn btn-pricing" href="#" target="_blank">Order Now</a>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-4 text-center" data-animation="fadeInDown" data-animation-delay="06">
+                    <div class="CondoBottom plan featured">
+                        <p class="icon gold">
+                            <i class="btn3d fa fa-building icon-small" id="condoTblIcon"></i>
+                        </p>
+                        <h2 class="gold-text">Condo Owners Insurance</h2>
+                        <p class="gold-text price"></p>
+                        <p>
+                            Multiple Condo Family Policy
+                        </p>
+                        <p>Replacement Cost Coverage</p>
+
+                        <p>
+                            This Policy covers your condominium from fire, wind damage,
+                            lightning, theft and family liability.
+                                                                                       
+                        </p>
+                        <p>The Coverage and Premiums are listed below.</p>
+
+                        <div class="table-responsive">
+                            <table id="condoInsurancePriceTable" class="table table-hover table-responsive table-bordered">
+                                <thead class="cf">
+                                    <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                                    <tr class=" btn-danger">
+                                        <th>Type</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">B</td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-title="" class="numeric">CONTENTS</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$8,000</td>
+                                        <td data-title="" class="numeric">$12,000</td>
+                                        <td data-title="" class="numeric">$15,000</td>
+                                        <td data-title="" class="numeric">$18,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">BURGLARY</td>
+                                        <td data-title="" class="numeric">$1,500</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                        <td data-title="" class="numeric">$2,500</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                        <td data-title="" class="numeric">$3,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">BROKEN GLASS</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">FAMILY LIABILITY</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">ANNUAL PREMIUM</td>
+                                        <td data-title="" class="numeric">$68.61</td>
+                                        <td data-title="" class="numeric">$74.88</td>
+                                        <td data-title="" class="numeric">$81.79</td>
+                                        <td data-title="" class="numeric">$88.06</td>
+                                        <td data-title="" class="numeric">$89.93</td>
+                                    </tr>
+
+                                    <tr class="">
+                                        <td data-title="" class="numeric">EARTHQUAKE</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table id="condoInsurancePriceTable" class="table table-hover table-responsive table-bordered">
+                                <thead class="cf">
+                                    <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                                    <tr class=" btn-danger">
+                                        <th>Type</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                    </tr>
+                                    <tr class="">
+                                        <td data-title="" class="numeric">B</td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                        <td data-title="" class="numeric"></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-title="" class="numeric">CONTENTS</td>
+                                        <td data-title="" class="numeric">$20,000</td>
+                                        <td data-title="" class="numeric">$30,000</td>
+                                        <td data-title="" class="numeric">$40,000</td>
+                                        <td data-title="" class="numeric">$50,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">BURGLARY</td>
+                                        <td data-title="" class="numeric">$4,000</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$5,000</td>
+                                        <td data-title="" class="numeric">$8,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">BROKEN GLASS</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$1,000</td>
+                                        <td data-title="" class="numeric">$2,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">FAMILY LIABILITY</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                        <td data-title="" class="numeric">$60,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">ANNUAL PREMIUM</td>
+                                        <td data-title="" class="numeric">$99.98</td>
+                                        <td data-title="" class="numeric">$115.03</td>
+                                        <td data-title="" class="numeric">$121.28</td>
+                                        <td data-title="" class="numeric">$127.52</td>
+                                        <td data-title="" class="numeric">$168.64</td>
+                                    </tr>
+
+                                    <tr class="">
+                                        <td data-title="" class="numeric">EARTHQUAKE</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                        <td data-title="" class="numeric">optional</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a class="btn btn-pricing" href="#" target="_blank">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 text-center" data-animation="fadeInDown" data-animation-delay="08">
+                    <div class="CarBottom plan featured">
+                        <p class="icon silver">
+                            <i class="btn3d fa fa-car icon-small" id="carTblIcon"></i>
+                        </p>
+
+                        <h2>Mexican Car Insurance</h2>
+                        <p class="price"></p>
+                        <p>Automobile Policies</p>
+                        <p>
+                            Type 1:
+                            Liability insurance policy covers you with your drivers license
+                            number, driving any vehicle(ATC and road vehicles) anywhere
+                            in Mexico. The Premium is $180.00 per two drivers and $100.00
+                            for one license.
+                        </p>
+                        <p>
+                            Type 2:
+                            Liability insurance policies, wich covers your Vehicle anywhere
+                            in Mexico. The Premium is $90.00 per year.
+                        </p>
+                        <p>
+                            Type 3:
+                            Liability insurance policy, wich covers your Vehicle and trailr
+                            or tow. The Premium is $150.00 per year.
+                        </p>
+                        <p>
+                            Type 4:
+                            Full coverage insurance anywhere in Mexico, the annual Premium
+                            is according to the cars value.
+                        </p>
+
+                        <div class="table-responsive">
+                            <table id="carInsurancePriceTable" class="table table-hover table-responsive table-bordered">
+                                <thead class="cf">
+                                    <!--<table id="preciosTable" class="table table-hover table-responsive table-bordered">-->
+                                    <tr class="btn-danger">
+                                        <th>Value</th>
+                                        <th>Premuim</th>
+                                        <th>W/ Trailer or Tow</th>
+                                        <th>Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-title="" class="numeric">$1,000-$5,000</td>
+                                        <td data-title="" class="numeric">$175</td>
+                                        <td data-title="" class="numeric">$220</td>
+                                        <td data-title="" class="numeric">5</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$6,000-$10,000</td>
+                                        <td data-title="" class="numeric">$220</td>
+                                        <td data-title="" class="numeric">$265</td>
+                                        <td data-title="" class="numeric">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$11,000-$15,000</td>
+                                        <td data-title="" class="numeric">$250</td>
+                                        <td data-title="" class="numeric">$295</td>
+                                        <td data-title="" class="numeric">7</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$16,000-$20,000</td>
+                                        <td data-title="" class="numeric">$275</td>
+                                        <td data-title="" class="numeric">$320</td>
+                                        <td data-title="" class="numeric">8</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$21,000-$25,000</td>
+                                        <td data-title="" class="numeric">$305</td>
+                                        <td data-title="" class="numeric">$650</td>
+                                        <td data-title="" class="numeric">9</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$26,000-$30,000</td>
+                                        <td data-title="" class="numeric">$335</td>
+                                        <td data-title="" class="numeric">$380</td>
+                                        <td data-title="" class="numeric">10</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$31,000-$35,000</td>
+                                        <td data-title="" class="numeric">$355</td>
+                                        <td data-title="" class="numeric">$400</td>
+                                        <td data-title="" class="numeric">11</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$36,000-$40,000</td>
+                                        <td data-title="" class="numeric">$390</td>
+                                        <td data-title="" class="numeric">$435</td>
+                                        <td data-title="" class="numeric">12</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$41,000-$45,000</td>
+                                        <td data-title="" class="numeric">$420</td>
+                                        <td data-title="" class="numeric">$465</td>
+                                        <td data-title="" class="numeric">13</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$46,000-$50,000</td>
+                                        <td data-title="" class="numeric">$440</td>
+                                        <td data-title="" class="numeric">$485</td>
+                                        <td data-title="" class="numeric">14</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$51,000-$55,000</td>
+                                        <td data-title="" class="numeric">$470</td>
+                                        <td data-title="" class="numeric">$515</td>
+                                        <td data-title="" class="numeric">15</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$56,000-$60,000</td>
+                                        <td data-title="" class="numeric">$505</td>
+                                        <td data-title="" class="numeric">$550</td>
+                                        <td data-title="" class="numeric">16</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$61,000-$65,000</td>
+                                        <td data-title="" class="numeric">$535</td>
+                                        <td data-title="" class="numeric">$580</td>
+                                        <td data-title="" class="numeric">17</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$66,000-$70,000</td>
+                                        <td data-title="" class="numeric">$560</td>
+                                        <td data-title="" class="numeric">$605</td>
+                                        <td data-title="" class="numeric">18</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="" class="numeric">$71,000-$75,000</td>
+                                        <td data-title="" class="numeric">$590</td>
+                                        <td data-title="" class="numeric">$635</td>
+                                        <td data-title="" class="numeric">19</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a class="btn btn-pricing" href="#" target="_blank">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container -->
+    <!-- Start Purchase Section -->
+    <!-- End Purchase Section -->
+    <!-- Start Portfolio Section -->
+    <!-- Start Big Heading -->
+    <!-- End Big Heading -->
+    <!-- Start Recent Projects Carousel -->
+    <!-- End Recent Projects Carousel -->
+    <!-- End Portfolio Section -->
+    <!-- Start Testimonials Section -->
+    <!-- End Testimonials Carousel -->
+    <!-- End Testimonials Section -->
+    <!-- Start Team Member Section -->
+    <!-- Start Team Members -->
+    <!-- End Team Member Section -->
+    <!-- Start Pricing Table Section -->
+    <!-- End Pricing Table Section -->
+    <!-- Start Client/Partner Section -->
+    <!-- End Client/Partner Section -->
+    <!-- Start Footer Section -->
+    <!--La section del header osea la barra de navegacion del template la cambie a _Layout.cshtml-->
+    <!-- End Footer Section -->
+    <!-- End Full Body Container -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+
+    <!-- Style Switcher -->
+    <!--End Style Switcher-->
+
+</body>
+
+</html>

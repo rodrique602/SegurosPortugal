@@ -1,0 +1,201 @@
+﻿@model Portugal_Insurance___PayPal.Models.HomeCondoPolicy
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HomeCondoPolicy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.homeOwnerInsurance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homeOwnerInsurance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.condoInsurance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.condoInsurance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerUsaAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerUsaAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneUsa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneUsa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cellPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cellPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insuredBuildingLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insuredBuildingLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.floors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.floors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.typeOfConstruction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typeOfConstruction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wall)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wall)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.roof)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roof)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.buildingsValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.buildingsValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contentsValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contentsValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.burlglaryTheft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.burlglaryTheft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brokenGlass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brokenGlass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.familyCivilLiability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.familyCivilLiability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.others)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.others)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.annualPremium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.annualPremium)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.earthquake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.earthquake)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

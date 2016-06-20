@@ -1,0 +1,206 @@
+﻿@model Portugal_Insurance___PayPal.Models.HomeCondoPolicy
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>HomeCondoPolicy</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.policyQuoteID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.homeOwnerInsurance, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.homeOwnerInsurance)
+                @Html.ValidationMessageFor(model => model.homeOwnerInsurance)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.condoInsurance, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.condoInsurance)
+                @Html.ValidationMessageFor(model => model.condoInsurance)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customerName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.customerName)
+                @Html.ValidationMessageFor(model => model.customerName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email)
+                @Html.ValidationMessageFor(model => model.email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customerUsaAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.customerUsaAddress)
+                @Html.ValidationMessageFor(model => model.customerUsaAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.zipCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.zipCode)
+                @Html.ValidationMessageFor(model => model.zipCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.city)
+                @Html.ValidationMessageFor(model => model.city)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.phoneUsa, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.phoneUsa)
+                @Html.ValidationMessageFor(model => model.phoneUsa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cellPhone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cellPhone)
+                @Html.ValidationMessageFor(model => model.cellPhone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.insuredBuildingLocation, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.insuredBuildingLocation)
+                @Html.ValidationMessageFor(model => model.insuredBuildingLocation)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.floors, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.floors)
+                @Html.ValidationMessageFor(model => model.floors)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.typeOfConstruction, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.typeOfConstruction)
+                @Html.ValidationMessageFor(model => model.typeOfConstruction)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.wall, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.wall)
+                @Html.ValidationMessageFor(model => model.wall)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.roof, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.roof)
+                @Html.ValidationMessageFor(model => model.roof)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.buildingsValue, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.buildingsValue)
+                @Html.ValidationMessageFor(model => model.buildingsValue)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.contentsValue, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.contentsValue)
+                @Html.ValidationMessageFor(model => model.contentsValue)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.burlglaryTheft, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.burlglaryTheft)
+                @Html.ValidationMessageFor(model => model.burlglaryTheft)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.brokenGlass, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.brokenGlass)
+                @Html.ValidationMessageFor(model => model.brokenGlass)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.familyCivilLiability, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.familyCivilLiability)
+                @Html.ValidationMessageFor(model => model.familyCivilLiability)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.others, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.others)
+                @Html.ValidationMessageFor(model => model.others)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.annualPremium, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.annualPremium)
+                @Html.ValidationMessageFor(model => model.annualPremium)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.earthquake, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.earthquake)
+                @Html.ValidationMessageFor(model => model.earthquake)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

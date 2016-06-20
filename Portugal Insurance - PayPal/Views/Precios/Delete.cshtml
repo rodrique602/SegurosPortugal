@@ -1,0 +1,117 @@
+﻿@model Portugal_Insurance___PayPal.Models.Precios
+
+@{
+    ViewBag.Title = "EliminarPrecio";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create New Precio</title>
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
+
+    <!-- Css3 Transitions Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/animate.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/colors/green.css" title="green" media="screen" />
+
+
+</head>
+<body>
+    <div class="form-actions no-color" style=" margin-left: 40%;" id="eliminarPrecioForm">
+        <h3>Eliminar Precio? Cuidado Esto no se puede deshacer</h3>
+    </div>
+
+    <div class="form-actions no-color">
+        <hr />
+        <div class="form-actions no-color" style=" margin-left: 40%;">
+            <h4>Precio</h4>
+        </div>
+        <dl class="dl-horizontal" id="eliminarPrecioForm">
+            <dt>
+                @Html.DisplayNameFor(model => model.precioID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.precioID)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.coverageType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.coverageType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dias)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dias)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.valorMinimo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.valorMinimo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.valorMaximo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.valorMaximo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.total)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.total)
+            </dd>
+
+        </dl>
+    </div>
+
+
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group" style=" margin-left: 33%;">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Eliminar Precio" class="btn btn-primary btn3d" />
+                </div>
+                <div style=" margin-left: 19.5%;">
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+            }
+    </body>
+</html>
