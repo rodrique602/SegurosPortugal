@@ -51,11 +51,11 @@ namespace Portugal_Insurance___PayPal.Controllers
 
             return View(precioss);
         }
-        
+
         // GET: /Precios/Details/5
         public static decimal PolicyFinalTotalVar;
         public ActionResult Details(String vinNumberTB = "", decimal vehicleValueTB = 0, DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null, int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
-        { 
+        {
             /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,12 +84,15 @@ namespace Portugal_Insurance___PayPal.Controllers
             ViewBag.CarModel = carmodels;
 
             ViewBag.StartingDate = startingDateTB;
-            ViewBag.EndingDate = endingDateTB;
+
             ViewBag.TipoDeCobertura = coverageType;
 
             //Aqui obtenemos los dias de las fechas y calculamos la diferiencia entre los dos
+            string numdias = Request["Coverage_Days"];
+            int numDiasCobertura = int.Parse(numdias);
             DateTime date1 = System.Convert.ToDateTime(startingDateTB);
-            DateTime date2 = System.Convert.ToDateTime(endingDateTB);
+            DateTime date2 = date1.AddDays(numDiasCobertura);
+            ViewBag.EndingDate = date2;
 
             var days = date2.Subtract(date1).TotalDays;
             var days2 = date1.Subtract(date1).TotalDays;
@@ -113,21 +116,24 @@ namespace Portugal_Insurance___PayPal.Controllers
             //Busqueda de precios 1. FULL COVERAGE y Liability Only Por DIA y por filtro VehicleValueTB
             Precios preciosFCPorDia;
             Precios preciosliabilityOnlyPorDia;
-            if (days > 0)
+
+            if (numDiasCobertura > 0)
             {
-                preciosFCPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= vehicleValueTB && pre.valorMaximo >= vehicleValueTB && pre.dias == days && pre.coverageType == "Full Coverage per day");
+                preciosFCPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= vehicleValueTB && pre.valorMaximo >= vehicleValueTB && pre.dias == numDiasCobertura && pre.coverageType == "Full Coverage Per Day");
 
                 ViewBag.PreciosFCPorDia = preciosFCPorDia.total;
 
 
-                preciosliabilityOnlyPorDia = db.Precios.FirstOrDefault(pre => pre.dias == days && pre.coverageType == "Liability Only per day");
+                preciosliabilityOnlyPorDia = db.Precios.FirstOrDefault(pre => pre.dias == numDiasCobertura && pre.coverageType == "Liability Only per day");
 
                 ViewBag.PreciosliabilityOnlyPorDia = preciosliabilityOnlyPorDia.total;
 
+                //int diasCobertura = date1 + numdias;
                 //Manda el resultado de la busqueda para ser mostrado en la vista
                 return View(preciosFCPorDia);
 
             }
+
 
             //Busqueda de precios 3. FULL COVERAGE Por Año y por filtro VehicleValueTB
             Precios preciosFCPorAnio;
