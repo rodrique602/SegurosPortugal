@@ -13,7 +13,7 @@ namespace Portugal_Insurance___PayPal.DAL
     {
         public Portugal_Insurance___PayPalContextDB()
            // : base("PortugalDB") //<-this was the old db that was on the hosting service
-            : base("Portugal_Insurance___PayPalContextDB")
+            : base("PortugalDB")
         {
  
         }
