@@ -164,6 +164,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AutomobilePolicyController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeCondoPolicyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PayPalController.cs" />
@@ -173,10 +175,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\HomeCondoPolicy.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\AutomobilePolicy.cs" />
     <Compile Include="Models\Precios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -485,6 +489,16 @@
     <Content Include="Views\PayPal\Index.cshtml" />
     <Content Include="Views\PayPal\SuccessView.cshtml" />
     <Content Include="Views\PayPal\FailureView.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\AutomobilePolicy\Create.cshtml" />
+    <Content Include="Views\AutomobilePolicy\Delete.cshtml" />
+    <Content Include="Views\AutomobilePolicy\Details.cshtml" />
+    <Content Include="Views\AutomobilePolicy\Edit.cshtml" />
+    <Content Include="Views\AutomobilePolicy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Portugal_Insurance___PayPal.Models.AutomobilePolicy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.client.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vehicleValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vehicleVin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carMake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policyFolio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policySold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policySoldDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policyStartingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policyEndingDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vehicleValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vehicleVin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carMake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.carModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policyFolio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policySold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policySoldDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policyStartingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policyEndingDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.automobilePolicyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.automobilePolicyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.automobilePolicyID })
+        </td>
+    </tr>
+}
+
+</table>
