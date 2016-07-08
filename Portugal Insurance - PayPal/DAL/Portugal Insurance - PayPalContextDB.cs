@@ -33,6 +33,10 @@ namespace Portugal_Insurance___PayPal.DAL
 
         public System.Data.Entity.DbSet<Portugal_Insurance___PayPal.Models.HomeCondoPolicy> HomeCondoPolicies { get; set; }
 
+        public System.Data.Entity.DbSet<Portugal_Insurance___PayPal.Models.Client> Clients { get; set; }
+
+        public System.Data.Entity.DbSet<Portugal_Insurance___PayPal.Models.AutomobilePolicy> AutomobilePolicies { get; set; }
+
 
     }
 }

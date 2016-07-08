@@ -1,7 +1,16 @@
-﻿
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>INDEXXXXXX</h2>
+
+@Html.ActionLink("Pay Direct With Credit Card", "PaymentWithCreditCard", "PayPal")
+@Html.ActionLink("Pay With PayPal Account", "PaymentWithPayPal", "PayPal")
+
 @*@{
     Layout = null;
-}
+}*@
 @using System.Configuration
 
 <!DOCTYPE html>
@@ -44,16 +53,6 @@
         </form>
 
 </body>
-</html>*@
+</html>
 
 
-
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>INDEXXXXXX</h2>
-
-@Html.ActionLink("Pay Direct With Credit Card", "PaymentWithCreditCard", "PayPal")
-@Html.ActionLink("Pay With PayPal Account", "PaymentWithPayPal", "PayPal")

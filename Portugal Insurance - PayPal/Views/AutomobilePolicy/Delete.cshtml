@@ -1,0 +1,113 @@
+﻿@model Portugal_Insurance___PayPal.Models.AutomobilePolicy
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AutomobilePolicy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.client.fullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.client.fullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehicleValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehicleValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vehicleVin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vehicleVin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carMake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carMake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.policyFolio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.policyFolio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.policySold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.policySold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.policySoldDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.policySoldDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.policyStartingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.policyStartingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.policyEndingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.policyEndingDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
