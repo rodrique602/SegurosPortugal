@@ -504,6 +504,8 @@
     <Content Include="Views\AutomobilePolicy\Details.cshtml" />
     <Content Include="Views\AutomobilePolicy\Edit.cshtml" />
     <Content Include="Views\AutomobilePolicy\Index.cshtml" />
+    <Content Include="Views\PayPal\PaymentWithCreditCard.cshtml" />
+    <Content Include="Views\PayPal\PaymentWithPaypal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

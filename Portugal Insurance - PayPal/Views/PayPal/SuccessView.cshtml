@@ -3,61 +3,246 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!--<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>-->
+
 
 <h2>SuccessView</h2>
 
 
-@*@{
-    Layout = null;
-}*@
+
+
+
+@*@using System.Configuration;
+
+@{
+    ViewBag.Title = "SuccessView";
+}
+
+<!--<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>-->
 
 <!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Success</title>
+
+    <!-- Basic -->
+    <title>Margo | SuccessView</title>
+
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive etatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/css/colors/red.css" title="red" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/jade.css" title="jade" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/blue.css" title="blue" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/beige.css" title="beige" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/cyan.css" title="cyan" media="screen" />-->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/colors/green.css" title="green" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/css/colors/red.css" title="red" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/orange.css" title="orange" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/peach.css" title="peach" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/pink.css" title="pink" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/purple.css" title="purple" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/sky-blue.css" title="sky-blue" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/yellow.css" title="yellow" media="screen" />-->
+    <!-- Margo JS  -->
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.migrate.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizrr.js"></script>
+    <script type="text/javascript" src="~/asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.appear.js"></script>
+    <script type="text/javascript" src="~/Scripts/count-to.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.textillate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.lettering.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+
+    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
 </head>
+
 <body>
-    <div class="feat_prod_box_details">
 
-        <div class="contact_form">
-            <div class="form_subtitle">Order Information</div>
+    <!-- Container -->
+    <div id="container">
 
-            <div class="form_row">
-                <label class="contact"><strong>Transaction Id:</strong></label>
-                @ViewBag.result.TransactionId
+
+        <!-- Start Page Banner -->
+        <div class="page-banner" style="padding:80px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>About Us</h2>
+                        <p>We Are Professional</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="breadcrumbs">
+                            <li><a href="/Home/Index">Home</a></li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </div>
+        <!-- End Page Banner -->
+        <!-- Start Content -->
+        <div id="content" style="background-color: ghostwhite;">
+            <div class="container">
+                <div class="page-content">
 
-            <div class="form_row">
-                <label class="contact"><strong>First Name:</strong></label>
-                @ViewBag.result.PayerFirstName
+
+                    <div class="row">
+
+                        <div class="col-md-7">
+
+                            <!-- Classic Heading -->
+                            <h4 class="classic-title"><span>Welcome To Our Agency</span></h4>
+
+                            <div class="feat_prod_box_details">
+
+                                <div class="contact_form">
+                                    <div class="form_subtitle">
+                                        Thank you for your payment.
+                                        Your transaction has been completed, and a receipt for your purchase has been emailed to you.
+                                        You may log into your account at www.paypal.com to view details of this transaction.
+                                        Order Information
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Transaction Id:</strong></label>
+                                        @ViewBag.result.TransactionId
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>First Name:</strong></label>
+                                        @ViewBag.result.PayerFirstName
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Last Name:</strong></label>
+                                        @ViewBag.result.PayerLastName
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Email:</strong></label>
+                                        @ViewBag.result.PayerEmail
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Payment Gross:</strong></label>
+                                        @ViewBag.result.GrossTotal
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Payment Fee</strong></label>
+                                        @ViewBag.result.PaymentFee
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                            <p>Lorem Ipsum is simply dummy text of the <a title="Simple Tooltip" href="#" class="itl-tooltip" data-placement="top">printing</a> and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Sed ut perspiciatis unde omnis iste natus error sit volup accusantium. Lorem ipsum dolor sit amet, consectetur.</p>
+
+                            <!-- Start Post -->
+                            <div class="blog-post image-post">
+                                <!-- Post Thumb -->
+                                <div class="post-head">
+                                    <a class="lightbox" title="This is an image title" href="/Content/images/blog-01.jpg">
+                                        <div class="thumb-overlay"><i class="fa fa-arrows-alt"></i></div>
+                                        <img alt="" src="/Content/images/ourteam.png">
+                                    </a>
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                                    <h2><a href="#">Image Box With Nice Lightbox</a></h2>
+                                    <ul class="post-meta">
+                                        <li>By <a href="#">iThemesLab</a></li>
+                                        <li>December 30, 2013</li>
+                                        <li><a href="#">WordPress</a>, <a href="#">Graphic</a></li>
+                                        <li><a href="#">4 Comments</a></li>
+                                    </ul>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                    <a class="main-button" href="#">Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- End Post -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Divider -->
+                <div class="hr1" style="margin-bottom:50px;"></div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <!-- Classic Heading -->
+                        <h4 class="classic-title"><span>Our Skills</span></h4>
+
+                        <!-- Classic Heading -->
+                        <h4 class="classic-title"><span>Our Solutions</span></h4>
+
+                    </div>
+                </div>
             </div>
+        </div>
+        <!-- End Container -->
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-            <div class="form_row">
-                <label class="contact"><strong>Last Name:</strong></label>
-                @ViewBag.result.PayerLastName
+        <div id="loader">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
             </div>
-
-            <div class="form_row">
-                <label class="contact"><strong>Email:</strong></label>
-                @ViewBag.result.PayerEmail
-            </div>
-
-            <div class="form_row">
-                <label class="contact"><strong>Payment Gross:</strong></label>
-                @ViewBag.result.GrossTotal
-            </div>
-
-            <div class="form_row">
-                <label class="contact"><strong>Payment Fee</strong></label>
-                @ViewBag.result.PaymentFee
-            </div>
-
-
-
         </div>
 
+
     </div>
+
 </body>
-</html>
+
+</html>*@
+
+
+
