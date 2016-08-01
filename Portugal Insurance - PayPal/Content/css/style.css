@@ -6447,11 +6447,11 @@ body{
 }
 
 .content .plan.featured {
-	top:0;
+	top:00px;
 	padding-top:40px;
-	padding-bottom:00px;
-	Original Values
+	padding-bottom:40px;
 
+	/*Original Values*/
 	/*top: 0;
 	margin-bottom: -40px;
 	padding-top: -1px;
@@ -6468,8 +6468,8 @@ body{
 
 	top: 0;
 	margin-bottom: -40px;
-	padding-top: -1px;
-	padding-bottom: 112px;
+	padding-top: 40px;
+	padding-bottom: 0px;
 }
 
 .content .homeOwner plan featured top {
@@ -6490,10 +6490,10 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0;
-	margin-bottom: -40px;
-	padding-top: -1px;
-	padding-bottom: 160px;
+	top: 80px;
+	margin-bottom: 0px;
+	padding-top: 40px;
+	padding-bottom: 400px;
 }
 
 .content .CondoBottom.plan.featured  {
@@ -6502,10 +6502,10 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0;
-	margin-bottom: 0px;
-	padding-top: -1px;
-	padding-bottom: 270px;
+	top: 80px;
+	margin-bottom: 120px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .condoOwner plan featured top {
@@ -6521,16 +6521,18 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0;
+	top: 40px;
 	margin-bottom: 0px;
-	padding-top: -1px;
-	padding-bottom: 292px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .content .plan:hover,
 .content .plan.featured {
-	background:#5CC9DF;
-	color:#fff;
+	/*background:#5CC9DF;
+	color:#fff;*/
+    background-image: url(/Content/images/Blue_DotBG.png);
+
 }
 
 .content .plan h2 {
@@ -6734,16 +6736,16 @@ body{
 .bgimage {
 
     /*background-image: url(images/responsive-background.jpg);*/
-    background-image: url(/Content/images/Blue_DotBG.png);
-    background-size: 100%;
+    /*background-image: url(/Content/images/Blue_DotBG.png);
+    background-size: 100%;*/
 
 
 }
 
 .bgimage-inside {
 
-    padding-top: 37.36%; /* this is actually (426/1140)*100 */
-
+    /*padding-top: 37.36%; /* this is actually (426/1140)*100 */
+    padding-top: 0.0%
 
 }
 
