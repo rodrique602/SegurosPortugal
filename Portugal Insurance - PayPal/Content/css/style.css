@@ -6473,7 +6473,7 @@ body{
 }
 
 .content .homeOwner plan featured top {
-    margin-top: auto;
+	margin-top: auto;
 
 
 
@@ -6509,7 +6509,7 @@ body{
 }
 
 .condoOwner plan featured top {
-    margin-top: auto;
+	margin-top: auto;
 
 
 
@@ -6531,7 +6531,7 @@ body{
 .content .plan.featured {
 	/*background:#5CC9DF;
 	color:#fff;*/
-    background-image: url(/Content/images/Blue_DotBG.png);
+	background-image: url(/Content/images/dots.png);
 
 }
 
@@ -6640,7 +6640,7 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-        background-color: white;
+		background-color: white;
 
 }
 
@@ -6721,31 +6721,31 @@ body{
 	padding-top: 0px;
 	margin-top: -40px;*/
 
-        width: 100%;
-    /* margin-left: 0px; */
-    color: black;
-    /* padding-right: 0px; */
-    /* padding-left: 0px; */
-    /* margin-right: auto; */
-    padding-top: 0px;
-    margin-top: -40px;
-    text-align: center;
-    /*background-image:repeating-radial-gradient(blue)*/
+		width: 100%;
+	/* margin-left: 0px; */
+	color: black;
+	/* padding-right: 0px; */
+	/* padding-left: 0px; */
+	/* margin-right: auto; */
+	padding-top: 0px;
+	margin-top: -40px;
+	text-align: center;
+	/*background-image:repeating-radial-gradient(blue)*/
 }
 
 .bgimage {
 
-    /*background-image: url(images/responsive-background.jpg);*/
-    /*background-image: url(/Content/images/Blue_DotBG.png);
-    background-size: 100%;*/
+	/*background-image: url(images/responsive-background.jpg);*/
+	/*background-image: url(/Content/images/Blue_DotBG.png);
+	background-size: 100%;*/
 
 
 }
 
 .bgimage-inside {
 
-    /*padding-top: 37.36%; /* this is actually (426/1140)*100 */
-    padding-top: 0.0%
+	/*padding-top: 37.36%; /* this is actually (426/1140)*100 */
+	padding-top: 0.0%
 
 }
 

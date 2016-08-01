@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -244,6 +245,7 @@
     <Content Include="Content\images\c6.png" />
     <Content Include="Content\images\c7.png" />
     <Content Include="Content\images\c8.png" />
+    <Content Include="Content\images\dots.png" />
     <Content Include="Content\images\favicon.png" />
     <Content Include="Content\images\flickr-01.jpg" />
     <Content Include="Content\images\flickr-02.jpg" />
