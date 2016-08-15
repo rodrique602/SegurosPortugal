@@ -567,6 +567,8 @@ ul.social-list li:last-child a i {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
+	position: relative;
+	min-height: 120px !important;
 }
 
 .navbar-brand {
@@ -5667,6 +5669,13 @@ ul.footer-nav li a:hover {
 	
 }
 
+#segurosFooterLogo img {
+	width: inherit;
+	height: inherit;
+	display: inline-block;
+	
+}
+
 #myModal {
 	padding-left: inherit;
 }
@@ -5828,11 +5837,29 @@ span .fa fa-automobile, #autoIcon {
 	height: auto;
 	display:inline-block*/
 
-	margin-left: -35px!important;
+	/*margin-left: -35px!important;
 	max-width: 100%;
 	height: auto;
 	margin-top: -10px;
-	display: inline-block;
+	display: inline-block;*/
+
+	/*margin-left: -60px!important;
+	max-width: 70%;
+	height: auto;
+	margin-top: -15px;
+	display: -webkit-box;*/
+
+	/*margin-left: 0px!important;
+	max-width: 50%;
+	height: auto;
+	margin-top: -15px;
+	display: inherit;*/
+
+	margin-left: 0px!important;
+	max-width: 90%;
+	height: 100px;
+	margin-top: -15px;
+	display: inherit;
 	
 }
 
@@ -6420,15 +6447,15 @@ body{
 }
 
 .content .plan.featured {
-	/*top:0;
-	padding-top:30px;
-	padding-bottom:30px;
-	Original Values*/
+	top:00px;
+	padding-top:40px;
+	padding-bottom:40px;
 
-	top: 0;
+	/*Original Values*/
+	/*top: 0;
 	margin-bottom: -40px;
 	padding-top: -1px;
-	padding-bottom: 30px;
+	padding-bottom: 30px;*/
 
 
 }
@@ -6441,8 +6468,15 @@ body{
 
 	top: 0;
 	margin-bottom: -40px;
-	padding-top: -1px;
-	padding-bottom: 112px;
+	padding-top: 40px;
+	padding-bottom: 0px;
+}
+
+.content .homeOwner plan featured top {
+	margin-top: auto;
+
+
+
 }
 
 #homePlanFeaturedP {
@@ -6456,10 +6490,10 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0;
-	margin-bottom: -40px;
-	padding-top: -1px;
-	padding-bottom: 160px;
+	top: 80px;
+	margin-bottom: 0px;
+	padding-top: 40px;
+	padding-bottom: 400px;
 }
 
 .content .CondoBottom.plan.featured  {
@@ -6468,10 +6502,17 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0;
-	margin-bottom: 0px;
-	padding-top: -1px;
-	padding-bottom: 380px;
+	top: 80px;
+	margin-bottom: 120px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.condoOwner plan featured top {
+	margin-top: auto;
+
+
+
 }
 
 .content .CarBottom.plan.featured  {
@@ -6480,16 +6521,18 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0;
+	top: 40px;
 	margin-bottom: 0px;
-	padding-top: -1px;
-	padding-bottom: 334px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .content .plan:hover,
 .content .plan.featured {
-	background:#5CC9DF;
-	color:#fff;
+	/*background:#5CC9DF;
+	color:#fff;*/
+	background-image: url(/Content/images/dots.png);
+
 }
 
 .content .plan h2 {
@@ -6558,6 +6601,7 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
+		background-color: white;
 }
 
 #homeOwnersPriceTable td,#homeOwnersPriceTable p {
@@ -6596,6 +6640,7 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
+		background-color: white;
 
 }
 
@@ -6606,6 +6651,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
+		
 }
 
 #servicesCarInsurancePriceTable {
@@ -6638,6 +6684,8 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
+		background-color: white;
+
 
 }
 
@@ -6664,14 +6712,40 @@ body{
 }
 
 #priceTblContainer,priceTblContainer p {
-	width: 100%;
+	/*width: 100%;
 	margin-left: 0px;
 	color: black;
 	padding-right: 0px;
 	padding-left: 0px;
 	margin-right: auto;
 	padding-top: 0px;
+	margin-top: -40px;*/
+
+		width: 100%;
+	/* margin-left: 0px; */
+	color: black;
+	/* padding-right: 0px; */
+	/* padding-left: 0px; */
+	/* margin-right: auto; */
+	padding-top: 0px;
 	margin-top: -40px;
+	text-align: center;
+	/*background-image:repeating-radial-gradient(blue)*/
+}
+
+.bgimage {
+
+	/*background-image: url(images/responsive-background.jpg);*/
+	/*background-image: url(/Content/images/Blue_DotBG.png);
+	background-size: 100%;*/
+
+
+}
+
+.bgimage-inside {
+
+	/*padding-top: 37.36%; /* this is actually (426/1140)*100 */
+	padding-top: 0.0%
 
 }
 
@@ -6685,7 +6759,9 @@ body{
 	padding-top: 0px;
 	padding-bottom: 0px;
 	margin-top: 0px;
-	margin-bottom: -40px
+	margin-bottom: -40px;
+	background-color: white;
+
 }
 
 #homeOwnerTblIcon, #carTblIcon,#condoTblIcon {

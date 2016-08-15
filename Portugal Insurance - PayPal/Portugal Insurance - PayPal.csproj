@@ -245,6 +245,8 @@
     <Content Include="Content\images\c6.png" />
     <Content Include="Content\images\c7.png" />
     <Content Include="Content\images\c8.png" />
+    <Content Include="Content\images\dots.png" />
+    <Content Include="Content\images\dots1.1.png" />
     <Content Include="Content\images\favicon.png" />
     <Content Include="Content\images\flickr-01.jpg" />
     <Content Include="Content\images\flickr-02.jpg" />
@@ -507,6 +509,8 @@
     <Content Include="Views\AutomobilePolicy\Details.cshtml" />
     <Content Include="Views\AutomobilePolicy\Edit.cshtml" />
     <Content Include="Views\AutomobilePolicy\Index.cshtml" />
+    <Content Include="Views\PayPal\PaymentWithCreditCard.cshtml" />
+    <Content Include="Views\PayPal\PaymentWithPaypal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
