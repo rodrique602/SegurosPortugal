@@ -374,6 +374,7 @@
     <Content Include="Content\images\slider\condo.jpg" />
     <Content Include="Content\images\slider\custombg1.jpg" />
     <Content Include="Content\images\slider\home.jpg" />
+    <Content Include="Content\images\slider\logo.png" />
     <Content Include="Content\images\slider\OldWebSiteHeaderPic.png" />
     <Content Include="Content\images\slider\Residential-Insurance-Coverage-AustinOG.jpg" />
     <Content Include="Content\images\slider\Seguros_Portugal_BenitoJuarez.jpg" />
@@ -381,6 +382,7 @@
     <Content Include="Content\images\Seguros_Portugal_Logo Original.png" />
     <Content Include="Content\images\Seguros_Portugal_Logo.jpg" />
     <Content Include="Content\images\slider\Seguros_Portugal_MoneyTruck.png" />
+    <Content Include="Content\images\slider\Untitled.png" />
     <Content Include="Content\images\team\face_1.png" />
     <Content Include="Content\images\team\face_2.png" />
     <Content Include="Content\images\team\face_3.png" />
