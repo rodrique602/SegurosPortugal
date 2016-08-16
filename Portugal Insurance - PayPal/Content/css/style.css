@@ -6493,7 +6493,7 @@ body{
 	top: 80px;
 	margin-bottom: 0px;
 	padding-top: 40px;
-	padding-bottom: 400px;
+	padding-bottom: 00px;
 }
 
 .content .CondoBottom.plan.featured  {
@@ -6503,7 +6503,7 @@ body{
 	Original Values*/
 
 	top: 80px;
-	margin-bottom: 120px;
+	margin-bottom: 160px;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
@@ -6521,10 +6521,10 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 40px;
-	margin-bottom: 0px;
-	padding-top: 40px;
-	padding-bottom: 40px;
+    top: 0px;
+    margin-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .content .plan:hover,
@@ -6602,6 +6602,8 @@ body{
 		border-color: black;
 		border-width: thin;
 		background-color: white;
+        width: 80%;
+        margin: auto;
 }
 
 #homeOwnersPriceTable td,#homeOwnersPriceTable p {
@@ -6632,6 +6634,8 @@ body{
 		overflow:auto;
 		height: 400px;
 		font-weight: 900;
+        width: 100%;
+        margin: auto;
 
 }
 #carInsurancePriceTable {
@@ -6641,6 +6645,8 @@ body{
 		border-color: black;
 		border-width: thin;
 		background-color: white;
+        width: 80%;
+        margin: auto;
 
 }
 
@@ -6685,6 +6691,8 @@ body{
 		border-color: black;
 		border-width: thin;
 		background-color: white;
+        width: 80%;
+        margin: auto;
 
 
 }
@@ -6721,7 +6729,7 @@ body{
 	padding-top: 0px;
 	margin-top: -40px;*/
 
-		width: 100%;
+	width: 100%;
 	/* margin-left: 0px; */
 	color: black;
 	/* padding-right: 0px; */
