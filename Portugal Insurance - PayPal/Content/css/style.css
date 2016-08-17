@@ -6531,7 +6531,7 @@ body{
 .content .plan.featured {
 	/*background:#5CC9DF;
 	color:#fff;*/
-	background-image: url(/Content/images/dots.png);
+	background-image: url(/Content/images/2016PamphletBlueDotsBackGround.png);
 
 }
 
@@ -6540,6 +6540,7 @@ body{
 	font-weight:700;
 	margin-bottom:0px;
 	text-transform:uppercase;
+    color:yellow;
 }
 
 .content .plan.featured h2 {
@@ -6547,9 +6548,10 @@ body{
 }
 
 .content .plan p {
-	color: black;
-	margin-bottom:16px;
-	font-weight:900;
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 900;
+    font-size: x-large;
 	/*text-align: justify;*/
 }
 
@@ -6601,7 +6603,9 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: white;
+		background-color: lightcyan;
+        opacity: 0.5;
+        filter: alpha(opacity=50); /* For IE8 and earlier */
         width: 80%;
         margin: auto;
 }
@@ -6613,6 +6617,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
+        font-size: x-large;
 }
 
 #homeOwnersPriceTable th,#homeOwnersPriceTable p {
@@ -6622,6 +6627,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
+        font-size: x-large;
 }
 
 #servicesHomeOwnersPriceTable {
@@ -6644,7 +6650,9 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: white;
+		background-color: lightcyan;
+        opacity: 0.5;
+        filter: alpha(opacity=50); /* For IE8 and earlier */        
         width: 80%;
         margin: auto;
 
@@ -6657,7 +6665,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-		
+	    font-size: x-large;
 }
 
 #servicesCarInsurancePriceTable {
@@ -6690,7 +6698,9 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: white;
+		background-color: lightcyan;
+        opacity: 0.5;
+        filter: alpha(opacity=50); /* For IE8 and earlier */
         width: 80%;
         margin: auto;
 
@@ -6704,6 +6714,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
+        font-size: x-large;
 }
 
 #servicesCondoInsurancePriceTable {
@@ -6842,3 +6853,5 @@ body{
 	color: black;
 	font-weight: bold;
 }
+
+
