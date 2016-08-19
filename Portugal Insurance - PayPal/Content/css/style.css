@@ -568,7 +568,7 @@ ul.social-list li:last-child a i {
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
 	position: relative;
-	min-height: 120px !important;
+	min-height: inherit;
 }
 
 .navbar-brand {
