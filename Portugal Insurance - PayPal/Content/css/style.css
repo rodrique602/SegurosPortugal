@@ -6603,8 +6603,8 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: lightcyan;
-        opacity: 0.5;
+		background-color: rgba(224, 255, 255, 0.5);
+        /*opacity: 0.5;*/
         filter: alpha(opacity=50); /* For IE8 and earlier */
         width: 80%;
         margin: auto;
@@ -6650,8 +6650,8 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: lightcyan;
-        opacity: 0.5;
+		background-color: rgba(224, 255, 255, 0.5);
+        /*opacity: 0.5;*/
         filter: alpha(opacity=50); /* For IE8 and earlier */        
         width: 80%;
         margin: auto;
@@ -6698,8 +6698,8 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: lightcyan;
-        opacity: 0.5;
+		background-color: rgba(224, 255, 255, 0.5);
+        /*opacity: 0.5;*/
         filter: alpha(opacity=50); /* For IE8 and earlier */
         width: 80%;
         margin: auto;
