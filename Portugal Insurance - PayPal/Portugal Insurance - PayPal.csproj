@@ -184,8 +184,8 @@
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\HomeCondoPolicy.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Configuration.cs" />
-    <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\ConfigurationModels.cs" />
+    <Compile Include="Models\LoggerModels.cs" />
     <Compile Include="Models\AutomobilePolicy.cs" />
     <Compile Include="Models\Precios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -122,7 +122,7 @@ namespace Portugal_Insurance___PayPal.Controllers
                 //to authenticate the payment to a factilitator account.
                 //An access token could be an alphanumeric string
 
-                APIContext apiContext = PayPalConfiguration.GetAPIContext();
+                APIContext apiContext = Configuration.GetAPIContext();
 
                 //Create is a Payment class function which actually sends the payment details
                 //to the PayPal API for the payment. The function is passed with the ApiContext
@@ -150,7 +150,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         public ActionResult PaymentWithPaypal()
         {
             //getting the apiContext as earlier
-            APIContext apiContext = PayPalConfiguration.GetAPIContext();
+            APIContext apiContext = Configuration.GetAPIContext();
 
             try
             {

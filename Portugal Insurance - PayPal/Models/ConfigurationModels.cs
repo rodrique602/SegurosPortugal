@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Portugal_Insurance___PayPal.Models
 {
-    public class PayPalConfiguration
+    public static class Configuration
     {
 
         //these variables will store the clientID and clientSecret
@@ -14,7 +14,7 @@ namespace Portugal_Insurance___PayPal.Models
         public readonly static string ClientId;
         public readonly static string ClientSecret;
 
-        static PayPalConfiguration()
+        static Configuration()
         {
             var paypalConfig = GetConfig();
             ClientId = paypalConfig["clientId"];
