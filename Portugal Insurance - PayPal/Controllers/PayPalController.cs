@@ -165,7 +165,7 @@ namespace Portugal_Insurance___PayPal.Controllers
                     //baseURL is the url on which PayPal sends back the data.
                     //So we have provided URL of this controller only
 
-                    string baseURI = Request.Url.Scheme + "://" + Request.Url.Authority + "http://orquidea-001-site3.dtempurl.com/Paypal/PaymentWithPayPal?";
+                    string baseURI = Request.Url.Scheme + "://" + Request.Url.Authority + "/Paypal/PaymentWithPayPal?";
 
                     //guid we are generating for storing the paymentID received in session
                     //after calling the create function and it is used in the payment execution
