@@ -47,5 +47,7 @@ namespace Portugal_Insurance___PayPal.Models
         public int clientID { get; set; }
         public virtual Client client { get; set; }
 
+      
+
     }
 }

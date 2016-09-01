@@ -1,10 +1,14 @@
 ﻿using Portugal_Insurance___PayPal.Models;
+using Portugal_Insurance___PayPal.Models.ViewModels;
 using PayPal.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using System.Web.Configuration;
+using System.IO;
 //using Portugal_Insurance___PayPal.PayPal;
 //using PayPal.Api;
 
@@ -145,6 +149,42 @@ namespace Portugal_Insurance___PayPal.Controllers
             }
 
             return View("SuccessView");
+        }
+
+        public ActionResult SuccessView()
+        {
+            String authToken = WebConfigurationManager.AppSettings["PDTToken"];
+
+            //read in txn token from querystring
+            String txToken = Request.QueryString.Get("tx");
+            PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
+            /*
+            String query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
+                                  txToken, authToken);
+
+            // Create the request back
+            string url = WebConfigurationManager.AppSettings["PayPalSubmitUrl"];
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+
+            // Set values for the request back
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.ContentLength = query.Length;
+            */
+            // Write the request back IPN strings
+           /* StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
+                                     System.Text.Encoding.ASCII);
+            stOut.Write(query);
+            stOut.Close();*/
+
+            // Do the request to PayPal and get the response
+            /*StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
+            String strResponse = stIn.ReadToEnd();
+            stIn.Close();*/
+
+
+            ViewBag.confirmacion = confirmacion;
+            return View();
         }
 
         public ActionResult PaymentWithPaypal()

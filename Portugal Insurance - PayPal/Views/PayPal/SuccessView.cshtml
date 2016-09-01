@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "SuccessView";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Portugal_Insurance___PayPal.Models.PDTHolder confirmacion =
+        (Portugal_Insurance___PayPal.Models.PDTHolder)ViewBag.confirmacion;
 }
 
 <!--<h2>@ViewBag.Title.</h2>
@@ -9,8 +11,9 @@
 
 <h2>SuccessView</h2>
 
-
-
+Thanks.<br />
+<p>GrossTotal: @confirmacion.GrossTotal</p>
+<p>ReceiverEmail: @confirmacion.ReceiverEmail</p>
 
 
 @*@using System.Configuration;
