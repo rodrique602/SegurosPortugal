@@ -1,29 +1,11 @@
-﻿@{
+﻿@using System.Configuration;
+@{
     ViewBag.Title = "SuccessView";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
     Portugal_Insurance___PayPal.Models.PDTHolder confirmacion =
         (Portugal_Insurance___PayPal.Models.PDTHolder)ViewBag.confirmacion;
 }
 
-<!--<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>-->
-
-
-<h2>SuccessView</h2>
-
-Thanks.<br />
-<p>GrossTotal: @confirmacion.GrossTotal</p>
-<p>ReceiverEmail: @confirmacion.ReceiverEmail</p>
-
-
-@*@using System.Configuration;
-
-@{
-    ViewBag.Title = "SuccessView";
-}
-
-<!--<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>-->
 
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -134,6 +116,32 @@ Thanks.<br />
 
                             <div class="feat_prod_box_details">
 
+
+                                @*<h2>@ViewBag.Title.</h2>
+                                <h3>@ViewBag.Message</h3>
+
+
+                                <h2>SuccessView</h2>
+
+                                Thanks.
+                                <br />
+                                <p>TxToken: @confirmacion.TxToken</p>
+                                <p>TransactionId: @confirmacion.TransactionId</p>
+                                <p>GrossTotal: @confirmacion.GrossTotal</p>
+                                <p>Currency: @confirmacion.Currency</p>
+                                <p>BusinessEmail: @confirmacion.BusinessEmail</p>
+                                <p>ReceiverEmail: @confirmacion.ReceiverEmail</p>
+                                <p>PayerEmail: @confirmacion.PayerEmail</p>
+                                <p>PayerFirstName: @confirmacion.PayerFirstName</p>
+                                <p>PayerLastName: @confirmacion.PayerLastName</p>
+                                <p>PaymentFee: @confirmacion.PaymentFee</p>
+                                <p>PaymentStatus: @confirmacion.PaymentStatus</p>
+                                <p>SubscriberId: @confirmacion.SubscriberId</p>
+                                <p>InvoiceNumber: @confirmacion.InvoiceNumber</p>
+                                <p>ItemName: @confirmacion.ItemName</p>
+                                <p>Custom: @confirmacion.Custom</p>*@
+
+
                                 <div class="contact_form">
                                     <div class="form_subtitle">
                                         Thank you for your payment.
@@ -143,33 +151,110 @@ Thanks.<br />
                                     </div>
 
                                     <div class="form_row">
+                                        <label class="contact"><strong>Payment Status:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>Payment Status: @confirmacion.PaymentStatus</p>
+                                    </div>
+
+                                    <div class="form_row">
                                         <label class="contact"><strong>Transaction Id:</strong></label>
-                                        @ViewBag.result.TransactionId
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>TransactionId: @confirmacion.TransactionId</p>
                                     </div>
 
                                     <div class="form_row">
-                                        <label class="contact"><strong>First Name:</strong></label>
-                                        @ViewBag.result.PayerFirstName
+                                        <label class="contact"><strong>TxToken:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>TxToken: @confirmacion.TxToken</p>
+                                    </div>
+
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Invoice Number:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>Invoice Number: @confirmacion.InvoiceNumber</p>
                                     </div>
 
                                     <div class="form_row">
-                                        <label class="contact"><strong>Last Name:</strong></label>
-                                        @ViewBag.result.PayerLastName
+                                        <label class="contact"><strong>Custom:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>Custom: @confirmacion.Custom</p>
+                                    </div>
+
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Item Name:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>Item Name: @confirmacion.ItemName</p>
                                     </div>
 
                                     <div class="form_row">
-                                        <label class="contact"><strong>Email:</strong></label>
-                                        @ViewBag.result.PayerEmail
+                                        <label class="contact"><strong>Subscriber Id:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>Subscriber Id: @confirmacion.SubscriberId</p>
                                     </div>
 
                                     <div class="form_row">
-                                        <label class="contact"><strong>Payment Gross:</strong></label>
-                                        @ViewBag.result.GrossTotal
+                                        <label class="contact"><strong>Business Email:</strong></label>
+                                        @*@ViewBag.result.PayerEmail*@
+
+                                        <p>Business Email: @confirmacion.BusinessEmail</p>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Receiver Email:</strong></label>
+                                        @*@ViewBag.result.PayerEmail*@
+
+                                        <p>Receiver Email: @confirmacion.ReceiverEmail</p>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Payer First Name:</strong></label>
+                                        @*@ViewBag.result.PayerFirstName*@
+
+                                        <p>Payer FirstName: @confirmacion.PayerFirstName</p>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Payer Last Name:</strong></label>
+                                        @*@ViewBag.result.PayerLastName*@
+
+                                        <p>Payer LastName: @confirmacion.PayerLastName</p>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Payer Email:</strong></label>
+                                        @*@ViewBag.result.PayerEmail*@
+
+                                        <p>Payer Email: @confirmacion.PayerEmail</p>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Payment Gross Total:</strong></label>
+                                        @*@ViewBag.result.GrossTotal*@
+
+                                        <p>Gross Total: @confirmacion.GrossTotal</p>
+                                    </div>
+
+                                    <div class="form_row">
+                                        <label class="contact"><strong>Currency:</strong></label>
+                                        @*@ViewBag.result.TransactionId*@
+
+                                        <p>Currency: @confirmacion.Currency</p>
                                     </div>
 
                                     <div class="form_row">
                                         <label class="contact"><strong>Payment Fee</strong></label>
-                                        @ViewBag.result.PaymentFee
+                                        @*@ViewBag.result.PaymentFee*@
+
+                                        <p>Payment Fee: @confirmacion.PaymentFee</p>
                                     </div>
 
 
@@ -245,7 +330,7 @@ Thanks.<br />
 
 </body>
 
-</html>*@
+</html>
 
 
 
