@@ -489,9 +489,9 @@
                                             <h4 class="modal-title">Insurance Policy Info</h4>
                                         </div>
 
-                                        @using (Html.BeginForm("Details", "Precios", FormMethod.Post))
-                                        {
-
+                                        @*@using (Html.BeginForm("Details", "Precios", FormMethod.Post))
+                                        {*@
+               
                                             <div class="form-group" id="customerInfoModal">
                                                 <label class="control-label">Policy Type</label>
                                                 <div class="controls">
@@ -528,86 +528,89 @@
                                             <!--Aqui insertamos el codigo para el paso 3 de el CarQuery API y agregamos un DropDown
                                             para seleccionarel tipo de poliza que el cliente guste cotizar-->
                                         <!-- <form role="form">-->
-
-
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Full Name</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="fullNameTB" name="fullNameTB" placeholder="full name">
+                                            @using (Html.BeginForm("Create", "Client", FormMethod.Post))
+                                            {
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Full Name</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="fullNameTB" name="fullNameTB" placeholder="full name">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--<div>
-                                            ViewBag.Dias = Coverage_Days.SelectedItem.Value
-                                            </div>-->
+                                                <!--<div>
+                                                ViewBag.Dias = Coverage_Days.SelectedItem.Value
+                                                </div>-->
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Street address, P.O. box, company name, c/o</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="address-line1TB" name="address-line1TB" placeholder="address-line1">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Street address, P.O. box, company name, c/o</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="address-line1TB" name="address-line1TB" placeholder="address-line1">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Apartment, suite , unit, building, floor, etc.</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="address-line2TB" name="address-line2TB" placeholder="address-line2">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Apartment, suite , unit, building, floor, etc.</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="address-line2TB" name="address-line2TB" placeholder="address-line2">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">City / Town</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="cityTB" name="cityTB" placeholder="city">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">City / Town</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="cityTB" name="cityTB" placeholder="city">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">State / Province / Region</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="regionTB" name="regionTB" placeholder="state / province / region">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">State / Province / Region</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="regionTB" name="regionTB" placeholder="state / province / region">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Zip / Postal Code</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="postal-codeTB" name="postal-codeTB" placeholder="zip or postal code">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Zip / Postal Code</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="postal-codeTB" name="postal-codeTB" placeholder="zip or postal code">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Country</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="countryTB" name="countryTB" placeholder="country">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Country</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="countryTB" name="countryTB" placeholder="country">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Please enter a US Contact Number</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="us-phoneNumberTB" name="us-phoneNumberTB" placeholder="US phone number">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Please enter a US Contact Number</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="us-phoneNumberTB" name="us-phoneNumberTB" placeholder="US phone number">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Please enter your Email</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="emailTB" name="emailTB" placeholder="email address">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Please enter your Email</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="emailTB" name="emailTB" placeholder="email address">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Please enter 1st license Number</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="license-number1TB" name="license-number1TB" placeholder="1st License Number">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Please enter 1st license Number</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="license-number1TB" name="license-number1TB" placeholder="1st License Number">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group" id="customerInfoModal">
-                                                <label class="control-label">Please enter 2nd license Number if applies</label>
-                                                <div class="controls">
-                                                    <input type="text" class="form-control" id="license-number2TB" name="license-number2TB" placeholder="2nd License Number">
+                                                <div class="form-group" id="customerInfoModal">
+                                                    <label class="control-label">Please enter 2nd license Number if applies</label>
+                                                    <div class="controls">
+                                                        <input type="text" class="form-control" id="license-number2TB" name="license-number2TB" placeholder="2nd License Number">
+                                                    </div>
                                                 </div>
-                                            </div>
+
+                                            }
+
 
                                             <!--<div class="form-group">
                                             <label for="psw"><span class="eye-openPswdIcon glyphicon glyphicon-eye-open icon-mini-effect icon-effect-1"></span></label>
@@ -659,7 +662,7 @@
 
                                             <!--<a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>-->
                                     <!-- </form>-->
-                                        }
+                                        @*}*@
                                     </div>
                                     @ViewBag.preciosPorDia
                                     <!--<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>-->
