@@ -182,7 +182,7 @@
 		display: none!important;
 	}
   
-    .tp-caption a.btn-system {
+	.tp-caption a.btn-system {
 		display: none;
 	}
 	
@@ -212,18 +212,18 @@
 		margin-bottom: 20px;
 	}
   
-    .milestone-block {
-        margin-bottom: 20px;
-        margin-right: 45px;
-    }
+	.milestone-block {
+		margin-bottom: 20px;
+		margin-right: 45px;
+	}
 
 }
 @media only screen and (max-width: 479px) { 
   
-    .top-bar  {
+	.top-bar  {
 		text-align: center;
 	}
-    
+	
 	.navbar-default .navbar-nav {
 		padding: 15px 0;
 	}
@@ -232,7 +232,7 @@
 		display: none;
 	}
   
-    ul.social-list li {
+	ul.social-list li {
 		margin: 0 3px;
 	}
 	
@@ -309,15 +309,15 @@
 		opacity: 0.7;
 	}
   
-    .navbar-default .navbar-nav > li {
+	.navbar-default .navbar-nav > li {
 		margin-left: 0;
 		display: block;
 		margin-bottom: 5px;
-        width: 100%
+		width: 100%
 	}
 
 	.navbar-default .navbar-nav > li.drop > a {
-	    padding-right: 10px;
+		padding-right: 10px;
 	}
 	
 	.navbar-default .navbar-nav > li.drop > a {
@@ -341,42 +341,42 @@
 		border-top: none;
 	}
   
-    .milestone-block {
-        display: block;
-        clear: left;
-        margin-right: 0;
-    }
+	.milestone-block {
+		display: block;
+		clear: left;
+		margin-right: 0;
+	}
   
-    .btn-system {
-        margin-bottom: 10px;
-    }
+	.btn-system {
+		margin-bottom: 10px;
+	}
   
-    .easyPieChart {
-      font-size: 24px;
-      font-weight: 400;
-      position: relative;
-      text-align: center;
-      display: inline-block;
-      margin: 0 0 20px 0;
-      overflow: hidden;
-    }
-    
+	.easyPieChart {
+	  font-size: 24px;
+	  font-weight: 400;
+	  position: relative;
+	  text-align: center;
+	  display: inline-block;
+	  margin: 0 0 20px 0;
+	  overflow: hidden;
+	}
+	
 }
 
 
 
 
 @media (min-width : 992px) {
-    
-    #main-slide .slider-content h2{
+	
+	#main-slide .slider-content h2{
 		font-size: 68px;
 	}
 }
 
 
 @media (min-width : 768px) and (max-width: 991px) {
-    
-    #main-slide .slider-content h2{
+	
+	#main-slide .slider-content h2{
 		font-size: 52px;
 	}
 	#main-slide .slider-content h3{
@@ -389,13 +389,13 @@
 		margin-top: 5px;
 		font-size: 16px;
 	}
-    
+	
 }
 
 
 @media (max-width : 767px) {
-    
-    #main-slide .slider-content h2{
+	
+	#main-slide .slider-content h2{
 		font-size: 28px;
 		line-height: normal;
 		margin-bottom: 0;
@@ -412,14 +412,14 @@
 	#main-slide .carousel-indicators{
 		display: none;
 	}
-    
+	
 }
 
 
 @media (max-width : 479px) {
-    
-    #main-slide .item .slider-content{
+	
+	#main-slide .item .slider-content{
 		display: none;
 	}
-    
+	
 }
