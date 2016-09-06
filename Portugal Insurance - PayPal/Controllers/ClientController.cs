@@ -47,7 +47,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="clientID,fullName,addressLine1,addressLine2,city,state,zipCode,country,phoneNumber,emailAddress,licenseNumber1,licenseNumber2")] Client client)
+        public ActionResult Create( Client client)
         {
             if (ModelState.IsValid)
             {
