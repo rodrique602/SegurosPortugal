@@ -1,4 +1,5 @@
-﻿@model Portugal_Insurance___PayPal.Models.Precios
+﻿@model Portugal_Insurance___PayPal.Models.Precios 
+@using Portugal_Insurance___PayPal.Models
 
 @{
     ViewBag.Title = "Precios/Details";
@@ -530,15 +531,17 @@
                                         <!-- <form role="form">-->
                                             @using (Html.BeginForm("Create", "Client", FormMethod.Post))
                                             {
-                                                <div class="form-group" id="customerInfoModal">
+                                                @Html.Partial("~/Views/Client/Create.cshtml", new Portugal_Insurance___PayPal.Models.Client())
+                                                @*<div class="form-group" id="customerInfoModal">
                                                     <label class="control-label">Full Name</label>
                                                     <div class="controls">
                                                         <input type="text" class="form-control" id="fullNameTB" name="fullNameTB" placeholder="full name">
                                                     </div>
+                                                    
                                                 </div>
-                                                <!--<div>
+                                                <div>
                                                 ViewBag.Dias = Coverage_Days.SelectedItem.Value
-                                                </div>-->
+                                                </div>
 
                                                 <div class="form-group" id="customerInfoModal">
                                                     <label class="control-label">Street address, P.O. box, company name, c/o</label>
@@ -607,7 +610,7 @@
                                                     <div class="controls">
                                                         <input type="text" class="form-control" id="license-number2TB" name="license-number2TB" placeholder="2nd License Number">
                                                     </div>
-                                                </div>
+                                                </div>*@
 
                                             }
 
