@@ -1,8 +1,17 @@
 ﻿@model Portugal_Insurance___PayPal.Models.Precios
 @using Portugal_Insurance___PayPal.Models
+@using Portugal_Insurance___PayPal.Models.ViewModels
 
 @{
+    VMAutoPolicyInfo info = ViewBag.info;
     ViewBag.Title = "Precios/Details";
+    
+    //CHANGE THIS BOOLEAN allowPayment to something that checks if the user is logged in or not with isAuthenticated LOOK IT UP!!
+    
+    Boolean allowPayment = false;
+    if (ViewBag.registered != null) { 
+        allowPayment = ViewBag.registered;
+    }
 }
 
 <!DOCTYPE html>
@@ -122,13 +131,13 @@
                         </div>-->
                         <div style="text-align:center; font-weight: 900; font-size: larger;">
                             <ul class="list-group text-center">
-                                <li class="list-group-item"><i class="fa fa-check"></i> Vehicle Value Entered = $@ViewBag.VehicleCost</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i>Vehicle ID Number (VIN) = @ViewBag.VinNumber</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i>Car Year = @ViewBag.CarYear</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i>Car Make = @ViewBag.CarMake</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i>Car Model = @ViewBag.CarModel</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i>Policy Starting Date = @ViewBag.StartingDate</li>
-                                <li class="list-group-item"><i class="fa fa-check"></i>Policy Ending Date = @ViewBag.EndingDate</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i> Vehicle Value Entered = @info.vehicleValue</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i>Vehicle ID Number (VIN) = @info.vinNumber</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i>Car Year = @info.carYears</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i>Car Make = @info.carMakes</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i>Car Model = @info.carModels</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i>Policy Starting Date = @info.startingDate</li>
+                                <li class="list-group-item"><i class="fa fa-check"></i>Policy Ending Date = @info.endingDate</li>
                             </ul>
                         </div>
                         <div id="carQuotePanelFooter" class="panel-footer">
@@ -159,6 +168,12 @@
                                     </td>-->
                                 </tr>
                             </table>
+
+                            @using (Html.BeginForm("Create", "Client", FormMethod.Post))
+                            {
+                                @Html.Partial("~/Views/Client/Create.cshtml", new Portugal_Insurance___PayPal.Models.Client())
+                            }
+
                             <!--FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE DAILY INSURANCE POLICIES-->
                             @if (ViewBag.days > 0)
                             {
@@ -186,6 +201,7 @@
                                                  data-env="sandbox">
                                          </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Full Coverage Per Day Insurance Policy"
                                        data-button="buynow"
                                        data-name="Full Coverage Per Day Insurance Policy"
@@ -224,6 +240,7 @@
                                                  data-env="sandbox">
                                          </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Liability Only Per Day Insurance Policy"
                                        data-button="buynow"
                                        data-name="Liability Only Per Day Insurance Policy"
@@ -265,6 +282,7 @@
                                                  data-env="sandbox">
                                          </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Annual Full Coverage Insurance Policy"
                                        data-button="buynow"
                                        data-name="Annual Full Coverage Insurance Policy"
@@ -303,6 +321,7 @@
                                                   data-env="sandbox">
                                           </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Annual Full Coverage With Tow Insurance Policy"
                                        data-button="buynow"
                                        data-name="Annual Full Coverage With Tow Insurance Policy"
@@ -340,6 +359,7 @@
                                              data-env="sandbox">
                                          </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Vehicle Only Liability Per Year"
                                        data-button="buynow"
                                        data-name="Vehicle Only Liability Per Year"
@@ -378,6 +398,7 @@
                                                  data-env="sandbox">
                                          </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Vehicle Only Liability Per Year W Tow"
                                        data-button="buynow"
                                        data-name="Vehicle Only Liability Per Year W Tow"
@@ -416,6 +437,7 @@
                                             data-env="sandbox">
                                     </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Liability 1 License Per Year"
                                        data-button="buynow"
                                        data-name="Liability 1 License Per Year"
@@ -455,6 +477,7 @@
                                                  data-env="sandbox">
                                          </script>-->
                                     <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                       @(allowPayment ? "" : "disabled")
                                        data-policy-id="Liability 2 License Per Year"
                                        data-button="buynow"
                                        data-name="Liability 2 License Per Year"
@@ -469,6 +492,7 @@
                                     <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                 </div>
                             }
+                            
 
                             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                             <!--<button type="submit" id="buyNowBtn" class="btn btn-success btn-lg btn3d"><span class="fa fa-paypal"></span> BUY NOW!!</button>-->
@@ -530,9 +554,7 @@
                                             <!--Aqui insertamos el codigo para el paso 3 de el CarQuery API y agregamos un DropDown
                                             para seleccionarel tipo de poliza que el cliente guste cotizar-->
                                         <!-- <form role="form">-->
-                                            @using (Html.BeginForm("Create", "Client", FormMethod.Post))
-                                            {
-                                                @Html.Partial("~/Views/Client/Create.cshtml", new Portugal_Insurance___PayPal.Models.Client())
+                                            
                                                 @*<div class="form-group" id="customerInfoModal">
                                                 <label class="control-label">Full Name</label>
                                                 <div class="controls">
@@ -646,6 +668,10 @@
                                                 });
 
                                             </script>
+                                            @if (ViewBag.registered == true)
+                                            {
+                                                
+                                           
                                             <div id="#customerInfoModalBuyNowBtn">
                                                 <script id="scriptPaypal" async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
                                                         data-button="buynow"
@@ -656,22 +682,28 @@
                                                         data-shipping="0"
                                                         data-tax="0"
                                                         data-callback="http://spppsonora-001-site1.smarterasp.net/Home/Index"
-                                                        data-env="sandbox"></script>
+                                                        data-env="sandbox"
+                                                        data-custom="TestCustomData">
+                                                </script>
+                                                        
                                                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                             </div>
-
+                                            }
+                                            else
+                                            {
+                                                
+                                            }
                                             <div class="checkbox">
                                                 <label><input type="checkbox" value="" checked>Remember me</label>
                                             </div>
 
                                             <!--<a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>-->
                                     <!-- </form>-->
-                                        @*}*@
+                                        }
                                     </div>
-                                    @ViewBag.preciosPorDia
+                                    @*@ViewBag.preciosPorDia*@
                                     <!--<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>-->
                                 </div>
-
                             </div>
                         </div>
                     </div>
