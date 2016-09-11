@@ -54,7 +54,9 @@ namespace Portugal_Insurance___PayPal.Controllers
 
         // GET: /Precios/Details/5
         public static decimal PolicyFinalTotalVar;
-        public ActionResult Details(String vinNumberTB = "", decimal vehicleValueTB = 0, DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null, int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
+        public ActionResult Details(String vinNumberTB = "", decimal vehicleValueTB = 0,
+            DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null,
+            int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
         {
             /*if (id == null)
             {

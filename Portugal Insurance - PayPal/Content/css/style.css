@@ -6521,10 +6521,10 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-    top: 0px;
-    margin-bottom: 80px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+	top: 0px;
+	margin-bottom: 80px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .content .plan:hover,
@@ -6540,7 +6540,7 @@ body{
 	font-weight:700;
 	margin-bottom:0px;
 	text-transform:uppercase;
-    color:yellow;
+	color:yellow;
 }
 
 .content .plan.featured h2 {
@@ -6548,10 +6548,10 @@ body{
 }
 
 .content .plan p {
-    color: white;
-    margin-bottom: 16px;
-    font-weight: 900;
-    font-size: x-large;
+	color: white;
+	margin-bottom: 16px;
+	font-weight: 900;
+	font-size: x-large;
 	/*text-align: justify;*/
 }
 
@@ -6604,10 +6604,10 @@ body{
 		border-color: black;
 		border-width: thin;
 		background-color: lightcyan;
-        opacity: 0.5;
-        filter: alpha(opacity=50); /* For IE8 and earlier */
-        width: 80%;
-        margin: auto;
+		opacity: 0.5;
+		filter: alpha(opacity=50); /* For IE8 and earlier */
+		width: 80%;
+		margin: auto;
 }
 
 #homeOwnersPriceTable td,#homeOwnersPriceTable p {
@@ -6617,7 +6617,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-        font-size: x-large;
+		font-size: x-large;
 }
 
 #homeOwnersPriceTable th,#homeOwnersPriceTable p {
@@ -6627,7 +6627,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-        font-size: x-large;
+		font-size: x-large;
 }
 
 #servicesHomeOwnersPriceTable {
@@ -6640,8 +6640,8 @@ body{
 		overflow:auto;
 		height: 400px;
 		font-weight: 900;
-        width: 100%;
-        margin: auto;
+		width: 100%;
+		margin: auto;
 
 }
 #carInsurancePriceTable {
@@ -6651,10 +6651,10 @@ body{
 		border-color: black;
 		border-width: thin;
 		background-color: lightcyan;
-        opacity: 0.5;
-        filter: alpha(opacity=50); /* For IE8 and earlier */        
-        width: 80%;
-        margin: auto;
+		opacity: 0.5;
+		filter: alpha(opacity=50); /* For IE8 and earlier */        
+		width: 80%;
+		margin: auto;
 
 }
 
@@ -6665,7 +6665,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-	    font-size: x-large;
+		font-size: x-large;
 }
 
 #servicesCarInsurancePriceTable {
@@ -6699,10 +6699,10 @@ body{
 		border-color: black;
 		border-width: thin;
 		background-color: lightcyan;
-        opacity: 0.5;
-        filter: alpha(opacity=50); /* For IE8 and earlier */
-        width: 80%;
-        margin: auto;
+		opacity: 0.5;
+		filter: alpha(opacity=50); /* For IE8 and earlier */
+		width: 80%;
+		margin: auto;
 
 
 }
@@ -6714,7 +6714,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-        font-size: x-large;
+		font-size: x-large;
 }
 
 #servicesCondoInsurancePriceTable {
