@@ -511,7 +511,7 @@
 
 
                                             <!--<div class="panel-body text-center">
-                                                <p><strong> Vehicle Value Entered = $@ViewBag.VehicleCost</strong></p>
+                                                <p><strong> Vehicle Value Entered = $ViewBag.VehicleCost</strong></p>
                                             </div>-->
                                             <ul class="list-group text-center" id="carInfoModalUl">
                                                 <li class="list-group-item"><i class="fa fa-check"></i> Vehicle Value Entered = $@ViewBag.VehicleCost</li>
@@ -530,7 +530,7 @@
                                             <!--Aqui insertamos el codigo para el paso 3 de el CarQuery API y agregamos un DropDown
                                             para seleccionarel tipo de poliza que el cliente guste cotizar-->
                                         <!-- <form role="form">-->
-                                            @using (Html.BeginForm("Create", "Client", FormMethod.Post))
+                                            using (Html.BeginForm("Create", "Client", FormMethod.Post))
                                             {
                                                 @Html.Partial("~/Views/Client/Create.cshtml", new Portugal_Insurance___PayPal.Models.Client())
                                                 @*<div class="form-group" id="customerInfoModal">
@@ -647,6 +647,7 @@
 
                                             </script>
                                             <div id="#customerInfoModalBuyNowBtn">
+                                                <input type="submit" value="Create" class="btn btn-default" />
                                                 <script id="scriptPaypal" async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
                                                         data-button="buynow"
                                                         data-name=""
@@ -666,7 +667,7 @@
 
                                             <!--<a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>-->
                                     <!-- </form>-->
-                                        @*}*@
+                                        }
                                     </div>
                                     @ViewBag.preciosPorDia
                                     <!--<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>-->
