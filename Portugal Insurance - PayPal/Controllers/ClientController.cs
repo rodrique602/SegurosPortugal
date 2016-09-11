@@ -53,8 +53,10 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 db.Clients.Add(client);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.registered = true;
+                return Redirect(Request.UrlReferrer.ToString());
             }
+            ViewBag.registered = false;
 
             return View(client);
         }

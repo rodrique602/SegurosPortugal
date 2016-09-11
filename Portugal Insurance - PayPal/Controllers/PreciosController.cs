@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Portugal_Insurance___PayPal.Models;
+using Portugal_Insurance___PayPal.Models.ViewModels;
 using Portugal_Insurance___PayPal.DAL;
 
 
@@ -54,19 +55,20 @@ namespace Portugal_Insurance___PayPal.Controllers
 
         // GET: /Precios/Details/5
         public static decimal PolicyFinalTotalVar;
-        public ActionResult Details(String vinNumberTB = "", decimal vehicleValueTB = 0, DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null, int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
+        //public ActionResult Details(String vinNumberTB = "", decimal info.vehicleValue = 0, DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null, int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
+            public ActionResult Details(VMAutoPolicyInfo info)
         {
             /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }*/
-            if (vehicleValueTB == null)
+            if (info.vehicleValue == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (startingDateTB == null)
+            if (info.startingDate == null)
             {
-                startingDateTB = DateTime.Now;
+                info.startingDate = DateTime.Now;
             }
 
             //Solo es una variable de prueba
@@ -77,25 +79,22 @@ namespace Portugal_Insurance___PayPal.Controllers
             //ViewBag.PolicyTotalVB = policyTotalTB;
 
 
-            ViewBag.VehicleCost = vehicleValueTB;
-            ViewBag.VinNumber = vinNumberTB;
-            ViewBag.CarYear = caryears;
-            ViewBag.CarMake = carmakes;
-            ViewBag.CarModel = carmodels;
+            ViewBag.info = info;
 
-            ViewBag.StartingDate = startingDateTB;
-
-            ViewBag.TipoDeCobertura = coverageType;
 
             //Aqui obtenemos los dias de las fechas y calculamos la diferiencia entre los dos
+<<<<<<< HEAD
             string numdias = Request["Coverage_Days"];
             if(numdias == "null"){
                 numdias = "0";  
             }
+=======
+            string numdias = Request["diasDeCobertura"];
+>>>>>>> origin/master
             int numDiasCobertura = int.Parse(numdias);
-            DateTime date1 = System.Convert.ToDateTime(startingDateTB);
+            DateTime date1 = System.Convert.ToDateTime(info.startingDate);
             DateTime date2 = date1.AddDays(numDiasCobertura);
-            ViewBag.EndingDate = date2;
+            info.endingDate = date2;
 
             var days = date2.Subtract(date1).TotalDays;
             var days2 = date1.Subtract(date1).TotalDays;
@@ -116,13 +115,13 @@ namespace Portugal_Insurance___PayPal.Controllers
             ViewBag.Date2 = date2;
 
 
-            //Busqueda de precios 1. FULL COVERAGE y Liability Only Por DIA y por filtro VehicleValueTB
+            //Busqueda de precios 1. FULL COVERAGE y Liability Only Por DIA y por filtro info.vehicleValue
             Precios preciosFCPorDia;
             Precios preciosliabilityOnlyPorDia;
 
             if (numDiasCobertura > 0)
             {
-                preciosFCPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= vehicleValueTB && pre.valorMaximo >= vehicleValueTB && pre.dias == numDiasCobertura && pre.coverageType == "Full Coverage Per Day");
+                preciosFCPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= info.vehicleValue && pre.valorMaximo >= info.vehicleValue && pre.dias == numDiasCobertura && pre.coverageType == "Full Coverage Per Day");
 
                 ViewBag.PreciosFCPorDia = preciosFCPorDia.total;
 
@@ -138,7 +137,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             }
 
 
-            //Busqueda de precios 3. FULL COVERAGE Por Año y por filtro VehicleValueTB
+            //Busqueda de precios 3. FULL COVERAGE Por Año y por filtro info.vehicleValue
             Precios preciosFCPorAnio;
             Precios preciosFCPorAnioWTow;
             Precios preciosLiabilityVehiclePorAnio;
@@ -148,12 +147,12 @@ namespace Portugal_Insurance___PayPal.Controllers
             
             if (days <= 0)
             {
-                preciosFCPorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= vehicleValueTB && precio.valorMaximo >= vehicleValueTB && precio.coverageType == "Full Coverage Annual");
+                preciosFCPorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual");
 
                 ViewBag.PreciosFCPorAnio = preciosFCPorAnio.total;
 
 
-                preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= vehicleValueTB && precio.valorMaximo >= vehicleValueTB && precio.coverageType == "Full Coverage Annual W Trailer or Tow");
+                preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual W Trailer or Tow");
 
                 ViewBag.PreciosFCPorAnioWTow = preciosFCPorAnioWTow.total;
 
@@ -188,7 +187,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             //Precios preciosFCPorAnioWTow;
             //if (days <= 0)
             //{
-                //preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= vehicleValueTB && precio.valorMaximo >= vehicleValueTB && precio.coverageType == "Full Coverage Annual W Trailer or tow");
+                //preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual W Trailer or tow");
 
                 //ViewBag.PreciosFCPorAnioWTow = preciosFCPorAnioWTow.total;
 
@@ -263,7 +262,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             //int day = Convert.ToInt32(days);
 
             //QUERY DE COTIZACION POR NUMERO DE DIAS algo me falta
-            //Precios preciosCotizacionPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= vehicleValueTB && pre.valorMaximo >= vehicleValueTB && pre.dias == days);
+            //Precios preciosCotizacionPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= info.vehicleValue && pre.valorMaximo >= info.vehicleValue && pre.dias == days);
 
             //ViewBag.Days = precios.days;
 

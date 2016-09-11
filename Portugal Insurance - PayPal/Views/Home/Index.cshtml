@@ -410,18 +410,18 @@
                         <!--Fin de Paso 3 de CarQuery API-->
                                 <div class="form-group">
                                     <label for="vinNumber"><span><i class="autoIcon btn3d fa fa-automobile icon-mini-effect icon-effect-1"></i></span></label>
-                                    <input type="text" class="form-control" id="vinNumberTB" name="vinNumberTB" placeholder="Enter Vehicle Identification Number#">
+                                    <input type="text" class="form-control" id="vinNumber" name="vinNumber" placeholder="Enter Vehicle Identification Number#">
                                 </div>
                                 <div class="form-group">
                                     <label for="vehicleValue"><span class="vehicleValueIcon btn3d glyphicon glyphicon-usd icon-mini-effect icon-effect-1"></span></label>
-                                    <input type="text" class="form-control" id="vehicleValueTB" name="vehicleValueTB" placeholder="Enter Vehicle Value">
+                                    <input type="text" class="form-control" id="vehicleValue" name="vehicleValue" placeholder="Enter Vehicle Value">
                                 </div>
                                 <div class="form-group">
                                     <label for="startingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
-                                    <input type="date" placeholder="Enter Policy Starting Date" class="form-control" id="startingDateTB" name="startingDateTB">
+                                    <input type="date" placeholder="Enter Policy Starting Date" class="form-control" id="startingDate" name="startingDate">
                                 </div>
-                                <div class="form-group" id="Coverage_Days">
-                                    @Html.DropDownList("Coverage_Days", new List<SelectListItem>
+    <div class="form-group" id="diasDeCobertura">
+        @Html.DropDownList("diasDeCobertura", new List<SelectListItem>
                                     {
                                         new SelectListItem{ Text = "Select Number of Coverage Days", Value = "0", Selected = true},
                                         new SelectListItem{ Text = "Annual", Value = "0"},
@@ -441,7 +441,7 @@
                                         new SelectListItem{ Text = "14 Days", Value = "14"},
                                         new SelectListItem{ Text = "15 Days", Value = "15"},
                                     })
-                                </div>
+    </div>
                                 <div>
                                     <!--ViewBag.Dias = Coverage_Days.SelectedItem.Value-->
                                 </div>
@@ -451,7 +451,7 @@
                                     </div>*@
                                 <div class="form-group">
                                     <label for="usrname"><span class="userNameIcon btn3d glyphicon glyphicon-user icon-mini-effect icon-effect-1"></span></label>
-                                    <input type="text" class="form-control" id="usrNameTB" name="usrNameTB" placeholder="Enter email">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
                                 </div>
                                 <!--<div class="form-group">
                                     <label for="psw"><span class="eye-openPswdIcon glyphicon glyphicon-eye-open icon-mini-effect icon-effect-1"></span></label>
