@@ -83,14 +83,9 @@ namespace Portugal_Insurance___PayPal.Controllers
 
 
             //Aqui obtenemos los dias de las fechas y calculamos la diferiencia entre los dos
-<<<<<<< HEAD
-            string numdias = Request["Coverage_Days"];
-            if(numdias == "null"){
-                numdias = "0";  
-            }
-=======
+
+       
             string numdias = Request["diasDeCobertura"];
->>>>>>> origin/master
             int numDiasCobertura = int.Parse(numdias);
             DateTime date1 = System.Convert.ToDateTime(info.startingDate);
             DateTime date2 = date1.AddDays(numDiasCobertura);

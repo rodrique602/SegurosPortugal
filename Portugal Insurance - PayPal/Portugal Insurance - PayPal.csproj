@@ -179,6 +179,14 @@
     <Compile Include="Migrations\201607081309191_InitialCreate.Designer.cs">
       <DependentUpon>201607081309191_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609111906197_addingClientToUserRegistration.cs" />
+    <Compile Include="Migrations\201609111906197_addingClientToUserRegistration.Designer.cs">
+      <DependentUpon>201609111906197_addingClientToUserRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609111935511_removeClientID.cs" />
+    <Compile Include="Migrations\201609111935511_removeClientID.Designer.cs">
+      <DependentUpon>201609111935511_removeClientID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -523,6 +531,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607081309191_InitialCreate.resx">
       <DependentUpon>201607081309191_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609111906197_addingClientToUserRegistration.resx">
+      <DependentUpon>201609111906197_addingClientToUserRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609111935511_removeClientID.resx">
+      <DependentUpon>201609111935511_removeClientID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

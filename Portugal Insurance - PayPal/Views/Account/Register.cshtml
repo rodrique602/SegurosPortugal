@@ -105,6 +105,94 @@
                 <input type="submit" class="btn btn-primary btn3d" value="Registrate" id="registerBtn" role="button" />
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.fullName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fullName)
+                @Html.ValidationMessageFor(model => model.fullName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.addressLine1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.addressLine1)
+                @Html.ValidationMessageFor(model => model.addressLine1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.addressLine2, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.addressLine2)
+                @Html.ValidationMessageFor(model => model.addressLine2)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.city)
+                @Html.ValidationMessageFor(model => model.city)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.state)
+                @Html.ValidationMessageFor(model => model.state)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.zipCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.zipCode)
+                @Html.ValidationMessageFor(model => model.zipCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.country, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.country)
+                @Html.ValidationMessageFor(model => model.country)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.phoneNumber)
+                @Html.ValidationMessageFor(model => model.phoneNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.emailAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.emailAddress)
+                @Html.ValidationMessageFor(model => model.emailAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.licenseNumber1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.licenseNumber1)
+                @Html.ValidationMessageFor(model => model.licenseNumber1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.licenseNumber2, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.licenseNumber2)
+                @Html.ValidationMessageFor(model => model.licenseNumber2)
+            </div>
+        </div>
+  
     }
 
     @section Scripts {
