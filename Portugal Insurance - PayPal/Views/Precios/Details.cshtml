@@ -169,9 +169,9 @@
                                 </tr>
                             </table>
 
-                            @using (Html.BeginForm("Create", "Client", FormMethod.Post))
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
                             {
-                                @Html.Partial("~/Views/Client/Create.cshtml", new Portugal_Insurance___PayPal.Models.Client())
+                                @Html.Partial("~/Views/Account/Register.cshtml", new Portugal_Insurance___PayPal.Models.RegisterViewModel())
                             }
 
                             <!--FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE DAILY INSURANCE POLICIES-->
