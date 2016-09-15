@@ -5,12 +5,17 @@
 @{
     VMAutoPolicyInfo info = ViewBag.info;
     ViewBag.Title = "Precios/Details";
-    
+
     //CHANGE THIS BOOLEAN allowPayment to something that checks if the user is logged in or not with isAuthenticated LOOK IT UP!!
-    
+
     Boolean allowPayment = false;
-    if (ViewBag.registered != null) {
-        allowPayment = ViewBag.registered;
+    if (User.IsInRole(AccountRolesNames.CLIENT))
+    {
+        allowPayment = true;
+    }
+    else
+    {
+        allowPayment = false; 
     }
 }
 
@@ -168,11 +173,20 @@
                                     </td>-->
                                 </tr>
                             </table>
-
-                            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                            @if (User.IsInRole(AccountRolesNames.CLIENT) || User.IsInRole(AccountRolesNames.ADMINISTRATOR)
+                                || User.IsInRole(AccountRolesNames.SALESMANAGER))
                             {
-                                @Html.Partial("~/Views/Account/Register.cshtml", new Portugal_Insurance___PayPal.Models.RegisterViewModel())
+
                             }
+                            else
+                            {
+                                using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                                {
+                                    @Html.Partial("~/Views/Account/Register.cshtml", new Portugal_Insurance___PayPal.Models.RegisterViewModel())
+                                }
+
+                            }
+                           
 
                             <!--FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE DAILY INSURANCE POLICIES-->
                             @if (ViewBag.days > 0)
@@ -189,32 +203,36 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div id="buyNowBtnDiv">
-                                    <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
-                                                 data-button="buynow"
-                                                 data-name="Full Coverage Per Day Insurance Policy"
-                                                 data-quantity="1"
-                                                 data-amount="@ViewBag.PreciosFCPorDia"
-                                                 data-currency="USD"
-                                                 data-shipping="0"
-                                                 data-tax="0"
-                                                 data-env="sandbox">
-                                         </script>-->
-                                    <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
-                                       @(allowPayment ? "" : "disabled")
-                                       data-policy-id="Full Coverage Per Day Insurance Policy"
-                                       data-button="buynow"
-                                       data-name="Full Coverage Per Day Insurance Policy"
-                                       data-quantity="1"
-                                       data-amount="@ViewBag.PreciosFCPorDia"
-                                       data-currency="USD"
-                                       data-shipping="0"
-                                       data-tax="0"
-                                       data-env="sandbox">
-                                        <span class="fa fa-paypal"> BUY NOW!!</span>
-                                    </a>
-                                    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                </div>
+                               
+                                    <div id="buyNowBtnDiv">
+                                        <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                                     data-button="buynow"
+                                                     data-name="Full Coverage Per Day Insurance Policy"
+                                                     data-quantity="1"
+                                                     data-amount="@ViewBag.PreciosFCPorDia"
+                                                     data-currency="USD"
+                                                     data-shipping="0"
+                                                     data-tax="0"
+                                                     data-env="sandbox">
+                                             </script>-->
+
+                                        <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-lg btn3d" id="buyNowBtn"
+                                           @(allowPayment ? "" : "disabled")
+                                           data-policy-id="Full Coverage Per Day Insurance Policy"
+                                           data-button="buynow"
+                                           data-name="Full Coverage Per Day Insurance Policy"
+                                           data-quantity="1"
+                                           data-amount="@ViewBag.PreciosFCPorDia"
+                                           data-currency="USD"
+                                           data-shipping="0"
+                                           data-tax="0"
+                                           data-env="sandbox">
+                                            <span class="fa fa-paypal"> BUY NOW!!</span>
+                                        </a>
+                                        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                    </div>
+                                
+
 
                                 <div class="detailsPageCoverageType">
                                     <ul class="list-group text-center">
