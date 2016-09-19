@@ -115,4 +115,11 @@ namespace Portugal_Insurance___PayPal.Models
 
         //}
     }
+    //Default validation error messages
+    public static class AccountRolesNames
+    {
+        public const string ADMINISTRATOR = "Administrator";
+        public const string SALESMANAGER = "SalesManager";
+        public const string CLIENT = "Client";
+    }
 }
