@@ -103,5 +103,16 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Lincense Number 2")]
         public String licenseNumber2 { get; set; }
 
+
+
+        ////Default validation error messages
+        //public static class AccountRolesNames
+        //{
+        //    public const string ADMINISTRATOR = "Administrador";
+        //    public const string SALES_MANAGER = "SalesManager";
+        //    public const string CLIENT = "Client";
+
+
+        //}
     }
 }
