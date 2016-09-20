@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Portugal_Insurance___PayPal.Models
+@using Portugal_Insurance___PayPal.Models.ViewModels
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -80,13 +82,16 @@
                                 </li>
                             </ul>
 
+
                             <!--Have to figure out HOW TO PUT log in and register links in navbar
                                 THIS WAY ISN'T WORKING MAKES MY NAVBAR TOO THICK NEED TO TAKE DIV OUT OF OTHER DIV-->
-                            <!--<div class="float-right">
+
+                            <div class="">
                                 <section id="login">
                                     @Html.Partial("_LoginPartial")
                                 </section>
-                            </div>-->
+                            </div>
+
                             <!-- End Social Links -->
                         </div><!-- .col-md-6 -->
                     </div><!-- .row -->
@@ -160,10 +165,14 @@
                             <li>
                                 <a href="/Home/Contact" id="contactBtn" class="btn btn-info btn3d" role="button"><span class="fa fa-phone-square"></span>Contact Us</a>
                             </li>
-                            <li>
-                                <!-- Deemphasize a button by making it look like a link while maintaining button behavior-->
+                            @if (User.IsInRole(AccountRolesNames.ADMINISTRATOR))
+                            {
+                                <li>@Html.ActionLink("Precios", "Index", "Index")</li>
+                            }
+                            @*<li>
+                                 Deemphasize a button by making it look like a link while maintaining button behavior
                                 <a href="/Precios/Index" id="preciosBtn" class="btn btn-danger btn3d" role="button"><span class="glyphicon glyphicon-tags"></span>Precios</a>
-                            </li>
+                            </li>*@
                         </ul>
 
                         <!-- End Navigation List -->
