@@ -89,107 +89,118 @@
                 @Html.AntiForgeryToken()
                 //<h4>Crear Nueva Cuenta Solo para Administradores.</h4>
                 @Html.ValidationSummary()
-                <fieldset class="form-group">
+                <div class="form-group">
                     @Html.LabelFor(m => m.UserName, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @*@Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })*@
                         @Html.EditorFor(m => m.UserName)
                         @Html.ValidationMessageFor(m => m.UserName)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
-                   @Html.LabelFor(m => m.Password, new { @class = "control-label col-md-12" })
-                <div class="col-md-12">
-                    @*@Html.PasswordFor(m => m.Password, new { @class = "form-control" })*@
-                    @Html.EditorFor(m => m.Password)
-                    @Html.ValidationMessageFor(m => m.Password)
                 </div>
-                </fieldset>
-                <fieldset class="form-group">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label col-md-12" })
+                    <div class="col-md-12">
+                        @*@Html.PasswordFor(m => m.Password, new { @class = "form-control" })*@
+                        @Html.EditorFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+                <div class="form-group">
                     @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @*@Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })*@
                         @Html.EditorFor(m => m.ConfirmPassword)
                         @Html.ValidationMessageFor(m => m.ConfirmPassword)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group">
                     @Html.LabelFor(model => model.fullName, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.fullName)
                         @Html.ValidationMessageFor(model => model.fullName)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
-                   @Html.LabelFor(model => model.addressLine1, new { @class = "control-label col-md-12" })
-                <div class="col-md-12">
-                    @Html.EditorFor(model => model.addressLine1)
-                    @Html.ValidationMessageFor(model => model.addressLine1)
                 </div>
-                </fieldset>
-                <fieldset class="form-group">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.addressLine1, new { @class = "control-label col-md-12" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.addressLine1)
+                        @Html.ValidationMessageFor(model => model.addressLine1)
+                    </div>
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.addressLine2, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.addressLine2)
                         @Html.ValidationMessageFor(model => model.addressLine2)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.city, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.city)
                         @Html.ValidationMessageFor(model => model.city)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.state, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.state)
                         @Html.ValidationMessageFor(model => model.state)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.zipCode, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.zipCode)
                         @Html.ValidationMessageFor(model => model.zipCode)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
-                   @Html.LabelFor(model => model.country, new { @class = "control-label col-md-12" })
-                <div class="col-md-12">
-                    @Html.EditorFor(model => model.country)
-                    @Html.ValidationMessageFor(model => model.country)
                 </div>
-                </fieldset>
-                <fieldset class="form-group">
-                   @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-md-12" })
+
+                <div class="form-group" id="">
+                    @Html.LabelFor(model => model.country, new { @class = "control-label col-md-12" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.country)
+                        @Html.ValidationMessageFor(model => model.country)
+                    </div>
+                </div>
+
+                <div class="form-group" id="">
+                    @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.phoneNumber)
                         @Html.ValidationMessageFor(model => model.phoneNumber)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.emailAddress, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.emailAddress)
                         @Html.ValidationMessageFor(model => model.emailAddress)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.licenseNumber1, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.licenseNumber1)
                         @Html.ValidationMessageFor(model => model.licenseNumber1)
                     </div>
-                </fieldset>
-                <fieldset class="form-group">
+                </div>
+
+                <div class="form-group" id="">
                     @Html.LabelFor(model => model.licenseNumber2, new { @class = "control-label col-md-12" })
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.licenseNumber2)
                         @Html.ValidationMessageFor(model => model.licenseNumber2)
                     </div>
-                </fieldset>
+                </div>
                 <div class="form-group" id="">
                     @*<div class="col-md-offset-2 col-md-12">*@
                     <div class="col-md-12">
