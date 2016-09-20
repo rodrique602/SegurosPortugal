@@ -78,7 +78,10 @@ namespace Portugal_Insurance___PayPal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.UserName, fullName = model.fullName, addressLine1 = model.addressLine1,
+                addressLine2 = model.addressLine2, city = model.city, country = model.country, emailAddress = model.emailAddress,
+                 licenseNumber1 = model.licenseNumber1, licenseNumber2 = model.licenseNumber2, phoneNumber = model.phoneNumber,
+                 state = model.state, zipCode = model.zipCode};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

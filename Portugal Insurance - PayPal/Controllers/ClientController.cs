@@ -16,12 +16,14 @@ namespace Portugal_Insurance___PayPal.Controllers
         private Portugal_Insurance___PayPalContextDB db = new Portugal_Insurance___PayPalContextDB();
 
         // GET: /Client/
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Index()
         {
             return View(db.Clients.ToList());
         }
 
         // GET: /Client/Details/5
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -53,13 +55,16 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 db.Clients.Add(client);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+               // ViewBag.registered = true;
+                return Redirect(Request.UrlReferrer.ToString());
             }
+            //ViewBag.registered = false;
 
             return View(client);
         }
 
         // GET: /Client/Edit/5
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +84,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Edit([Bind(Include="clientID,fullName,addressLine1,addressLine2,city,state,zipCode,country,phoneNumber,emailAddress,licenseNumber1,licenseNumber2")] Client client)
         {
             if (ModelState.IsValid)
@@ -91,6 +97,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         }
 
         // GET: /Client/Delete/5
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         // POST: /Client/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR)]
         public ActionResult DeleteConfirmed(int id)
         {
             Client client = db.Clients.Find(id);
