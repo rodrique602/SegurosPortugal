@@ -534,8 +534,6 @@
 
                                         @using (Html.BeginForm("Details", "Precios", FormMethod.Post))
                                         {
-
-
                                             <div class="form-group" id="customerInfoModal">
                                                 <label class="control-label">Policy Type</label>
                                                 <div class="controls">
@@ -562,7 +560,6 @@
                                                 <li class="list-group-item"><i class="fa fa-check"></i>Policy Starting Date = @ViewBag.StartingDate</li>
                                                 <li class="list-group-item"><i class="fa fa-check"></i>Policy Ending Date = @ViewBag.EndingDate</li>
                                             </ul>
-
 
                                             <div class="modal-header" id="customerInfoModalHeader">
                                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -686,10 +683,7 @@
                                                 });
 
                                             </script>
-                                            @if (ViewBag.registered == true)
-                                            {
-                                                
-                                           
+
                                             <div id="#customerInfoModalBuyNowBtn">
                                                 <input type="submit" value="Create" class="btn btn-default" />
                                                 <script id="scriptPaypal" async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
@@ -704,21 +698,16 @@
                                                         data-env="sandbox"
                                                         data-custom="TestCustomData">
                                                 </script>
-                                                        
+
                                                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                             </div>
-                                            }
-                                            else
-                                            {
-                                                
-                                            }
+
                                             <div class="checkbox">
                                                 <label><input type="checkbox" value="" checked>Remember me</label>
                                             </div>
 
                                             <!--<a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>-->
                                     <!-- </form>-->
-                                        }
                                     </div>
                                     @*@ViewBag.preciosPorDia*@
                                     <!--<a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>-->

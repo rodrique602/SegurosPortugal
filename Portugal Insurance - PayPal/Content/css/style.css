@@ -480,9 +480,10 @@ header {
 }
 
 .top-bar .contact-details li a {
-	font-size: 12px;
+	font-size: 13px;
+    font-weight: bold;
 	display: block;
-	line-height: 32px;
+	line-height: 30px;
 }
 
 ul.social-list {
@@ -546,11 +547,11 @@ ul.social-list li a.skype:hover {
 }
 
 ul.social-list li a i {
-	font-size: 1em;
+	font-size: 2em;
 	display: block;
 	width: 34px;
 	height: 33px;
-	line-height: 33px;
+	line-height: 40px;
 	text-align: center;
 	border-left: 1px solid #f2f2f2;
 }
