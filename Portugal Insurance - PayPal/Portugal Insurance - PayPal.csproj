@@ -457,6 +457,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\Portugal Insurance - PayPal.pubxml" />
+    <None Include="Properties\PublishProfiles\Seguros Portugal - SmarterASP.NET.pubxml" />
     <None Include="Properties\PublishProfiles\Seguros Portugal.pubxml" />
     <None Include="Properties\PublishProfiles\segurosPortugal.pubxml" />
     <None Include="Properties\PublishProfiles\spsonora.pubxml" />

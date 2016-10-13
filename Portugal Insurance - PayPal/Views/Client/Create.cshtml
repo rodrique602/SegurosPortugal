@@ -1,118 +1,196 @@
 ﻿@model Portugal_Insurance___PayPal.Models.Client
-    @using Portugal_Insurance___PayPal.Models
+@using Portugal_Insurance___PayPal.Models
 
 @{
     ViewBag.Title = "Create";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Client</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+<!--<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>-->
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.fullName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.fullName)
-                @Html.ValidationMessageFor(model => model.fullName)
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+<head>
+
+    <!-- Basic -->
+    <title>Margo | About Us</title>
+
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive etatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
+
+
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
+
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
+
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
+
+    <!-- Color CSS Styles  -->
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/css/colors/red.css" title="red" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/jade.css" title="jade" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/blue.css" title="blue" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/beige.css" title="beige" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/cyan.css" title="cyan" media="screen" />-->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/colors/green.css" title="green" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/css/colors/red.css" title="red" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/orange.css" title="orange" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/peach.css" title="peach" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/pink.css" title="pink" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/purple.css" title="purple" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/sky-blue.css" title="sky-blue" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/yellow.css" title="yellow" media="screen" />-->
+    <!-- Margo JS  -->
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.migrate.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizrr.js"></script>
+    <script type="text/javascript" src="~/asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.appear.js"></script>
+    <script type="text/javascript" src="~/Scripts/count-to.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.textillate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.lettering.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+
+    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Client</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fullName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fullName)
+                    @Html.ValidationMessageFor(model => model.fullName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.addressLine1, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.addressLine1)
+                    @Html.ValidationMessageFor(model => model.addressLine1)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.addressLine2, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.addressLine2)
+                    @Html.ValidationMessageFor(model => model.addressLine2)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.city)
+                    @Html.ValidationMessageFor(model => model.city)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.state)
+                    @Html.ValidationMessageFor(model => model.state)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.zipCode, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.zipCode)
+                    @Html.ValidationMessageFor(model => model.zipCode)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.country, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.country)
+                    @Html.ValidationMessageFor(model => model.country)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.phoneNumber)
+                    @Html.ValidationMessageFor(model => model.phoneNumber)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.emailAddress, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.emailAddress)
+                    @Html.ValidationMessageFor(model => model.emailAddress)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.licenseNumber1, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.licenseNumber1)
+                    @Html.ValidationMessageFor(model => model.licenseNumber1)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.licenseNumber2, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.licenseNumber2)
+                    @Html.ValidationMessageFor(model => model.licenseNumber2)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn3d" />
+                </div>
             </div>
         </div>
+    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.addressLine1, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.addressLine1)
-                @Html.ValidationMessageFor(model => model.addressLine1)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.addressLine2, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.addressLine2)
-                @Html.ValidationMessageFor(model => model.addressLine2)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.city)
-                @Html.ValidationMessageFor(model => model.city)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.state, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.state)
-                @Html.ValidationMessageFor(model => model.state)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.zipCode, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.zipCode)
-                @Html.ValidationMessageFor(model => model.zipCode)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.country, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.country)
-                @Html.ValidationMessageFor(model => model.country)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.phoneNumber)
-                @Html.ValidationMessageFor(model => model.phoneNumber)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.emailAddress, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.emailAddress)
-                @Html.ValidationMessageFor(model => model.emailAddress)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.licenseNumber1, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.licenseNumber1)
-                @Html.ValidationMessageFor(model => model.licenseNumber1)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.licenseNumber2, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.licenseNumber2)
-                @Html.ValidationMessageFor(model => model.licenseNumber2)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn3d" />
-            </div>
-        </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
+</body>
+</html>

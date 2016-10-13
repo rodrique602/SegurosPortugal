@@ -6820,8 +6820,16 @@ body{
 	margin-bottom: 0px;
 }
 
+#carInfoModal {
+    text-align: -webkit-center;
+    /*text-align: center;*/
+
+
+}
+
 #carInfoModalUl {
 	margin-bottom: -10px;
+
 }
 
 
@@ -6829,6 +6837,8 @@ body{
 	padding-bottom: 10px;
 	margin-bottom: 0px;
 	text-align: -webkit-center;
+    /*text-align: center;*/
+
 }
 
 #customerInfoModalBuyNowBtn {

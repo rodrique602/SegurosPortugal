@@ -402,26 +402,25 @@
                                     </div>
                                 </div>
 
-                                @*@Html.DropDownList("CoverageTypes", "Select Coverage Type");*@
+                                    @*@Html.DropDownList("CoverageTypes", "Select Coverage Type");*@
 
 
-                            <!--DropDownList(string name, IEnumerable<SelectListItem> selectList, string optionLabel);-->
-
-                        <!--Fin de Paso 3 de CarQuery API-->
-                                <div class="form-group">
-                                    <label for="vinNumber"><span><i class="autoIcon btn3d fa fa-automobile icon-mini-effect icon-effect-1"></i></span></label>
-                                    <input type="text" class="form-control" id="vinNumber" name="vinNumber" placeholder="Enter Vehicle Identification Number#">
-                                </div>
-                                <div class="form-group">
-                                    <label for="vehicleValue"><span class="vehicleValueIcon btn3d glyphicon glyphicon-usd icon-mini-effect icon-effect-1"></span></label>
-                                    <input type="text" class="form-control" id="vehicleValue" name="vehicleValue" placeholder="Enter Vehicle Value">
-                                </div>
-                                <div class="form-group">
-                                    <label for="startingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
-                                    <input type="date" placeholder="Enter Policy Starting Date" class="form-control" id="startingDate" name="startingDate">
-                                </div>
-    <div class="form-group" id="diasDeCobertura">
-        @Html.DropDownList("diasDeCobertura", new List<SelectListItem>
+                                    <!--DropDownList(string name, IEnumerable<SelectListItem> selectList, string optionLabel);-->
+                                    <!--Fin de Paso 3 de CarQuery API-->
+                                    <div class="form-group" id="carInfoModal">
+                                        <label for="vinNumber"><span><i class="autoIcon btn3d fa fa-automobile icon-mini-effect icon-effect-1"></i></span></label>
+                                        <input type="text" class="form-control" id="vinNumber" name="vinNumber" placeholder="Enter Vehicle Identification Number#">
+                                    </div>
+                                    <div class="form-group" id="carInfoModal">
+                                        <label for="vehicleValue"><span class="vehicleValueIcon btn3d glyphicon glyphicon-usd icon-mini-effect icon-effect-1"></span></label>
+                                        <input type="text" class="form-control" id="vehicleValue" name="vehicleValue" placeholder="Enter Vehicle Value">
+                                    </div>
+                                    <div class="form-group" id="carInfoModal">
+                                        <label for="startingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
+                                        <input type="date" placeholder="Enter Policy Starting Date" class="form-control" id="startingDate" name="startingDate">
+                                    </div>
+                                    <div class="form-group" id="diasDeCobertura">
+                                        @Html.DropDownList("diasDeCobertura", new List<SelectListItem>
                                     {
                                         new SelectListItem{ Text = "Select Number of Coverage Days", Value = "0", Selected = true},
                                         new SelectListItem{ Text = "Annual", Value = "0"},
@@ -441,7 +440,7 @@
                                         new SelectListItem{ Text = "14 Days", Value = "14"},
                                         new SelectListItem{ Text = "15 Days", Value = "15"},
                                     })
-    </div>
+                                    </div>
                                 <div>
                                     <!--ViewBag.Dias = Coverage_Days.SelectedItem.Value-->
                                 </div>
@@ -449,17 +448,17 @@
                                         <label for="endingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
                                         <input type="date" class="form-control" id="endingDateTB" name="endingDateTB" placeholder="Enter Policy endind date">
                                     </div>*@
-                                <div class="form-group">
+                                @*<div class="form-group" id="carInfoModal">
                                     <label for="usrname"><span class="userNameIcon btn3d glyphicon glyphicon-user icon-mini-effect icon-effect-1"></span></label>
                                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
-                                </div>
+                                </div>*@
                                 <!--<div class="form-group">
                                     <label for="psw"><span class="eye-openPswdIcon glyphicon glyphicon-eye-open icon-mini-effect icon-effect-1"></span></label>
                                     <input type="text" class="form-control" id="pswTB" name="pswTB" placeholder="Enter password">
                                 </div>-->
-                                <div class="checkbox">
+                                @*<div class="checkbox">
                                     <label><input type="checkbox" value="" checked>Remember me</label>
-                                </div>
+                                </div>*@
                                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                 <button type="submit" id="obtainQuoteNowModalBtn" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-ok"></span> Obtain Quote Now!!</button>
 
@@ -1087,8 +1086,8 @@
                 </div>
 
 
-        </div>
-    </div><!-- .row -->
+            </div>
+        </div><!-- .row -->
     </div><!-- .container -->
 
     <div class="container" id="priceTblContainer">

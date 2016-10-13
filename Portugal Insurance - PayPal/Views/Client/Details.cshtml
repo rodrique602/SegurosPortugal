@@ -7,101 +7,178 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Client</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.fullName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.fullName)
-        </dd>
+<!--<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>-->
 
-        <dt>
-            @Html.DisplayNameFor(model => model.addressLine1)
-        </dt>
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+<html lang="en">
+<head>
 
-        <dd>
-            @Html.DisplayFor(model => model.addressLine1)
-        </dd>
+    <!-- Basic -->
+    <title>Margo | About Us</title>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.addressLine2)
-        </dt>
+    <!-- Define Charset -->
+    <meta charset="utf-8">
 
-        <dd>
-            @Html.DisplayFor(model => model.addressLine2)
-        </dd>
+    <!-- Responsive etatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.city)
-        </dt>
+    <!-- Page Description and Author -->
+    <meta name="description" content="Margo - Responsive HTML5 Template">
+    <meta name="author" content="iThemesLab">
 
-        <dd>
-            @Html.DisplayFor(model => model.city)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.state)
-        </dt>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="~/asset/css/bootstrap.min.css" type="text/css" media="screen">
 
-        <dd>
-            @Html.DisplayFor(model => model.state)
-        </dd>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" media="screen">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.zipCode)
-        </dt>
+    <!-- Margo CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" media="screen">
 
-        <dd>
-            @Html.DisplayFor(model => model.zipCode)
-        </dd>
+    <!-- Responsive CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" media="screen">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.country)
-        </dt>
+    <!-- Color CSS Styles  -->
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/css/colors/red.css" title="red" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/jade.css" title="jade" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/blue.css" title="blue" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/beige.css" title="beige" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/cyan.css" title="cyan" media="screen" />-->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/colors/green.css" title="green" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="~/Content/css/colors/red.css" title="red" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/orange.css" title="orange" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/peach.css" title="peach" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/pink.css" title="pink" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/purple.css" title="purple" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/sky-blue.css" title="sky-blue" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/css/colors/yellow.css" title="yellow" media="screen" />-->
+    <!-- Margo JS  -->
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.migrate.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizrr.js"></script>
+    <script type="text/javascript" src="~/asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.appear.js"></script>
+    <script type="text/javascript" src="~/Scripts/count-to.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.textillate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.lettering.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
 
-        <dd>
-            @Html.DisplayFor(model => model.country)
-        </dd>
+    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-        <dt>
-            @Html.DisplayNameFor(model => model.phoneNumber)
-        </dt>
+</head>
 
-        <dd>
-            @Html.DisplayFor(model => model.phoneNumber)
-        </dd>
+<body>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.emailAddress)
-        </dt>
+    <div>
+        <h4>Client</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.fullName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.emailAddress)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.fullName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.licenseNumber1)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.addressLine1)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.licenseNumber1)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.addressLine1)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.licenseNumber2)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.addressLine2)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.licenseNumber2)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.addressLine2)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.clientID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dt>
+                @Html.DisplayNameFor(model => model.city)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.city)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.state)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.state)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.zipCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.zipCode)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.country)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.country)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.phoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.phoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.emailAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.emailAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.licenseNumber1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.licenseNumber1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.licenseNumber2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.licenseNumber2)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.clientID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
