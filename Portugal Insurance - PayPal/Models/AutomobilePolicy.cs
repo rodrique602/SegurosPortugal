@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNet.Identity;
 
 namespace Portugal_Insurance___PayPal.Models
 {
@@ -14,11 +15,10 @@ namespace Portugal_Insurance___PayPal.Models
         public int automobilePolicyID { get; set; }
 
         [Display(Name = "Vehicle Value")]
-        public int vehicleValue { get; set; }
+        public int? vehicleValue { get; set; }
 
         [Display(Name = "Vehicle VIN")]
         public String vehicleVin { get; set; }
-
 
         [Display(Name = "Car Year")]
         public String carYear { get; set; }
@@ -44,10 +44,11 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Policy Ending Date")]
         public DateTime? policyEndingDate { get; set; }
 
-        public int clientID { get; set; }
-        public virtual Client client { get; set; }
+        //To one movement correspond one user
+        public String Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
-      
+
 
     }
 }

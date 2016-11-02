@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Portugal_Insurance___PayPal.Models;
-using Portugal_Insurance___PayPal.DAL;
 
 namespace Portugal_Insurance___PayPal.Controllers
 {
@@ -19,7 +18,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Index()
         {
-            var automobilepolicies = db.AutomobilePolicies.Include(a => a.client);
+            var automobilepolicies = db.AutomobilePolicies;
             return View(automobilepolicies.ToList());
         }
 
@@ -43,7 +42,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Create()
         {
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName");
+            ViewBag.clientID = new SelectList(db.Users, "clientID", "fullName");
             return View();
         }
 
@@ -61,8 +60,7 @@ namespace Portugal_Insurance___PayPal.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName", automobilepolicy.clientID);
+            
             return View(automobilepolicy);
         }
 
@@ -79,7 +77,6 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName", automobilepolicy.clientID);
             return View(automobilepolicy);
         }
 
@@ -97,7 +94,7 @@ namespace Portugal_Insurance___PayPal.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName", automobilepolicy.clientID);
+
             return View(automobilepolicy);
         }
 

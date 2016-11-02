@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Portugal_Insurance___PayPal.Models;
-using Portugal_Insurance___PayPal.DAL;
 
 namespace Portugal_Insurance___PayPal.Controllers
 {
@@ -19,7 +18,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Index()
         {
-            return View(db.Clients.ToList());
+            return View(db.Users.ToList());
         }
 
         // GET: /Client/Details/5
@@ -30,7 +29,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
+            ApplicationUser client = db.Users.Find(id);
             if (client == null)
             {
                 return HttpNotFound();
@@ -49,11 +48,11 @@ namespace Portugal_Insurance___PayPal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Client client)
+        public ActionResult Create( ApplicationUser client)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                db.Users.Add(client);
                 db.SaveChanges();
                // ViewBag.registered = true;
                 return Redirect(Request.UrlReferrer.ToString());
@@ -71,7 +70,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
+            ApplicationUser client = db.Users.Find(id);
             if (client == null)
             {
                 return HttpNotFound();
@@ -104,7 +103,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
+            ApplicationUser client = db.Users.Find(id);
             if (client == null)
             {
                 return HttpNotFound();
@@ -118,8 +117,8 @@ namespace Portugal_Insurance___PayPal.Controllers
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR)]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            ApplicationUser client = db.Users.Find(id);
+            db.Users.Remove(client);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Portugal_Insurance___PayPal.Models;
-using Portugal_Insurance___PayPal.DAL;
 
 namespace Portugal_Insurance___PayPal.Controllers
 {

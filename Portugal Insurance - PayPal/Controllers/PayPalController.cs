@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using System.Net;
 using System.Web.Configuration;
 using System.IO;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 //using Portugal_Insurance___PayPal.PayPal;
 //using PayPal.Api;
 
@@ -17,7 +20,7 @@ namespace Portugal_Insurance___PayPal.Controllers
     public class PayPalController : Controller
     {
         //GET: /Paypal/
-        
+        private Portugal_Insurance___PayPalContextDB db = new Portugal_Insurance___PayPalContextDB();
         public ActionResult Index()
         {
             return View();
@@ -158,6 +161,27 @@ namespace Portugal_Insurance___PayPal.Controllers
             //read in txn token from querystring
             String txToken = Request.QueryString.Get("tx");
             PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
+            if(confirmacion != null)
+            {
+                //var poliza = db.AutomobilePolicies.Find(db.AutomobilePolicies.Where( pol => pol.clientID == null));
+                AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
+
+                //var currentUserId = User.Identity.GetUserId()
+                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
+                var currentUser = manager.FindById(User.Identity.GetUserId());
+                ViewBag.EmailID = currentUser.Email;
+
+
+                //Se le asigna a una poliza el cliente logeado que acaba de pagar
+                //poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
+                poliza.Id = User.Identity.GetUserId();
+                db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+
+
+                 
+            }
             /*
             String query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
                                   txToken, authToken);
@@ -172,16 +196,16 @@ namespace Portugal_Insurance___PayPal.Controllers
             req.ContentLength = query.Length;
             */
             // Write the request back IPN strings
-           /* StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
-                                     System.Text.Encoding.ASCII);
-            stOut.Write(query);
-            stOut.Close();*/
+            /* StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
+                                      System.Text.Encoding.ASCII);
+             stOut.Write(query);
+             stOut.Close();*/
 
             // Do the request to PayPal and get the response
             /*StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
             String strResponse = stIn.ReadToEnd();
             stIn.Close();*/
-
+           
 
             ViewBag.confirmacion = confirmacion;
             return View();

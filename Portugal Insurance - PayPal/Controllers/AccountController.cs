@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Portugal_Insurance___PayPal.Models;
+using System.Net;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace Portugal_Insurance___PayPal.Controllers
 {
@@ -16,7 +20,7 @@ namespace Portugal_Insurance___PayPal.Controllers
     public class AccountController : Controller
     {
         public AccountController()
-            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB())))
         {
         }
 
@@ -61,6 +65,14 @@ namespace Portugal_Insurance___PayPal.Controllers
             return View(model);
         }
 
+        public ActionResult Index()
+        {
+            //var allUsers = UserManager.Users.ToList();//Get all users
+            var allUsers = new Portugal_Insurance___PayPalContextDB().Users.ToList();
+
+            return View();
+        }
+
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -80,7 +92,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 var user = new ApplicationUser() { UserName = model.UserName, fullName = model.fullName, addressLine1 = model.addressLine1,
                 addressLine2 = model.addressLine2, city = model.city, country = model.country, emailAddress =  model.emailAddress,
-                 licenseNumber1 = model.licenseNumber1, licenseNumber2 = model.licenseNumber2, phoneNumber = model.phoneNumber,
+                 licenseNumber1 = model.licenseNumber1, licenseNumber2 = model.licenseNumber2, PhoneNumber = model.phoneNumber,
                  state = model.state, zipCode = model.zipCode};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

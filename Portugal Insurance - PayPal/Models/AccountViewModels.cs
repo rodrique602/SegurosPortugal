@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
 namespace Portugal_Insurance___PayPal.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -103,7 +103,7 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Lincense Number 2")]
         public String licenseNumber2 { get; set; }
 
-
+        public virtual ICollection<AutomobilePolicy> polizas { get; set; }
 
         ////Default validation error messages
         //public static class AccountRolesNames
@@ -115,6 +115,7 @@ namespace Portugal_Insurance___PayPal.Models
 
         //}
     }
+
     //Default validation error messages
     public static class AccountRolesNames
     {
