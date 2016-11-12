@@ -51,7 +51,7 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Lincense Number 2")]
         public String licenseNumber2 { get; set; }
 
-        public virtual ICollection<AutomobilePolicy> automobilePolicies { get; set; }
+        public virtual ICollection<AutomobilePolicy> AutomobilePolicies { get; set; }
 
     }
 
@@ -89,10 +89,10 @@ namespace Portugal_Insurance___PayPal.Models
         //public DbSet<AutomobilePolicy> AutomobilePolicies { get; set; }
         //SE DECLARARAN LOS DBSETS QUE REPRESENTAN TABLAS EN LA DB
         //SEGUN LOS MODELOS DECLARADOS
-        public DbSet<Precios> Precios { get; set; }
+        public virtual DbSet<Precios> Precios { get; set; }
 
-        public DbSet<HomeCondoPolicy> HomeCondoPolicies { get; set; }
-        public DbSet<AutomobilePolicy> AutomobilePolicies { get; set; }
+        public virtual DbSet<HomeCondoPolicy> HomeCondoPolicies { get; set; }
+        public virtual DbSet<AutomobilePolicy> AutomobilePolicies { get; set; }
 
 
     }
