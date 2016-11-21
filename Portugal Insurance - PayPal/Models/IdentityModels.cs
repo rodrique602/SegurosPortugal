@@ -6,7 +6,11 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.Reflection.Emit;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using Portugal_Insurance___PayPal.Models;
+using System.Linq;
+using System.Web;
 
 namespace Portugal_Insurance___PayPal.Models
 {
@@ -69,6 +73,15 @@ namespace Portugal_Insurance___PayPal.Models
             var userClaims = modelBuilder.Entity<IdentityUserClaim>()
                 .ToTable("AspNetUserClaims");
             userClaims.Property(u => u.UserId).HasColumnName("User_Id");
+
+            //ESTE EVENTO EVITA QUE SE PLURALIZEN LOS NOMBRES DE LAS TABLAS
+            //CREADAS APARTIR DE LOS MODELOS
+            //Fuente: http://edspencer.me.uk/2012/03/13/entity-framework-plural-and-singular-table-names/
+
+
+            //ORIGINAL
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
         }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -91,8 +104,10 @@ namespace Portugal_Insurance___PayPal.Models
         //SEGUN LOS MODELOS DECLARADOS
         public virtual DbSet<Precios> Precios { get; set; }
 
-        public virtual DbSet<HomeCondoPolicy> HomeCondoPolicies { get; set; }
         public virtual DbSet<AutomobilePolicy> AutomobilePolicies { get; set; }
+
+        public virtual DbSet<HomeCondoPolicy> HomeCondoPolicies { get; set; }
+
 
 
     }

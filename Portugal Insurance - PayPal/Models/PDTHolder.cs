@@ -28,6 +28,8 @@ namespace Portugal_Insurance___PayPal.Models
         public string SubscriberId { get; set; }
         public string Custom { get; set; }
 
+
+
         public static PDTHolder RequestPDTToPayPal(string txToken)
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;

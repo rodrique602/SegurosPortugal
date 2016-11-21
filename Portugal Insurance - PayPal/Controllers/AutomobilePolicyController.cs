@@ -56,6 +56,8 @@ namespace Portugal_Insurance___PayPal.Controllers
         {
             if (ModelState.IsValid)
             {
+                automobilepolicy.policyStartingDate = DateTime.Now;
+                automobilepolicy.policyEndingDate = DateTime.Now; 
                 db.AutomobilePolicies.Add(automobilepolicy);
                 db.SaveChanges();
                 return RedirectToAction("Index");

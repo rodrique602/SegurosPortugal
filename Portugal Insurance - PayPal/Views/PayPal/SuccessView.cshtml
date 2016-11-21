@@ -4,7 +4,7 @@
     //Layout = "~/Views/Shared/_Layout.cshtml";
     Portugal_Insurance___PayPal.Models.PDTHolder confirmacion =
         (Portugal_Insurance___PayPal.Models.PDTHolder)ViewBag.confirmacion;
-    
+    //String[] custom = ViewBag.custom;
 }
 
 
@@ -185,6 +185,12 @@
                                         @*@ViewBag.result.TransactionId*@
 
                                         <p>Custom: @confirmacion.Custom</p>
+                                        @foreach (string custom in ViewData["custom"] as string[])
+                                        {
+                                            <li>
+                                                @custom
+                                            </li>
+                                        }
                                     </div>
 
 

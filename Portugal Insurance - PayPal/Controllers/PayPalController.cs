@@ -161,26 +161,53 @@ namespace Portugal_Insurance___PayPal.Controllers
             //read in txn token from querystring
             String txToken = Request.QueryString.Get("tx");
             PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
-            if(confirmacion != null)
+            string[] splitCustom = {};
+            int vehicleValue = 0;
+            string vinNumber = "", carYear = "", carMake = "", carModel = "";
+            DateTime startDate = DateTime.Now, endDate = DateTime.Now;
+            if (confirmacion != null)
             {
                 //var poliza = db.AutomobilePolicies.Find(db.AutomobilePolicies.Where( pol => pol.clientID == null));
-                AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
+                //AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
+                AutomobilePolicy poliza = db.AutomobilePolicies.FirstOrDefault(pol => pol.Id == null);
+
 
                 //var currentUserId = User.Identity.GetUserId()
                 var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
                 var currentUser = manager.FindById(User.Identity.GetUserId());
                 ViewBag.EmailID = currentUser.Email;
 
+                String customList = confirmacion.Custom.ToString();
+                splitCustom = customList.Split(',');
 
+                for (int i = 0; i < splitCustom.Length; i++)
+                {
+                    vehicleValue = int.Parse(splitCustom[0]);
+                    vinNumber = splitCustom[1].ToString();
+                    carYear = splitCustom[2].ToString();
+                    carMake = splitCustom[3].ToString();
+                    carModel = splitCustom[4].ToString();
+                    startDate = DateTime.Parse(splitCustom[5]);
+                    endDate = DateTime.Parse(splitCustom[6]);
+                }
                 //Se le asigna a una poliza el cliente logeado que acaba de pagar
-                //poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
-                poliza.Id = User.Identity.GetUserId();
+                poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
+                poliza.Id = User.Identity.GetUserId().ToString();
+                poliza.carMake = carMake;
+                poliza.carModel = carModel;
+                poliza.carYear = carYear;
+                poliza.policyEndingDate = endDate;
+                poliza.policySold = true;
+                poliza.policySoldDate = DateTime.Now;
+                poliza.policyStartingDate = startDate;
+                poliza.vehicleValue = vehicleValue;
+                poliza.vehicleVin = vinNumber;
                 db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
 
 
-                 
+
             }
             /*
             String query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
@@ -205,9 +232,10 @@ namespace Portugal_Insurance___PayPal.Controllers
             /*StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
             String strResponse = stIn.ReadToEnd();
             stIn.Close();*/
-           
+
 
             ViewBag.confirmacion = confirmacion;
+            ViewData["custom"] = splitCustom; 
             return View();
         }
 

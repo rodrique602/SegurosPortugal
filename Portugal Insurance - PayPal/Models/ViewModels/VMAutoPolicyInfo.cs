@@ -9,8 +9,8 @@ namespace Portugal_Insurance___PayPal.Models.ViewModels
     {
             public String vinNumber { get; set; }
             public decimal vehicleValue { get; set; }
-            public DateTime? startingDate { get; set; }
-            public DateTime? endingDate { get; set; }
+            public DateTime startingDate { get; set; }
+            public DateTime endingDate { get; set; }
             public int? diasDeCobertura { get; set; }
             public int carYears { get; set; }
             public String carMakes { get; set; }
