@@ -190,22 +190,20 @@
 
                             }
 
-
                             <!--FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE DAILY INSURANCE POLICIES-->
                             @if (ViewBag.days > 0)
                             {
                                 <table id="detailsTable" class="table table-striped table-hover table-responsive table-bordered" style="text-align: center">
                                     <tr class="success" style="text-align: center">
-
-                                    @*<th style="text-align: center">
-                                          @Html.DisplayNameFor(model => model.coverageType)
-                                    </th>*@
+                                        @*<th style="text-align: center">
+                                                  @Html.DisplayNameFor(model => model.coverageType)
+                                            </th>*@
 
                                         <td>
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Coverage Type= Full Coverage Per Day | Total=$@ViewBag.PreciosFCPorDia
+                                                        Full Coverage Per Day | Total=$@ViewBag.PreciosFCPorDia
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorDia">
@@ -238,7 +236,7 @@
                                                    data-shipping="0"
                                                    data-tax="0"
                                                    data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
+                                                   <span class="fa fa-paypal"></span>
                                                 </a>
                                                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                             </div>
@@ -252,7 +250,7 @@
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Coverage Type= Liability Only Per Day | Total=$@ViewBag.PreciosliabilityOnlyPorDia
+                                                        Liability Only Per Day | Total=$@ViewBag.PreciosliabilityOnlyPorDia
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosliabilityOnlyPorDia">
@@ -261,6 +259,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
+
                                             <div id="buyNowBtnDiv">
                                                 <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
                                                         data-button="buynow"
@@ -283,18 +282,19 @@
                                                    data-shipping="0"
                                                    data-tax="0"
                                                    data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
+                                                   <span class="fa fa-paypal"></span>
                                                 </a>
                                                 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                             </div>
                                         </td>
                                     </tr>
-
+                                </table>
+                            }
                             <!--FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE ANNUAL INSURANCE POLICIES-->
                             @if (ViewBag.days <= 0 || ViewBag.days > 0)
                             {
+                                <table id="detailsTable" class="table table-striped table-hover table-responsive table-bordered" style="text-align: center">
                                     <tr class="success" style="text-align: center">
-
                                         @*<th style="text-align: center">
                                                 @Html.DisplayNameFor(model => model.coverageType)
                                             </th>*@
@@ -303,7 +303,7 @@
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Coverage Type= Full Coverage Per  Year | Total=$@ViewBag.PreciosFCPorAnio
+                                                        Full Coverage Per  Year | Total=$@ViewBag.PreciosFCPorAnio
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorAnio">
@@ -350,7 +350,7 @@
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Coverage Type= Full Coverage Per Year W Tow | Total=$@ViewBag.PreciosFCPorAnioWTow
+                                                        Full Coverage Per Year W Tow | Total=$@ViewBag.PreciosFCPorAnioWTow
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorAnioWTow">
@@ -388,6 +388,7 @@
                                         </td>
                                     </tr>
 
+
                                     <tr class="success" style="text-align: center">
                                         @*<th style="text-align: center">
                                                 @Html.DisplayNameFor(model => model.coverageType)
@@ -397,7 +398,7 @@
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Coverage Type= Vehicle Only Liability Per Year | Total=$@ViewBag.PreciosLiabilityVehiclePorAnio
+                                                        Vehicle Only Liability Per Year | Total=$@ViewBag.PreciosLiabilityVehiclePorAnio
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiabilityVehiclePorAnio">
@@ -440,7 +441,7 @@
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item" style="font-weight: 900; font-size:larger;">
-                                                        Coverage Type= Vehicle Only Liability Per Year W Tow | Total=$@ViewBag.PreciosLiabilityVehiclePorAnioWTow
+                                                        Vehicle Only Liability Per Year W Tow | Total=$@ViewBag.PreciosLiabilityVehiclePorAnioWTow
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiabilityVehiclePorAnioWTow">
@@ -479,6 +480,7 @@
                                         </td>
                                     </tr>
 
+
                                     <tr class="success" style="text-align: center">
                                         @*<th style="text-align: center">
                                                 @Html.DisplayNameFor(model => model.coverageType)
@@ -487,7 +489,8 @@
                                         <td>
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">Coverage Type = Liability 1 License Per Year | Total=$@ViewBag.PreciosLiability1LicensePorAnio
+                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                        Liability 1 License Per Year | Total=$@ViewBag.PreciosLiability1LicensePorAnio
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiability1LicensePorAnio">
@@ -528,7 +531,8 @@
                                         <td>
                                             <div class="detailsPageCoverageType">
                                                 <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">Coverage Type = Liability 2 License Per Year | Total=$@ViewBag.PreciosLiability2LicensePorAnio
+                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                        Liability 2 License Per Year | Total=$@ViewBag.PreciosLiability2LicensePorAnio
                                                         <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                             <input type="hidden" name="cmd" value="_s-xclick">
                                                             <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiability2LicensePorAnio">
@@ -566,7 +570,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                            }                     
                                 </table>
                             }
                             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
@@ -625,89 +628,89 @@
                                                 <h4 class="modal-title">Customer Info</h4>
                                             </div>
 
-                                            <!--Aqui insertamos el codigo para el paso 3 de el CarQuery API y agregamos un DropDown
-                                            para seleccionarel tipo de poliza que el cliente guste cotizar-->
+                                                    <!--Aqui insertamos el codigo para el paso 3 de el CarQuery API y agregamos un DropDown
+                                                    para seleccionarel tipo de poliza que el cliente guste cotizar-->
                                         <!-- <form role="form">-->
 
-                                            @*<div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Full Name</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="fullNameTB" name="fullNameTB" placeholder="full name">
-                                                    </div>
+                                                    @*<div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Full Name</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="fullNameTB" name="fullNameTB" placeholder="full name">
+                                                            </div>
 
-                                                </div>
-                                                    <div>
-                                                ViewBag.Dias = Coverage_Days.SelectedItem.Value
-                                                    </div>
+                                                        </div>
+                                                            <div>
+                                                        ViewBag.Dias = Coverage_Days.SelectedItem.Value
+                                                            </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Street address, P.O. box, company name, c/o</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="address-line1TB" name="address-line1TB" placeholder="address-line1">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Street address, P.O. box, company name, c/o</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="address-line1TB" name="address-line1TB" placeholder="address-line1">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Apartment, suite , unit, building, floor, etc.</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="address-line2TB" name="address-line2TB" placeholder="address-line2">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Apartment, suite , unit, building, floor, etc.</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="address-line2TB" name="address-line2TB" placeholder="address-line2">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">City / Town</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="cityTB" name="cityTB" placeholder="city">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">State / Province / Region</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="regionTB" name="regionTB" placeholder="state / province / region">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">City / Town</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="cityTB" name="cityTB" placeholder="city">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">State / Province / Region</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="regionTB" name="regionTB" placeholder="state / province / region">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Zip / Postal Code</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="postal-codeTB" name="postal-codeTB" placeholder="zip or postal code">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Zip / Postal Code</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="postal-codeTB" name="postal-codeTB" placeholder="zip or postal code">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Country</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="countryTB" name="countryTB" placeholder="country">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Country</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="countryTB" name="countryTB" placeholder="country">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Please enter a US Contact Number</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="us-phoneNumberTB" name="us-phoneNumberTB" placeholder="US phone number">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Please enter a US Contact Number</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="us-phoneNumberTB" name="us-phoneNumberTB" placeholder="US phone number">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Please enter your Email</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="emailTB" name="emailTB" placeholder="email address">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Please enter your Email</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="emailTB" name="emailTB" placeholder="email address">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Please enter 1st license Number</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="license-number1TB" name="license-number1TB" placeholder="1st License Number">
-                                                    </div>
-                                                </div>
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Please enter 1st license Number</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="license-number1TB" name="license-number1TB" placeholder="1st License Number">
+                                                            </div>
+                                                        </div>
 
-                                                <div class="form-group" id="customerInfoModal">
-                                                    <label class="control-label">Please enter 2nd license Number if applies</label>
-                                                    <div class="controls">
-                                                        <input type="text" class="form-control" id="license-number2TB" name="license-number2TB" placeholder="2nd License Number">
-                                                    </div>
-                                                    </div>*@
+                                                        <div class="form-group" id="customerInfoModal">
+                                                            <label class="control-label">Please enter 2nd license Number if applies</label>
+                                                            <div class="controls">
+                                                                <input type="text" class="form-control" id="license-number2TB" name="license-number2TB" placeholder="2nd License Number">
+                                                            </div>
+                                                            </div>*@
 
                                         }
 
@@ -784,8 +787,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                     </div>
                 </div>
