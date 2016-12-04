@@ -163,7 +163,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
             string[] splitCustom = {};
             int vehicleValue = 0;
-            string vinNumber = "", carYear = "", carMake = "", carModel = "";
+            string vinNumber = "", carYear = "", carMake = "", carModel = "", coverageType = "" ;
             DateTime startDate = DateTime.Now, endDate = DateTime.Now;
             if (confirmacion != null)
             {
@@ -180,19 +180,21 @@ namespace Portugal_Insurance___PayPal.Controllers
                 String customList = confirmacion.Custom.ToString();
                 splitCustom = customList.Split(',');
 
-                for (int i = 0; i < splitCustom.Length; i++)
-                {
-                    vehicleValue = int.Parse(splitCustom[0]);
-                    vinNumber = splitCustom[1].ToString();
-                    carYear = splitCustom[2].ToString();
-                    carMake = splitCustom[3].ToString();
-                    carModel = splitCustom[4].ToString();
-                    startDate = DateTime.Parse(splitCustom[5]);
-                    endDate = DateTime.Parse(splitCustom[6]);
-                }
+                VMAutoPolicyInfo policyInfo = new VMAutoPolicyInfo(splitCustom);
+                ViewBag.policyInfo = policyInfo;
+
+                vehicleValue = int.Parse(splitCustom[0]);
+                vinNumber = splitCustom[1].ToString();
+                carYear = splitCustom[2].ToString();
+                carMake = splitCustom[3].ToString();
+                carModel = splitCustom[4].ToString();
+                startDate = DateTime.Parse(splitCustom[5]);
+                endDate = DateTime.Parse(splitCustom[6]);
+                coverageType = confirmacion.ItemName; //We get converage type from paypal response
+
+
                 //Se le asigna a una poliza el cliente logeado que acaba de pagar
-                poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
-                poliza.Id = User.Identity.GetUserId().ToString();
+                poliza.Id = currentUser.Id;
                 poliza.carMake = carMake;
                 poliza.carModel = carModel;
                 poliza.carYear = carYear;
@@ -202,12 +204,9 @@ namespace Portugal_Insurance___PayPal.Controllers
                 poliza.policyStartingDate = startDate;
                 poliza.vehicleValue = vehicleValue;
                 poliza.vehicleVin = vinNumber;
+                poliza.coverageType = coverageType;
                 db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-
-
-
-
             }
             /*
             String query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
@@ -235,7 +234,6 @@ namespace Portugal_Insurance___PayPal.Controllers
 
 
             ViewBag.confirmacion = confirmacion;
-            ViewData["custom"] = splitCustom; 
             return View();
         }
 

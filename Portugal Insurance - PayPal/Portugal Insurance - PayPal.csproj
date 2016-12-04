@@ -244,6 +244,14 @@
     <Compile Include="Migrations\201610260235379_resetDatabase3.Designer.cs">
       <DependentUpon>201610260235379_resetDatabase3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611272140412_resetMigration.cs" />
+    <Compile Include="Migrations\201611272140412_resetMigration.Designer.cs">
+      <DependentUpon>201611272140412_resetMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.cs" />
+    <Compile Include="Migrations\201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.Designer.cs">
+      <DependentUpon>201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -691,6 +699,12 @@
     <EmbeddedResource Include="Migrations\201610260235379_resetDatabase3.resx">
       <DependentUpon>201610260235379_resetDatabase3.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611272140412_resetMigration.resx">
+      <DependentUpon>201611272140412_resetMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.resx">
+      <DependentUpon>201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

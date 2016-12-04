@@ -44,11 +44,27 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Policy Ending Date")]
         public DateTime? policyEndingDate { get; set; }
 
+
+        [Display(Name = "Policy Coverage Type ")]
+        public String coverageType { get; set; }
+        
         //To one movement correspond one user
         public String Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
+  
+        public Precios getPrice()
+        {
+            Portugal_Insurance___PayPalContextDB db = new Portugal_Insurance___PayPalContextDB();
+            //Calculates how many days the policy lasts 
+            int days = (int)this.policyEndingDate.Value.Subtract(this.policyStartingDate.Value).TotalDays;
+            Precios p = db.Precios.
+                Single(pre => pre.valorMinimo <= this.vehicleValue &&
+                pre.valorMaximo >= this.vehicleValue &&
+                pre.dias == days && 
+                pre.coverageType == this.coverageType);
 
-
+            return p;
+        }
 
     }
 }
