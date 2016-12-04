@@ -49,6 +49,7 @@ namespace Portugal_Insurance___PayPal.Models
 
         //Un cliente puede tener muchas polizas
     public virtual ICollection<AutomobilePolicy> AutomobilePolicies { get; set; }
+    
 
     }
 }

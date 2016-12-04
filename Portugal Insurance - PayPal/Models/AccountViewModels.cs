@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 namespace Portugal_Insurance___PayPal.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -26,6 +27,7 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Confirmar Nueva Contaseña")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
     }
 
     public class LoginViewModel
@@ -59,5 +61,66 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Confirmar Contaseña")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Full Name")]
+        public String fullName { get; set; }
+
+        [Required]
+        [Display(Name = "address Line1")]
+        public String addressLine1 { get; set; }
+        [Display(Name = "address Line1")]
+        public String addressLine2 { get; set; }
+
+        [Required]
+        [Display(Name = "City")]
+        public String city { get; set; }
+
+        [Required]
+        [Display(Name = "State")]
+        public String state { get; set; }
+
+        [Required]
+        [Display(Name = "Zip Code")]
+        public String zipCode { get; set; }
+
+        [Required]
+        [Display(Name = "Country")]
+        public String country { get; set; }
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        public String phoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Email Address")]
+        public String emailAddress { get; set; }
+
+        [Required]
+        [Display(Name = "Lincense Number 1")]
+        public String licenseNumber1 { get; set; }
+
+        [Display(Name = "Lincense Number 2")]
+        public String licenseNumber2 { get; set; }
+
+        public virtual ICollection<AutomobilePolicy> polizas { get; set; }
+
+        ////Default validation error messages
+        //public static class AccountRolesNames
+        //{
+        //    public const string ADMINISTRATOR = "Administrador";
+        //    public const string SALES_MANAGER = "SalesManager";
+        //    public const string CLIENT = "Client";
+
+
+        //}
+    }
+
+    //Default validation error messages
+    public static class AccountRolesNames
+    {
+        public const string ADMINISTRATOR = "Administrator";
+        public const string SALESMANAGER = "SalesManager";
+        public const string CLIENT = "Client";
     }
 }

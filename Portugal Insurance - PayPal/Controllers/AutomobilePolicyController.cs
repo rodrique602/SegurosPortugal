@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Portugal_Insurance___PayPal.Models;
-using Portugal_Insurance___PayPal.DAL;
 
 namespace Portugal_Insurance___PayPal.Controllers
 {
@@ -16,13 +15,15 @@ namespace Portugal_Insurance___PayPal.Controllers
         private Portugal_Insurance___PayPalContextDB db = new Portugal_Insurance___PayPalContextDB();
 
         // GET: /AutomobilePolicy/
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Index()
         {
-            var automobilepolicies = db.AutomobilePolicies.Include(a => a.client);
+            var automobilepolicies = db.AutomobilePolicies;
             return View(automobilepolicies.ToList());
         }
 
         // GET: /AutomobilePolicy/Details/5
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,9 +39,10 @@ namespace Portugal_Insurance___PayPal.Controllers
         }
 
         // GET: /AutomobilePolicy/Create
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Create()
         {
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName");
+            ViewBag.clientID = new SelectList(db.Users, "clientID", "fullName");
             return View();
         }
 
@@ -49,20 +51,23 @@ namespace Portugal_Insurance___PayPal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Create([Bind(Include="automobilePolicyID,vehicleValue,vehicleVin,carYear,carMake,carModel,policyFolio,policySold,policySoldDate,policyStartingDate,policyEndingDate,clientID")] AutomobilePolicy automobilepolicy)
         {
             if (ModelState.IsValid)
             {
+                automobilepolicy.policyStartingDate = DateTime.Now;
+                automobilepolicy.policyEndingDate = DateTime.Now; 
                 db.AutomobilePolicies.Add(automobilepolicy);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName", automobilepolicy.clientID);
+            
             return View(automobilepolicy);
         }
 
         // GET: /AutomobilePolicy/Edit/5
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,7 +79,6 @@ namespace Portugal_Insurance___PayPal.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName", automobilepolicy.clientID);
             return View(automobilepolicy);
         }
 
@@ -83,6 +87,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
         public ActionResult Edit([Bind(Include="automobilePolicyID,vehicleValue,vehicleVin,carYear,carMake,carModel,policyFolio,policySold,policySoldDate,policyStartingDate,policyEndingDate,clientID")] AutomobilePolicy automobilepolicy)
         {
             if (ModelState.IsValid)
@@ -91,11 +96,12 @@ namespace Portugal_Insurance___PayPal.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.clientID = new SelectList(db.Clients, "clientID", "fullName", automobilepolicy.clientID);
+
             return View(automobilepolicy);
         }
 
         // GET: /AutomobilePolicy/Delete/5
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -113,6 +119,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         // POST: /AutomobilePolicy/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = AccountRolesNames.ADMINISTRATOR)]
         public ActionResult DeleteConfirmed(int id)
         {
             AutomobilePolicy automobilepolicy = db.AutomobilePolicies.Find(id);

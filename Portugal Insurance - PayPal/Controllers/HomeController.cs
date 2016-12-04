@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Portugal_Insurance___PayPal.Models;
-using Portugal_Insurance___PayPal.DAL;
 namespace Portugal_Insurance___PayPal.Controllers
 {
     public class HomeController : Controller
@@ -16,21 +15,7 @@ namespace Portugal_Insurance___PayPal.Controllers
 
         public ActionResult Index()
         {
-
-            //we use this to connect to the database
-            Portugal_Insurance___PayPalContextDB db1 = new Portugal_Insurance___PayPalContextDB();
-            List<Precios> precioss = db.Precios.Where(precio => precio.dias <= 15).ToList();
-
-            var coverageTypes = (from cov in db1.Precios select cov.coverageType).Distinct();
-
-            ViewBag.CoverageTypes = new SelectList(coverageTypes, "coverageType");
-
-            //ViewBag.CoverageTypes = new SelectList(db.Precios, "precioID", "coverageType");
-
-            //TEST CODE FOR DROPDOWN LIST FOR DIAS
             
-
-
             return View();
         }
 

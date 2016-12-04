@@ -480,9 +480,10 @@ header {
 }
 
 .top-bar .contact-details li a {
-	font-size: 12px;
+	font-size: 13px;
+    font-weight: bold;
 	display: block;
-	line-height: 32px;
+	line-height: 30px;
 }
 
 ul.social-list {
@@ -546,11 +547,11 @@ ul.social-list li a.skype:hover {
 }
 
 ul.social-list li a i {
-	font-size: 1em;
+	font-size: 2em;
 	display: block;
 	width: 34px;
 	height: 33px;
-	line-height: 33px;
+	line-height: 40px;
 	text-align: center;
 	border-left: 1px solid #f2f2f2;
 }
@@ -568,7 +569,7 @@ ul.social-list li:last-child a i {
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
 	position: relative;
-	min-height: 120px !important;
+	min-height: inherit;
 }
 
 .navbar-brand {
@@ -6521,10 +6522,10 @@ body{
 	padding-bottom:30px;
 	Original Values*/
 
-	top: 0px;
-	margin-bottom: 80px;
-	padding-top: 40px;
-	padding-bottom: 40px;
+    top: 0px;
+    margin-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .content .plan:hover,
@@ -6540,7 +6541,7 @@ body{
 	font-weight:700;
 	margin-bottom:0px;
 	text-transform:uppercase;
-	color:yellow;
+    color:yellow;
 }
 
 .content .plan.featured h2 {
@@ -6548,10 +6549,10 @@ body{
 }
 
 .content .plan p {
-	color: white;
-	margin-bottom: 16px;
-	font-weight: 900;
-	font-size: x-large;
+    color: white;
+    margin-bottom: 16px;
+    font-weight: 900;
+    font-size: x-large;
 	/*text-align: justify;*/
 }
 
@@ -6603,11 +6604,11 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: lightcyan;
-		opacity: 0.5;
-		filter: alpha(opacity=50); /* For IE8 and earlier */
-		width: 80%;
-		margin: auto;
+		background-color: rgba(224, 255, 255, 0.5);
+        /*opacity: 0.5;*/
+        filter: alpha(opacity=50); /* For IE8 and earlier */
+        width: 80%;
+        margin: auto;
 }
 
 #homeOwnersPriceTable td,#homeOwnersPriceTable p {
@@ -6617,7 +6618,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-		font-size: x-large;
+        font-size: x-large;
 }
 
 #homeOwnersPriceTable th,#homeOwnersPriceTable p {
@@ -6627,7 +6628,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-		font-size: x-large;
+        font-size: x-large;
 }
 
 #servicesHomeOwnersPriceTable {
@@ -6640,8 +6641,8 @@ body{
 		overflow:auto;
 		height: 400px;
 		font-weight: 900;
-		width: 100%;
-		margin: auto;
+        width: 100%;
+        margin: auto;
 
 }
 #carInsurancePriceTable {
@@ -6650,11 +6651,11 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: lightcyan;
-		opacity: 0.5;
-		filter: alpha(opacity=50); /* For IE8 and earlier */        
-		width: 80%;
-		margin: auto;
+		background-color: rgba(224, 255, 255, 0.5);
+        /*opacity: 0.5;*/
+        filter: alpha(opacity=50); /* For IE8 and earlier */        
+        width: 80%;
+        margin: auto;
 
 }
 
@@ -6665,7 +6666,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-		font-size: x-large;
+	    font-size: x-large;
 }
 
 #servicesCarInsurancePriceTable {
@@ -6698,11 +6699,11 @@ body{
 		border-style: outset;
 		border-color: black;
 		border-width: thin;
-		background-color: lightcyan;
-		opacity: 0.5;
-		filter: alpha(opacity=50); /* For IE8 and earlier */
-		width: 80%;
-		margin: auto;
+		background-color: rgba(224, 255, 255, 0.5);
+        /*opacity: 0.5;*/
+        filter: alpha(opacity=50); /* For IE8 and earlier */
+        width: 80%;
+        margin: auto;
 
 
 }
@@ -6714,7 +6715,7 @@ body{
 		border-width: thin;
 		color: black;
 		font-weight: 900;
-		font-size: x-large;
+        font-size: x-large;
 }
 
 #servicesCondoInsurancePriceTable {
@@ -6819,8 +6820,16 @@ body{
 	margin-bottom: 0px;
 }
 
+#carInfoModal {
+    text-align: -webkit-center;
+    /*text-align: center;*/
+
+
+}
+
 #carInfoModalUl {
 	margin-bottom: -10px;
+
 }
 
 
@@ -6828,6 +6837,8 @@ body{
 	padding-bottom: 10px;
 	margin-bottom: 0px;
 	text-align: -webkit-center;
+    /*text-align: center;*/
+
 }
 
 #customerInfoModalBuyNowBtn {

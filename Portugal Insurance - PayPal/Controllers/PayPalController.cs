@@ -1,10 +1,17 @@
 ﻿using Portugal_Insurance___PayPal.Models;
+using Portugal_Insurance___PayPal.Models.ViewModels;
 using PayPal.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using System.Web.Configuration;
+using System.IO;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 //using Portugal_Insurance___PayPal.PayPal;
 //using PayPal.Api;
 
@@ -13,7 +20,7 @@ namespace Portugal_Insurance___PayPal.Controllers
     public class PayPalController : Controller
     {
         //GET: /Paypal/
-        
+        private Portugal_Insurance___PayPalContextDB db = new Portugal_Insurance___PayPalContextDB();
         public ActionResult Index()
         {
             return View();
@@ -122,7 +129,7 @@ namespace Portugal_Insurance___PayPal.Controllers
                 //to authenticate the payment to a factilitator account.
                 //An access token could be an alphanumeric string
 
-                APIContext apiContext = PayPalConfiguration.GetAPIContext();
+                APIContext apiContext = Configuration.GetAPIContext();
 
                 //Create is a Payment class function which actually sends the payment details
                 //to the PayPal API for the payment. The function is passed with the ApiContext
@@ -147,10 +154,95 @@ namespace Portugal_Insurance___PayPal.Controllers
             return View("SuccessView");
         }
 
+        public ActionResult SuccessView()
+        {
+            String authToken = WebConfigurationManager.AppSettings["PDTToken"];
+
+            //read in txn token from querystring
+            String txToken = Request.QueryString.Get("tx");
+            PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
+            string[] splitCustom = {};
+            int vehicleValue = 0;
+            string vinNumber = "", carYear = "", carMake = "", carModel = "";
+            DateTime startDate = DateTime.Now, endDate = DateTime.Now;
+            if (confirmacion != null)
+            {
+                //var poliza = db.AutomobilePolicies.Find(db.AutomobilePolicies.Where( pol => pol.clientID == null));
+                //AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
+                AutomobilePolicy poliza = db.AutomobilePolicies.FirstOrDefault(pol => pol.Id == null);
+
+
+                //var currentUserId = User.Identity.GetUserId()
+                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
+                var currentUser = manager.FindById(User.Identity.GetUserId());
+                ViewBag.EmailID = currentUser.Email;
+
+                String customList = confirmacion.Custom.ToString();
+                splitCustom = customList.Split(',');
+
+                for (int i = 0; i < splitCustom.Length; i++)
+                {
+                    vehicleValue = int.Parse(splitCustom[0]);
+                    vinNumber = splitCustom[1].ToString();
+                    carYear = splitCustom[2].ToString();
+                    carMake = splitCustom[3].ToString();
+                    carModel = splitCustom[4].ToString();
+                    startDate = DateTime.Parse(splitCustom[5]);
+                    endDate = DateTime.Parse(splitCustom[6]);
+                }
+                //Se le asigna a una poliza el cliente logeado que acaba de pagar
+                poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
+                poliza.Id = User.Identity.GetUserId().ToString();
+                poliza.carMake = carMake;
+                poliza.carModel = carModel;
+                poliza.carYear = carYear;
+                poliza.policyEndingDate = endDate;
+                poliza.policySold = true;
+                poliza.policySoldDate = DateTime.Now;
+                poliza.policyStartingDate = startDate;
+                poliza.vehicleValue = vehicleValue;
+                poliza.vehicleVin = vinNumber;
+                db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+
+
+
+            }
+            /*
+            String query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
+                                  txToken, authToken);
+
+            // Create the request back
+            string url = WebConfigurationManager.AppSettings["PayPalSubmitUrl"];
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+
+            // Set values for the request back
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.ContentLength = query.Length;
+            */
+            // Write the request back IPN strings
+            /* StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
+                                      System.Text.Encoding.ASCII);
+             stOut.Write(query);
+             stOut.Close();*/
+
+            // Do the request to PayPal and get the response
+            /*StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
+            String strResponse = stIn.ReadToEnd();
+            stIn.Close();*/
+
+
+            ViewBag.confirmacion = confirmacion;
+            ViewData["custom"] = splitCustom; 
+            return View();
+        }
+
         public ActionResult PaymentWithPaypal()
         {
             //getting the apiContext as earlier
-            APIContext apiContext = PayPalConfiguration.GetAPIContext();
+            APIContext apiContext = Configuration.GetAPIContext();
 
             try
             {

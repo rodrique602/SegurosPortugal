@@ -32,5 +32,7 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = " Total ")]
         public decimal? total { get; set; }
 
+       
+
     }
 }
