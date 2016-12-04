@@ -1,10 +1,12 @@
 ﻿@using System.Configuration;
+@using Portugal_Insurance___PayPal.Models.ViewModels;
 @{
     ViewBag.Title = "SuccessView";
     //Layout = "~/Views/Shared/_Layout.cshtml";
     Portugal_Insurance___PayPal.Models.PDTHolder confirmacion =
         (Portugal_Insurance___PayPal.Models.PDTHolder)ViewBag.confirmacion;
     //String[] custom = ViewBag.custom;
+    VMAutoPolicyInfo policyInfo = ViewBag.policyInfo;
 }
 
 

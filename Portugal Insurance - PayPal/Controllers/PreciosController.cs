@@ -56,46 +56,28 @@ namespace Portugal_Insurance___PayPal.Controllers
         // GET: /Precios/Details/5
         public static decimal PolicyFinalTotalVar;
         //public ActionResult Details(String vinNumberTB = "", decimal info.vehicleValue = 0, DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null, int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
-            public ActionResult Details(VMAutoPolicyInfo info)
+            public ActionResult Details(VMAutoPolicyInfo info, String numDiasDeCobertura)
         {
-            /*if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }*/
-            if (info.vehicleValue == null)
+            if (info.vehicleValue == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            //By default the starting date is today
             if (info.startingDate == null)
             {
                 info.startingDate = DateTime.Now;
             }
-
-            //Solo es una variable de prueba
-            //PolicyTotal = policyTotalTB;
-
-            //ViewBag.PolicyTotalVB = PolicyFinalTotalVar;
-
-            //ViewBag.PolicyTotalVB = policyTotalTB;
-
-
+            
             ViewBag.info = info;
-
-
+            int numDias = int.Parse(numDiasDeCobertura);
             //Aqui obtenemos los dias de las fechas y calculamos la diferiencia entre los dos
+            DateTime date1 = info.startingDate;
+            DateTime date2 = date1.AddDays(numDias);
 
-       
-            string numdias = Request["diasDeCobertura"];
-            int numDiasCobertura = int.Parse(numdias);
-            DateTime date1 = System.Convert.ToDateTime(info.startingDate);
-            DateTime date2 = date1.AddDays(numDiasCobertura);
             info.endingDate = date2;
 
-            var days = date2.Subtract(date1).TotalDays;
-            var days2 = date1.Subtract(date1).TotalDays;
-
-            ViewBag.days = days;
-            int day = Convert.ToInt32(days);
+            ViewBag.days = numDias;
 
             if (date1 < DateTime.Now)
             {
@@ -109,7 +91,6 @@ namespace Portugal_Insurance___PayPal.Controllers
             ViewBag.Date1 = date1;
             ViewBag.Date2 = date2;
 
-
             //Busqueda de precios 1. FULL COVERAGE y Liability Only Por DIA y por filtro info.vehicleValue
             Precios preciosFCPorDia;
             Precios preciosliabilityOnlyPorDia;
@@ -122,88 +103,90 @@ namespace Portugal_Insurance___PayPal.Controllers
             Precios preciosLiability1LicensePorAnio;
             Precios preciosLiability2LicensePorAnio;
             
-            if (days <= 0)
+
+            /*Annual Policies*/
+            preciosFCPorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual");
+
+            ViewBag.PreciosFCPorAnio = preciosFCPorAnio.total;
+
+
+            preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual W Trailer or Tow");
+
+            ViewBag.PreciosFCPorAnioWTow = preciosFCPorAnioWTow.total;
+
+
+            preciosLiability1LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 1 License");
+
+            ViewBag.PreciosLiability1LicensePorAnio = preciosLiability1LicensePorAnio.total;
+
+
+            preciosLiability2LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 2 Licence");
+
+            ViewBag.PreciosLiability2LicensePorAnio = preciosLiability2LicensePorAnio.total;
+
+
+            preciosLiabilityVehiclePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle per Year");
+
+            ViewBag.PreciosLiabilityVehiclePorAnio = preciosLiabilityVehiclePorAnio.total;
+
+
+            preciosLiabilityVehiclePorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle W Trailer or Tow");
+
+            ViewBag.PreciosLiabilityVehiclePorAnioWTow = preciosLiabilityVehiclePorAnioWTow.total;
+            
+
+
+            //For diarios policies
+            if (numDias > 0)
             {
-                preciosFCPorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual");
-
-                ViewBag.PreciosFCPorAnio = preciosFCPorAnio.total;
-
-
-                preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual W Trailer or Tow");
-
-                ViewBag.PreciosFCPorAnioWTow = preciosFCPorAnioWTow.total;
-
-
-                preciosLiability1LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 1 License");
-
-                ViewBag.PreciosLiability1LicensePorAnio = preciosLiability1LicensePorAnio.total;
-
-
-                preciosLiability2LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 2 Licence");
-
-                ViewBag.PreciosLiability2LicensePorAnio = preciosLiability2LicensePorAnio.total;
-
-
-                preciosLiabilityVehiclePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle per Year");
-
-                ViewBag.PreciosLiabilityVehiclePorAnio = preciosLiabilityVehiclePorAnio.total;
-
-
-                preciosLiabilityVehiclePorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle W Trailer or Tow");
-
-                ViewBag.PreciosLiabilityVehiclePorAnioWTow = preciosLiabilityVehiclePorAnioWTow.total;
-
-                return View(preciosFCPorAnio);            
-           
-            }
-            if (numDiasCobertura > 0 || numDiasCobertura <= 0)
-            {
-                preciosFCPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= info.vehicleValue && pre.valorMaximo >= info.vehicleValue && pre.dias == numDiasCobertura && pre.coverageType == "Full Coverage Per Day");
+                //For Daily Policies
+                preciosFCPorDia = db.Precios.FirstOrDefault(pre => pre.valorMinimo <= info.vehicleValue && pre.valorMaximo >= info.vehicleValue && pre.dias == numDias && pre.coverageType == "Full Coverage Per Day");
 
                 ViewBag.PreciosFCPorDia = preciosFCPorDia.total;
 
 
-                preciosliabilityOnlyPorDia = db.Precios.FirstOrDefault(pre => pre.dias == numDiasCobertura && pre.coverageType == "Liability Only per day");
+                preciosliabilityOnlyPorDia = db.Precios.FirstOrDefault(pre => pre.dias == numDias && pre.coverageType == "Liability Only per day");
 
                 ViewBag.PreciosliabilityOnlyPorDia = preciosliabilityOnlyPorDia.total;
 
 
-                preciosFCPorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual");
+                //preciosFCPorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual");
 
-                ViewBag.PreciosFCPorAnio = preciosFCPorAnio.total;
-
-
-                preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual W Trailer or Tow");
-
-                ViewBag.PreciosFCPorAnioWTow = preciosFCPorAnioWTow.total;
+                //ViewBag.PreciosFCPorAnio = preciosFCPorAnio.total;
 
 
-                preciosLiability1LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 1 License");
+                //preciosFCPorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo <= info.vehicleValue && precio.valorMaximo >= info.vehicleValue && precio.coverageType == "Full Coverage Annual W Trailer or Tow");
 
-                ViewBag.PreciosLiability1LicensePorAnio = preciosLiability1LicensePorAnio.total;
-
-
-                preciosLiability2LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 2 Licence");
-
-                ViewBag.PreciosLiability2LicensePorAnio = preciosLiability2LicensePorAnio.total;
+                //ViewBag.PreciosFCPorAnioWTow = preciosFCPorAnioWTow.total;
 
 
-                preciosLiabilityVehiclePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle per Year");
+                //preciosLiability1LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 1 License");
 
-                ViewBag.PreciosLiabilityVehiclePorAnio = preciosLiabilityVehiclePorAnio.total;
+                //ViewBag.PreciosLiability1LicensePorAnio = preciosLiability1LicensePorAnio.total;
 
 
-                preciosLiabilityVehiclePorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle W Trailer or Tow");
+                //preciosLiability2LicensePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability 2 Licence");
 
-                ViewBag.PreciosLiabilityVehiclePorAnioWTow = preciosLiabilityVehiclePorAnioWTow.total;
+                //ViewBag.PreciosLiability2LicensePorAnio = preciosLiability2LicensePorAnio.total;
+
+
+                //preciosLiabilityVehiclePorAnio = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle per Year");
+
+                //ViewBag.PreciosLiabilityVehiclePorAnio = preciosLiabilityVehiclePorAnio.total;
+
+
+                //preciosLiabilityVehiclePorAnioWTow = db.Precios.FirstOrDefault(precio => precio.valorMinimo == 0 && precio.valorMaximo == 0 && precio.dias == 0 && precio.coverageType == "Liability Vehicle W Trailer or Tow");
+
+                //ViewBag.PreciosLiabilityVehiclePorAnioWTow = preciosLiabilityVehiclePorAnioWTow.total;
 
                 //int diasCobertura = date1 + numdias;
                 //Manda el resultado de la busqueda para ser mostrado en la vista
-                return View(preciosFCPorDia);
 
             }
-                return View(ViewBag.PreciosFCPorAnio, ViewBag.PreciosliabilityOnlyPorDia,ViewBag.PolicyTotalTB);
-            }
+
+            //ViewBag.policyTotalTB = algo; /**PENDIENTE**/
+            return View();
+        }
 
 
         // GET: /Precios/Create

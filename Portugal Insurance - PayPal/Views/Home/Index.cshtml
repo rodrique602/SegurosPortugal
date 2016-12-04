@@ -419,8 +419,8 @@
                                         <label for="startingDate"><span class="calendarIcon btn3d glyphicon glyphicon-calendar icon-mini-effect icon-effect-1"></span></label>
                                         <input type="date" placeholder="Enter Policy Starting Date" class="form-control" id="startingDate" name="startingDate">
                                     </div>
-                                    <div class="form-group" id="diasDeCobertura">
-                                        @Html.DropDownList("diasDeCobertura", new List<SelectListItem>
+                                    <div class="form-group" id="numDiasDeCobertura">
+                                        @Html.DropDownList("numDiasDeCobertura", new List<SelectListItem>
                                     {
                                         new SelectListItem{ Text = "Select Number of Coverage Days", Value = "0", Selected = true},
                                         new SelectListItem{ Text = "Annual", Value = "0"},

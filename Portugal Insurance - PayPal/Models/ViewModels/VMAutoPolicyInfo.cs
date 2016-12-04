@@ -20,8 +20,20 @@ namespace Portugal_Insurance___PayPal.Models.ViewModels
             public String coverageType { get; set; }
 
             public decimal policyTotal { get; set; }
-            public String email { get; set;
-            }
+            public String email { get; set;  }
+
+        public VMAutoPolicyInfo() { }
+
+        public VMAutoPolicyInfo(String[] customData)
+        {
+            this.vehicleValue = int.Parse(customData[0]);
+            this.vinNumber = customData[1].ToString();
+            this.carYears = int.Parse(customData[2].ToString());
+            this.carMakes = customData[3].ToString();
+            this.carModels = customData[4].ToString();
+            this.startingDate = DateTime.Parse(customData[5]);
+            this.endingDate = DateTime.Parse(customData[6]);
+        }
 
 
     }
