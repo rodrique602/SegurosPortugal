@@ -52,7 +52,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
-        public ActionResult Create([Bind(Include="automobilePolicyID,vehicleValue,vehicleVin,carYear,carMake,carModel,policyFolio,policySold,policySoldDate,policyStartingDate,policyEndingDate,clientID")] AutomobilePolicy automobilepolicy)
+        public ActionResult Create([Bind(Include = "automobilePolicyID,vehicleValue,vehicleVin,carYear,carMake,carModel,policyFolio,policySold,policySoldDate,policyStartingDate,policyEndingDate,clientID")] AutomobilePolicy automobilepolicy)
         {
             if (ModelState.IsValid)
             {
