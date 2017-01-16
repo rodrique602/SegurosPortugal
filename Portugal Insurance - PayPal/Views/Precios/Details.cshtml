@@ -9,8 +9,8 @@
     //CHANGE THIS BOOLEAN allowPayment to something that checks if the user is logged in or not with isAuthenticated LOOK IT UP!!
 
     Boolean allowPayment = false;
-    if (User.IsInRole(AccountRolesNames.CLIENT) || User.IsInRole(AccountRolesNames.ADMINISTRATOR) || User.IsInRole(AccountRolesNames.SALESMANAGER))
-    //if (User.Identity.IsAuthenticated)
+    //if (User.IsInRole(AccountRolesNames.CLIENT) || User.IsInRole(AccountRolesNames.ADMINISTRATOR) || User.IsInRole(AccountRolesNames.SALESMANAGER))
+    if (User.Identity.IsAuthenticated)
     {
         allowPayment = true;
 
@@ -90,23 +90,23 @@
 </head>
 <body>
     @*<div class="container">
-        <h4>Precios</h4>
+            <h4>Precios</h4>
 
-        <table id="detailsTable" class="table table-striped table-hover table-responsive table-bordered">
-            <tr class="success">
-    </div>
-    <div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.precioID }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>
-    </div>*@
+            <table id="detailsTable" class="table table-striped table-hover table-responsive table-bordered">
+                <tr class="success">
+        </div>
+        <div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.precioID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>*@
 
     <br /><br /><br />
 
 
     <!-- Start Page Banner-->
-    <div class="page-bannerr" style="padding:0px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="page-bannerr" style="padding:59px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -178,12 +178,9 @@
                                 </tr>
                             </table>
 
-                            @*@if (!User.Identity.IsAuthenticated)*@
-                            @if (User.IsInRole(AccountRolesNames.CLIENT) || User.IsInRole(AccountRolesNames.ADMINISTRATOR) || User.IsInRole(AccountRolesNames.SALESMANAGER))
-                            {
 
-                            }
-                            else
+                            @*@if (User.IsInRole(AccountRolesNames.CLIENT) || User.IsInRole(AccountRolesNames.ADMINISTRATOR) || User.IsInRole(AccountRolesNames.SALESMANAGER))*@
+                            @if (!User.Identity.IsAuthenticated)
                             {
                                 using (Html.BeginForm("Register", "Account", FormMethod.Post))
                                 {
@@ -191,7 +188,7 @@
                                 }
 
                             }
-                            
+
 
                             <!--FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE DAILY INSURANCE POLICIES-->
 
@@ -294,283 +291,283 @@
                                     </tr>
                                 }
 
-                                    @*FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE ANNUAL INSURANCE POLICIES*@
-                                    <tr class="success" style="text-align: center">
-                                        @*<th style="text-align: center">
-                                                @Html.DisplayNameFor(model => model.coverageType)
-                                            </th>*@
+                                @*FROM HERE ON DOWN WE GENERATE THE BIG GREEN 3D BUY NOW BUTTONS THAT OPENS THE MODAL FOR ALL THE ANNUAL INSURANCE POLICIES*@
+                                <tr class="success" style="text-align: center">
+                                    @*<th style="text-align: center">
+                                            @Html.DisplayNameFor(model => model.coverageType)
+                                        </th>*@
 
-                                        <td>
-                                            <div class="detailsPageCoverageType">
-                                                <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Full Coverage Per  Year | Total=$@ViewBag.PreciosFCPorAnio
-                                                        <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                                            <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorAnio">
-                                                            <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                                        </form>-->
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    <td>
+                                        <div class="detailsPageCoverageType">
+                                            <ul class="list-group text-center">
+                                                <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                    Full Coverage Per  Year | Total=$@ViewBag.PreciosFCPorAnio
+                                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorAnio">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                    </form>-->
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                            <div id="buyNowBtnDiv">
-                                                <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
-                                                        data-button="buynow"
-                                                        data-name="Annual Full Coverage Insurance Policy"
-                                                        data-quantity="1"
-                                                        data-amount="@ViewBag.PreciosFCPorAnio"
-                                                        data-currency="USD"
-                                                        data-shipping="0"
-                                                        data-tax="0"
-                                                        data-env="sandbox">
-                                                </script>-->
-                                                <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
-                                                   @(allowPayment ? "" : "disabled")
-                                                   data-policy-id="Annual Full Coverage Insurance Policy"
-                                                   data-button="buynow"
-                                                   data-name="Annual Full Coverage Insurance Policy"
-                                                   data-quantity="1"
-                                                   data-amount="@ViewBag.PreciosFCPorAnio"
-                                                   data-currency="USD"
-                                                   data-shipping="0"
-                                                   data-tax="0"
-                                                   data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
-                                                </a>
-                                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </div>
-                                        </td>
-
-
-                                        @*<th style="text-align: center">
-                                                @Html.DisplayNameFor(model => model.coverageType)
-                                            </th>*@
-
-                                        <td>
-                                            <div class="detailsPageCoverageType">
-                                                <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Full Coverage Per Year W Tow | Total=$@ViewBag.PreciosFCPorAnioWTow
-                                                        <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                                            <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorAnioWTow">
-                                                            <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                                        </form>-->
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div id="buyNowBtnDiv">
-                                                <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
-                                                        data-button="buynow"
-                                                        data-name="Annual Full Coverage With Tow Insurance Policy"
-                                                        data-quantity="1"
-                                                        data-amount="@ViewBag.PreciosFCPorAnioWTow"
-                                                        data-currency="USD"
-                                                        data-shipping="0"
-                                                        data-tax="0"
-                                                        data-env="sandbox">
-                                                </script>-->
-                                                <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
-                                                   @(allowPayment ? "" : "disabled")
-                                                   data-policy-id="Annual Full Coverage With Tow Insurance Policy"
-                                                   data-button="buynow"
-                                                   data-name="Annual Full Coverage With Tow Insurance Policy"
-                                                   data-quantity="1"
-                                                   data-amount="@ViewBag.PreciosFCPorAnioWTow"
-                                                   data-currency="USD"
-                                                   data-shipping="0"
-                                                   data-tax="0" data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
-                                                </a>
-                                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr class="success" style="text-align: center">
-                                        @*<th style="text-align: center">
-                                                @Html.DisplayNameFor(model => model.coverageType)
-                                            </th>*@
-
-                                        <td>
-                                            <div class="detailsPageCoverageType">
-                                                <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Vehicle Only Liability Per Year | Total=$@ViewBag.PreciosLiabilityVehiclePorAnio
-                                                        <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                                            <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiabilityVehiclePorAnio">
-                                                            <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                                        </form>-->
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-
-                                            <div id="buyNowBtnDiv">
-                                                <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                        <div id="buyNowBtnDiv">
+                                            <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
                                                     data-button="buynow"
-                                                    data-name="Vehicle Only Liability Per Year"
+                                                    data-name="Annual Full Coverage Insurance Policy"
                                                     data-quantity="1"
-                                                    data-amount="@ViewBag.PreciosLiabilityVehiclePorAnio"
+                                                    data-amount="@ViewBag.PreciosFCPorAnio"
                                                     data-currency="USD"
                                                     data-shipping="0"
                                                     data-tax="0"
                                                     data-env="sandbox">
-                                                </script>-->
-                                                <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
-                                                   @(allowPayment ? "" : "disabled")
-                                                   data-policy-id="Vehicle Only Liability Per Year"
-                                                   data-button="buynow"
-                                                   data-name="Vehicle Only Liability Per Year"
-                                                   data-quantity="1"
-                                                   data-amount="@ViewBag.PreciosLiabilityVehiclePorAnio"
-                                                   data-currency="USD"
-                                                   data-shipping="0"
-                                                   data-tax="0"
-                                                   data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
-                                                </a>
-                                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <div class="detailsPageCoverageType">
-                                                <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size:larger;">
-                                                        Vehicle Only Liability Per Year W Tow | Total=$@ViewBag.PreciosLiabilityVehiclePorAnioWTow
-                                                        <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                                            <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiabilityVehiclePorAnioWTow">
-                                                            <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                                        </form>-->
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div id="buyNowBtnDiv">
-                                                <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
-                                                        data-button="buynow"
-                                                        data-name="Vehicle Only Liability Per Year W Tow"
-                                                        data-quantity="1"
-                                                        data-amount="@ViewBag.PreciosLiabilityVehiclePorAnioWTow"
-                                                        data-currency="USD"
-                                                        data-shipping="0"
-                                                        data-tax="0"
-                                                        data-env="sandbox">
-                                                </script>-->
-                                                <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
-                                                   @(allowPayment ? "" : "disabled")
-                                                   data-policy-id="Vehicle Only Liability Per Year W Tow"
-                                                   data-button="buynow"
-                                                   data-name="Vehicle Only Liability Per Year W Tow"
-                                                   data-quantity="1"
-                                                   data-amount="@ViewBag.PreciosLiabilityVehiclePorAnioWTow"
-                                                   data-currency="USD"
-                                                   data-shipping="0"
-                                                   data-tax="0"
-                                                   data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
-                                                </a>
-                                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </script>-->
+                                            <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
+                                               @(allowPayment ? "" : "disabled")
+                                               data-policy-id="Annual Full Coverage Insurance Policy"
+                                               data-button="buynow"
+                                               data-name="Annual Full Coverage Insurance Policy"
+                                               data-quantity="1"
+                                               data-amount="@ViewBag.PreciosFCPorAnio"
+                                               data-currency="USD"
+                                               data-shipping="0"
+                                               data-tax="0"
+                                               data-env="sandbox">
+                                                <span class="fa fa-paypal"></span>
+                                            </a>
+                                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                        </div>
+                                    </td>
 
 
-                                    <tr class="success" style="text-align: center">
-                                        @*<th style="text-align: center">
-                                                @Html.DisplayNameFor(model => model.coverageType)
-                                            </th>*@
+                                    @*<th style="text-align: center">
+                                            @Html.DisplayNameFor(model => model.coverageType)
+                                        </th>*@
 
-                                        <td>
-                                            <div class="detailsPageCoverageType">
-                                                <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Liability 1 License Per Year | Total=$@ViewBag.PreciosLiability1LicensePorAnio
-                                                        <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                                            <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiability1LicensePorAnio">
-                                                            <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                                        </form>-->
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    <td>
+                                        <div class="detailsPageCoverageType">
+                                            <ul class="list-group text-center">
+                                                <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                    Full Coverage Per Year W Tow | Total=$@ViewBag.PreciosFCPorAnioWTow
+                                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosFCPorAnioWTow">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                    </form>-->
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                            <div id="buyNowBtnDiv">
-                                                <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
-                                                        data-button="buynow"
-                                                        data-name="Liability 1 License Per Year"
-                                                        data-quantity="1"
-                                                        data-amount="@ViewBag.PreciosLiability1LicensePorAnio"
-                                                        data-currency="USD"
-                                                        data-shipping="0"
-                                                        data-tax="0"
-                                                        data-env="sandbox">
-                                                </script>-->
-                                                <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
-                                                   @(allowPayment ? "" : "disabled")
-                                                   data-policy-id="Liability 1 License Per Year"
-                                                   data-button="buynow"
-                                                   data-name="Liability 1 License Per Year"
-                                                   data-quantity="1"
-                                                   data-amount="@ViewBag.PreciosLiability1LicensePorAnio"
-                                                   data-currency="USD"
-                                                   data-shipping="0"
-                                                   data-tax="0"
-                                                   data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
-                                                </a>
-                                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </div>
-                                        </td>
+                                        <div id="buyNowBtnDiv">
+                                            <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                                    data-button="buynow"
+                                                    data-name="Annual Full Coverage With Tow Insurance Policy"
+                                                    data-quantity="1"
+                                                    data-amount="@ViewBag.PreciosFCPorAnioWTow"
+                                                    data-currency="USD"
+                                                    data-shipping="0"
+                                                    data-tax="0"
+                                                    data-env="sandbox">
+                                            </script>-->
+                                            <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
+                                               @(allowPayment ? "" : "disabled")
+                                               data-policy-id="Annual Full Coverage With Tow Insurance Policy"
+                                               data-button="buynow"
+                                               data-name="Annual Full Coverage With Tow Insurance Policy"
+                                               data-quantity="1"
+                                               data-amount="@ViewBag.PreciosFCPorAnioWTow"
+                                               data-currency="USD"
+                                               data-shipping="0"
+                                               data-tax="0" data-env="sandbox">
+                                                <span class="fa fa-paypal"></span>
+                                            </a>
+                                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                        <td>
-                                            <div class="detailsPageCoverageType">
-                                                <ul class="list-group text-center">
-                                                    <li class="list-group-item" style="font-weight: 900; font-size: larger;">
-                                                        Liability 2 License Per Year | Total=$@ViewBag.PreciosLiability2LicensePorAnio
-                                                        <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                                            <input type="hidden" name="cmd" value="_s-xclick">
-                                                            <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiability2LicensePorAnio">
-                                                            <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                                                        </form>-->
-                                                    </li>
-                                                </ul>
-                                            </div>
 
-                                            <div id="buyNowBtnDiv">
-                                                <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
-                                                        data-button="buynow"
-                                                        data-name="Liability 2 License Per Year"
-                                                        data-quantity="1"
-                                                        data-amount="@ViewBag.PreciosLiability2LicensePorAnio"
-                                                        data-currency="USD"
-                                                        data-shipping="0"
-                                                        data-tax="0"
-                                                        data-env="sandbox">
-                                                </script>-->
-                                                <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
-                                                   @(allowPayment ? "" : "disabled")
-                                                   data-policy-id="Liability 2 License Per Year"
-                                                   data-button="buynow"
-                                                   data-name="Liability 2 License Per Year"
-                                                   data-quantity="1"
-                                                   data-amount="@ViewBag.PreciosLiability2LicensePorAnio"
-                                                   data-currency="USD"
-                                                   data-shipping="0"
-                                                   data-tax="0"
-                                                   data-env="sandbox">
-                                                    <span class="fa fa-paypal"></span>
-                                                </a>
-                                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                            </div>
-                                        </td>
-                                    </tr>
+                                <tr class="success" style="text-align: center">
+                                    @*<th style="text-align: center">
+                                            @Html.DisplayNameFor(model => model.coverageType)
+                                        </th>*@
+
+                                    <td>
+                                        <div class="detailsPageCoverageType">
+                                            <ul class="list-group text-center">
+                                                <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                    Vehicle Only Liability Per Year | Total=$@ViewBag.PreciosLiabilityVehiclePorAnio
+                                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiabilityVehiclePorAnio">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                    </form>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div id="buyNowBtnDiv">
+                                            <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                                data-button="buynow"
+                                                data-name="Vehicle Only Liability Per Year"
+                                                data-quantity="1"
+                                                data-amount="@ViewBag.PreciosLiabilityVehiclePorAnio"
+                                                data-currency="USD"
+                                                data-shipping="0"
+                                                data-tax="0"
+                                                data-env="sandbox">
+                                            </script>-->
+                                            <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
+                                               @(allowPayment ? "" : "disabled")
+                                               data-policy-id="Vehicle Only Liability Per Year"
+                                               data-button="buynow"
+                                               data-name="Vehicle Only Liability Per Year"
+                                               data-quantity="1"
+                                               data-amount="@ViewBag.PreciosLiabilityVehiclePorAnio"
+                                               data-currency="USD"
+                                               data-shipping="0"
+                                               data-tax="0"
+                                               data-env="sandbox">
+                                                <span class="fa fa-paypal"></span>
+                                            </a>
+                                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="detailsPageCoverageType">
+                                            <ul class="list-group text-center">
+                                                <li class="list-group-item" style="font-weight: 900; font-size:larger;">
+                                                    Vehicle Only Liability Per Year W Tow | Total=$@ViewBag.PreciosLiabilityVehiclePorAnioWTow
+                                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiabilityVehiclePorAnioWTow">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                    </form>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="buyNowBtnDiv">
+                                            <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                                    data-button="buynow"
+                                                    data-name="Vehicle Only Liability Per Year W Tow"
+                                                    data-quantity="1"
+                                                    data-amount="@ViewBag.PreciosLiabilityVehiclePorAnioWTow"
+                                                    data-currency="USD"
+                                                    data-shipping="0"
+                                                    data-tax="0"
+                                                    data-env="sandbox">
+                                            </script>-->
+                                            <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
+                                               @(allowPayment ? "" : "disabled")
+                                               data-policy-id="Vehicle Only Liability Per Year W Tow"
+                                               data-button="buynow"
+                                               data-name="Vehicle Only Liability Per Year W Tow"
+                                               data-quantity="1"
+                                               data-amount="@ViewBag.PreciosLiabilityVehiclePorAnioWTow"
+                                               data-currency="USD"
+                                               data-shipping="0"
+                                               data-tax="0"
+                                               data-env="sandbox">
+                                                <span class="fa fa-paypal"></span>
+                                            </a>
+                                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                                <tr class="success" style="text-align: center">
+                                    @*<th style="text-align: center">
+                                            @Html.DisplayNameFor(model => model.coverageType)
+                                        </th>*@
+
+                                    <td>
+                                        <div class="detailsPageCoverageType">
+                                            <ul class="list-group text-center">
+                                                <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                    Liability 1 License Per Year | Total=$@ViewBag.PreciosLiability1LicensePorAnio
+                                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiability1LicensePorAnio">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                    </form>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="buyNowBtnDiv">
+                                            <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                                    data-button="buynow"
+                                                    data-name="Liability 1 License Per Year"
+                                                    data-quantity="1"
+                                                    data-amount="@ViewBag.PreciosLiability1LicensePorAnio"
+                                                    data-currency="USD"
+                                                    data-shipping="0"
+                                                    data-tax="0"
+                                                    data-env="sandbox">
+                                            </script>-->
+                                            <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
+                                               @(allowPayment ? "" : "disabled")
+                                               data-policy-id="Liability 1 License Per Year"
+                                               data-button="buynow"
+                                               data-name="Liability 1 License Per Year"
+                                               data-quantity="1"
+                                               data-amount="@ViewBag.PreciosLiability1LicensePorAnio"
+                                               data-currency="USD"
+                                               data-shipping="0"
+                                               data-tax="0"
+                                               data-env="sandbox">
+                                                <span class="fa fa-paypal"></span>
+                                            </a>
+                                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="detailsPageCoverageType">
+                                            <ul class="list-group text-center">
+                                                <li class="list-group-item" style="font-weight: 900; font-size: larger;">
+                                                    Liability 2 License Per Year | Total=$@ViewBag.PreciosLiability2LicensePorAnio
+                                                    <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="@ViewBag.PreciosLiability2LicensePorAnio">
+                                                        <input type="image" src="https://www.sandbox.paypal.com/en_US/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                    </form>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div id="buyNowBtnDiv">
+                                            <!--<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=8P5MYXSTUR8FW"
+                                                    data-button="buynow"
+                                                    data-name="Liability 2 License Per Year"
+                                                    data-quantity="1"
+                                                    data-amount="@ViewBag.PreciosLiability2LicensePorAnio"
+                                                    data-currency="USD"
+                                                    data-shipping="0"
+                                                    data-tax="0"
+                                                    data-env="sandbox">
+                                            </script>-->
+                                            <a href="#my_modal" data-toggle="modal" class="btn btn-success btn-sm btn3d" id="buyNowBtn"
+                                               @(allowPayment ? "" : "disabled")
+                                               data-policy-id="Liability 2 License Per Year"
+                                               data-button="buynow"
+                                               data-name="Liability 2 License Per Year"
+                                               data-quantity="1"
+                                               data-amount="@ViewBag.PreciosLiability2LicensePorAnio"
+                                               data-currency="USD"
+                                               data-shipping="0"
+                                               data-tax="0"
+                                               data-env="sandbox">
+                                                <span class="fa fa-paypal"></span>
+                                            </a>
+                                            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                        </div>
+                                    </td>
+                                </tr>
                             </table>
                             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                             <!--<button type="submit" id="buyNowBtn" class="btn btn-success btn-lg btn3d"><span class="fa fa-paypal"></span> BUY NOW!!</button>-->
@@ -594,7 +591,8 @@
 
                                         @using (Html.BeginForm("Details", "Precios", FormMethod.Post))
                                         {
-                                            <div class="form-group" id="customerInfoModal">
+                                            <div class="form-group" id="
+                                                 erInfoModal">
                                                 <label class="control-label">Policy Type</label>
                                                 <div class="controls">
                                                     <input type="text" class="form-control" id="policyTypeTB" readonly name="policyTypeTB" placeholder="policy type" value="" />
@@ -615,7 +613,9 @@
                                             </div>-->
                                             <ul class="list-group text-center" id="carInfoModalUl">
                                                 <li class="list-group-item"><i class=""></i> Vehicle Value Entered = @info.vehicleValue</li>
+                                                <li class="list-group-item"><i class=""></i>Vehicle Type = @info.vehicleType</li>
                                                 <li class="list-group-item"><i class=""></i>Vehicle ID Number (VIN) = @info.vinNumber</li>
+                                                <li class="list-group-item"><i class=""></i>Vehicle Plates = @info.vehiclePlate</li>
                                                 <li class="list-group-item"><i class=""></i>Car Year = @info.carYears</li>
                                                 <li class="list-group-item"><i class=""></i>Car Make = @info.carMakes</li>
                                                 <li class="list-group-item"><i class=""></i>Car Model = @info.carModels</li>
@@ -747,15 +747,17 @@
                                         </script>
                                         @{
                                             string vehicleCost = info.vehicleValue.ToString();
+                                            string vehicleType = info.vehicleType.Replace(" ", "-");
                                             string vinNumber = info.vinNumber;
+                                            string vehiclePlate = info.vehiclePlate.Replace(" ", "-");
                                             string carYear = info.carYears.ToString();
                                             string carMake = info.carMakes;
-                                            string carModel = info.carModels;
+                                            string carModel = info.carModels.Replace(" ", "-");
                                             //string coverageType = info.coverageType;
                                             string startDate = info.startingDate.ToShortDateString();
                                             string endDate = info.endingDate.ToShortDateString();
-                                            String customField = vehicleCost + "," + vinNumber + "," + carYear + "," + 
-                                                   carMake + "," +carModel + "," + startDate + "," + endDate /*+ "," + coverageType*/;
+                                            String customField = vehicleCost + "," + vinNumber + "," + carYear + "," +
+                                                   carMake + "," + carModel + "," + startDate + "," + endDate + "," + vehicleType + "," + vehiclePlate;
                                         }
                                         <div id="#customerInfoModalBuyNowBtn">
                                             <input type="submit" value="Create" class="btn btn-default" />

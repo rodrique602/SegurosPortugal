@@ -47,7 +47,21 @@ namespace Portugal_Insurance___PayPal.Models
 
         [Display(Name = "Policy Coverage Type ")]
         public String coverageType { get; set; }
-        
+
+        [Display(Name = "Policy Total Cost ")]
+        public decimal? policyTotalCost { get; set; }
+
+
+        [Display(Name = "PayPal Transaction Id ")]
+        public string payPalTransactionId { get; set; }
+
+        [Display(Name = "Vehicle Type")]
+        public string vehicleType { get; set; }
+
+        [Display(Name = "Vehicle Plate Number")]
+        public string vehiclePlate { get; set; }
+
+
         //To one movement correspond one user
         public String Id { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

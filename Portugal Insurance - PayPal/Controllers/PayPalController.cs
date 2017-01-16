@@ -163,53 +163,82 @@ namespace Portugal_Insurance___PayPal.Controllers
             PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
             string[] splitCustom = {};
             int vehicleValue = 0;
-            string vinNumber = "", carYear = "", carMake = "", carModel = "",coverageType = "";
+            string vinNumber = "", carYear = "", carMake = "", carModel = "", coverageType = "", payPalTransactionId = "", vehicleType = "", vehiclePlate = "";
+            decimal policyTotalCost = 0;
             DateTime startDate = DateTime.Now, endDate = DateTime.Now;
+            AutomobilePolicy poliza = null;
             if (confirmacion != null)
             {
                 //var poliza = db.AutomobilePolicies.Find(db.AutomobilePolicies.Where( pol => pol.clientID == null));
                 //AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
-                AutomobilePolicy poliza = db.AutomobilePolicies.FirstOrDefault(pol => pol.Id == null);
+                 poliza = db.AutomobilePolicies.FirstOrDefault(pol => pol.Id == null);
 
-
-                //var currentUserId = User.Identity.GetUserId()
-                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
-                var currentUser = manager.FindById(User.Identity.GetUserId());
-                ViewBag.EmailID = currentUser.Email;
-
-                String customList = confirmacion.Custom.ToString();
-                splitCustom = customList.Split(',');
-
-                //VMAutoPolicyInfo policyInfo = new VMAutoPolicyInfo(splitCustom);
-                //ViewBag.policyInfo = policyInfo;
-
-                for (int i = 0; i < splitCustom.Length; i++)
+                if(poliza != null)
                 {
-                    vehicleValue = int.Parse(splitCustom[0]);
-                    vinNumber = splitCustom[1].ToString();
-                    carYear = splitCustom[2].ToString();
-                    carMake = splitCustom[3].ToString();
-                    carModel = splitCustom[4].ToString();
-                    //coverageType = splitCustom[5].ToString();
-                    startDate = DateTime.Parse(splitCustom[5]);
-                    endDate = DateTime.Parse(splitCustom[6]);
+                    //var currentUserId = User.Identity.GetUserId()
+                    var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
+                    var currentUser = manager.FindById(User.Identity.GetUserId());
+                    ViewBag.EmailID = currentUser.emailAddress;
+                    ViewBag.fullName = currentUser.fullName;
+                    ViewBag.address = currentUser.addressLine1;
+                    ViewBag.address2 = currentUser.addressLine2;
+                    ViewBag.city = currentUser.city;
+                    ViewBag.country = currentUser.country;
+                    ViewBag.license1 = currentUser.licenseNumber1;
+                    ViewBag.license2 = currentUser.licenseNumber2;
+                    ViewBag.phoneNumber = currentUser.PhoneNumber;
+                    ViewBag.state = currentUser.state;
+                    ViewBag.zipCode = currentUser.zipCode;
+
+                    String customList = confirmacion.Custom.ToString();
+                    splitCustom = customList.Split(',');
+
+                    VMAutoPolicyInfo policyInfo = new VMAutoPolicyInfo(splitCustom);
+                    ViewBag.policyInfo = policyInfo;
+
+                    for (int i = 0; i < splitCustom.Length; i++)
+                    {
+                        vehicleValue = int.Parse(splitCustom[0]);
+                        vinNumber = splitCustom[1].ToString();
+                        carYear = splitCustom[2].ToString();
+                        carMake = splitCustom[3].ToString();
+                        carModel = splitCustom[4].ToString();
+                        startDate = DateTime.Parse(splitCustom[5]);
+                        endDate = DateTime.Parse(splitCustom[6]);
+                        vehicleType = splitCustom[7].ToString();
+                        vehiclePlate = splitCustom[8].ToString();
+                        //coverageType = confirmacion.ItemName;
+
+                    }
+                    coverageType = confirmacion.ItemName;//We get converage type from paypal response
+                    policyTotalCost = (decimal)confirmacion.GrossTotal;//We get GrossTotal from paypal response
+                    payPalTransactionId = confirmacion.TransactionId;
+                    //Se le asigna a una poliza el cliente logeado que acaba de pagar
+                    //poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
+                    //poliza.Id = User.Identity.GetUserId().ToString();
+                    poliza.Id = currentUser.Id.ToString();
+                    poliza.carMake = carMake;
+                    poliza.carModel = carModel;
+                    poliza.carYear = carYear;
+                    poliza.policyEndingDate = endDate;
+                    poliza.policySold = true;
+                    poliza.policySoldDate = DateTime.Now;
+                    poliza.policyStartingDate = startDate;
+                    poliza.vehicleValue = vehicleValue;
+                    poliza.vehicleVin = vinNumber;
+                    poliza.vehicleType = vehicleType;
+                    poliza.vehiclePlate = vehiclePlate;
+                    poliza.coverageType = coverageType;
+                    poliza.policyTotalCost = policyTotalCost;
+                    poliza.payPalTransactionId = payPalTransactionId;
+                    db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                 }
-                /*coverageType = confirmacion.ItemName;*/ //We get converage type from paypal response
-                //Se le asigna a una poliza el cliente logeado que acaba de pagar
-                poliza.Id = manager.FindById(User.Identity.GetUserId().ToString()).Id;
-                poliza.Id = User.Identity.GetUserId().ToString();//currentUser.Id.ToString();
-                poliza.carMake = carMake;
-                poliza.carModel = carModel;
-                poliza.carYear = carYear;
-                poliza.policyEndingDate = endDate;
-                poliza.policySold = true;
-                poliza.policySoldDate = DateTime.Now;
-                poliza.policyStartingDate = startDate;
-                poliza.vehicleValue = vehicleValue;
-                poliza.vehicleVin = vinNumber;
-                //poliza.coverageType = coverageType;
-                db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                else
+                {
+                    ViewBag.error = "Please call us at: (###)###-####, there was a problem processing your order. /n"+
+                        "We apologize for the inconvinience." ;
+                }
             }
             /*
             String query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
@@ -237,7 +266,18 @@ namespace Portugal_Insurance___PayPal.Controllers
 
 
             ViewBag.confirmacion = confirmacion;
-            ViewData["custom"] = splitCustom;
+            ViewBag.vehicleValue = vehicleValue;
+            ViewBag.vinNumber = vinNumber;
+            ViewBag.carYear = carYear;
+            ViewBag.carMake = carMake;
+            ViewBag.carModel = carModel;
+            ViewBag.startDate = startDate.ToShortDateString();
+            ViewBag.endDate = endDate.ToShortDateString();
+            ViewBag.vehicleType = vehicleType;
+            ViewBag.vehiclePlate = vehiclePlate;
+            //ViewData["custom"] = splitCustom;
+            ViewBag.poliza = poliza;
+            ViewBag.policyFolio = poliza.policyFolio.ToString();
             return View();
         }
 

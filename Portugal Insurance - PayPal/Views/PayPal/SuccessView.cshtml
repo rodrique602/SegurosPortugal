@@ -1,5 +1,6 @@
 ﻿@using System.Configuration;
 @using Portugal_Insurance___PayPal.Models.ViewModels;
+@using Portugal_Insurance___PayPal.Models;
 @{
     ViewBag.Title = "SuccessView";
     //Layout = "~/Views/Shared/_Layout.cshtml";
@@ -112,7 +113,7 @@
 
                     <div class="row">
 
-                        <div class="col-md-7">
+                        <div class="col-md-12">
 
                             <!-- Classic Heading -->
                             <h4 class="classic-title"><span>Welcome To Our Agency</span></h4>
@@ -144,7 +145,6 @@
                                 <p>ItemName: @confirmacion.ItemName</p>
                                 <p>Custom: @confirmacion.Custom</p>*@
 
-
                                 <div class="contact_form">
                                     <div class="form_subtitle">
                                         Thank you for your payment.
@@ -152,126 +152,284 @@
                                         You may log into your account at www.paypal.com to view details of this transaction.
                                         Order Information
                                     </div>
+                                    @if (ViewBag.poliza != null)
+                                    {
+                                        <div class="dl-horizontal col-md-4">
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Payment Status:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.PaymentStatus" readonly />
+                                                    
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Business Email:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.BusinessEmail" readonly />
 
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Payment Status:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
+                                                </div>
+                                            </fieldset>
+                                            <hr/>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Item Name:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.ItemName" readonly />
 
-                                        <p>Payment Status: @confirmacion.PaymentStatus</p>
-                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Payment Gross Total:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.GrossTotal" readonly />
 
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Transaction Id:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Insured Policy Holder Name:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.fullName" readonly />
 
-                                        <p>TransactionId: @confirmacion.TransactionId</p>
-                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Address:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.address" readonly />
 
-                                    <div class="form_row">
-                                        <label class="contact"><strong>TxToken:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>State:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.state" readonly />
 
-                                        <p>TxToken: @confirmacion.TxToken</p>
-                                    </div>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>License Number:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.license1" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Car Year:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.carYear" readonly />
+
+                                                </div>
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Vehicle Type:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.vehicleType" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="dl-horizontal col-md-4">
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Transaction Id:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.TransactionId" readonly />
+                                                  
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Payer Email:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.PayerEmail" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <hr/>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Start Date:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.startDate" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Currency:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.Currency" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Buyer Email:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.EmailID" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Address Continued:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.address2" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Zip Code:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.zipCode" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Vehicle Value:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.vehicleValue" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Car Make:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.carMake" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Vehicle Plate:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.vehiclePlate" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="dl-horizontal col-md-4">
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Policy Folio Number:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.policyFolio" readonly />
+                                                    
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Receiver Email:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.ReceiverEmail" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <hr/>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>End Date:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.endDate " readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Payment Fee:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.PaymentFee" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Phone Number:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.phoneNumber" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>City:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.city" readonly />
+
+                                                </div>
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Country:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.country" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>VIN Number:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.vinNumber" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>Car Model:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.carModel" readonly />
+
+                                                </div>
+                                            </fieldset>
+
+                                            <fieldset class="form-group">
+                                                <label class="contact"><strong>License Number 2:</strong></label>
+                                                <div class="col-md-12">
+                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.license2" readonly />
+
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        /*<div class="form_row">
+                                            <label class="contact"><strong>Insured Policy Holder:</strong></label>
+                                            @*@ViewBag.result.PayerFirstName
+                                            
+                                        </div>*/
+                                        /*<div class="form_row">
+                                            <label class="contact"><strong>Custom:</strong></label>
+                                            @*@ViewBag.result.TransactionId*@
+
+                                            <p>Custom: @confirmacion.Custom</p>
+                                            @foreach (string custom in ViewData["custom"] as string[])
+                                            {
+                                                <li>
+                                                    @custom
+                                                </li>
+                                            }
+                                        </div>*/
 
 
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Invoice Number:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
 
-                                        <p>Invoice Number: @confirmacion.InvoiceNumber</p>
-                                    </div>
+                                        @*<p>License Number 2: @ViewBag.license2</p>*@
 
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Custom:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
+                                        /*<div class="form_row">
+                                            <label class="contact"><strong>Buyer Name:</strong></label>
+                                            @*@ViewBag.result.PayerFirstName*@
 
-                                        <p>Custom: @confirmacion.Custom</p>
-                                        @foreach (string custom in ViewData["custom"] as string[])
-                                        {
-                                            <li>
-                                                @custom
-                                            </li>
-                                        }
-                                    </div>
+                                            <p>Buyer Name: @ViewBag.fullName</p>
+                                        </div>*/
+                                        /*<div class="form_row">
+                                            <label class="contact"><strong>TxToken:</strong></label>
+                                            @*@ViewBag.result.TransactionId*@
+
+                                            <p>TxToken: @confirmacion.TxToken</p>
+                                        </div>*/
 
 
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Item Name:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
+                                        /*<div class="form_row">
+                                            <label class="contact"><strong>Buyer License Number:</strong></label>
+                                            @*@ViewBag.result.PayerLastName*@
 
-                                        <p>Item Name: @confirmacion.ItemName</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Subscriber Id:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
-
-                                        <p>Subscriber Id: @confirmacion.SubscriberId</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Business Email:</strong></label>
-                                        @*@ViewBag.result.PayerEmail*@
-
-                                        <p>Business Email: @confirmacion.BusinessEmail</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Receiver Email:</strong></label>
-                                        @*@ViewBag.result.PayerEmail*@
-
-                                        <p>Receiver Email: @confirmacion.ReceiverEmail</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Payer First Name:</strong></label>
-                                        @*@ViewBag.result.PayerFirstName*@
-
-                                        <p>Payer FirstName: @confirmacion.PayerFirstName</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Payer Last Name:</strong></label>
-                                        @*@ViewBag.result.PayerLastName*@
-
-                                        <p>Payer LastName: @confirmacion.PayerLastName</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Payer Email:</strong></label>
-                                        @*@ViewBag.result.PayerEmail*@
-
-                                        <p>Payer Email: @confirmacion.PayerEmail</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Payment Gross Total:</strong></label>
-                                        @*@ViewBag.result.GrossTotal*@
-
-                                        <p>Gross Total: @confirmacion.GrossTotal</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Currency:</strong></label>
-                                        @*@ViewBag.result.TransactionId*@
-
-                                        <p>Currency: @confirmacion.Currency</p>
-                                    </div>
-
-                                    <div class="form_row">
-                                        <label class="contact"><strong>Payment Fee</strong></label>
-                                        @*@ViewBag.result.PaymentFee*@
-
-                                        <p>Payment Fee: @confirmacion.PaymentFee</p>
-                                    </div>
+                                            <p>License1: @ViewBag.license1</p>
+                                            <p>License2: @ViewBag.license2</p>
+                                        </div>*/
 
 
-
-                                </div>
+                                    }
+                                    else
+                                    {
+                                            @ViewBag.error
+                                            }
+                                        </div>
 
                             </div>
-
+                            <hr />
                             <p>Lorem Ipsum is simply dummy text of the <a title="Simple Tooltip" href="#" class="itl-tooltip" data-placement="top">printing</a> and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                             <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Sed ut perspiciatis unde omnis iste natus error sit volup accusantium. Lorem ipsum dolor sit amet, consectetur.</p>
 

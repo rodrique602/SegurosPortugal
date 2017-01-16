@@ -6,7 +6,7 @@ namespace Portugal_Insurance___PayPal.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Nombre de Usuario")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
     }
 
@@ -14,17 +14,17 @@ namespace Portugal_Insurance___PayPal.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contaseña Actual")]
+        [Display(Name = "Enter Your password")]
         public string OldPassword { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Contaseña Nueva")]
+        [Display(Name = "Enter New Password")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar Nueva Contaseña")]
+        [Display(Name = "Confirm New Password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
@@ -33,32 +33,32 @@ namespace Portugal_Insurance___PayPal.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Nombre de Usuario")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contaseña")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Recuerdame")]
+        [Display(Name = "Remember me")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Nombre de Usuario")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Contaseña")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar Contaseña")]
+        [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
@@ -67,9 +67,9 @@ namespace Portugal_Insurance___PayPal.Models
         public String fullName { get; set; }
 
         [Required]
-        [Display(Name = "address Line1")]
+        [Display(Name = "Address Line 1")]
         public String addressLine1 { get; set; }
-        [Display(Name = "address Line1")]
+        [Display(Name = "Address Line 2")]
         public String addressLine2 { get; set; }
 
         [Required]

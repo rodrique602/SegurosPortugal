@@ -56,7 +56,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         // GET: /Precios/Details/5
         public static decimal PolicyFinalTotalVar;
         //public ActionResult Details(String vinNumberTB = "", decimal info.vehicleValue = 0, DateTime? startingDateTB = null, DateTime? endingDateTB = null, int? diasDeCobertura = null, int caryears = 0, String carmakes = "", String carmodels = "", String coverageType = "", decimal policyTot = 0)
-            public ActionResult Details(VMAutoPolicyInfo info, String numDiasDeCobertura)
+            public ActionResult Details(VMAutoPolicyInfo info, String numDiasDeCobertura/*, String vehicleType*/)
         {
             if (info.vehicleValue == 0)
             {
@@ -71,6 +71,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             
             ViewBag.info = info;
             int numDias = int.Parse(numDiasDeCobertura);
+            //string vehicleKind = vehicleType;
             //Aqui obtenemos los dias de las fechas y calculamos la diferiencia entre los dos
             DateTime date1 = info.startingDate;
             DateTime date2 = date1.AddDays(numDias);

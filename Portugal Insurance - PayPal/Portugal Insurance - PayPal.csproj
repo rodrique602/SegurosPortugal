@@ -252,6 +252,34 @@
     <Compile Include="Migrations\201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.Designer.cs">
       <DependentUpon>201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612050857244_added_policyTotalCost_field_to_AutomobilePolicy_Controller.cs" />
+    <Compile Include="Migrations\201612050857244_added_policyTotalCost_field_to_AutomobilePolicy_Controller.Designer.cs">
+      <DependentUpon>201612050857244_added_policyTotalCost_field_to_AutomobilePolicy_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612050909108_changed_policyTotalCost_field_from_double_to_decimal_AutomobilePolicy_Controller.cs" />
+    <Compile Include="Migrations\201612050909108_changed_policyTotalCost_field_from_double_to_decimal_AutomobilePolicy_Controller.Designer.cs">
+      <DependentUpon>201612050909108_changed_policyTotalCost_field_from_double_to_decimal_AutomobilePolicy_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612052219381_changed_policyTocalCost_field_to_correct_name_policyTotalCost_in_AutomobilePolicy_Controller.cs" />
+    <Compile Include="Migrations\201612052219381_changed_policyTocalCost_field_to_correct_name_policyTotalCost_in_AutomobilePolicy_Controller.Designer.cs">
+      <DependentUpon>201612052219381_changed_policyTocalCost_field_to_correct_name_policyTotalCost_in_AutomobilePolicy_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612060548305_makingPolicyTotalCostNull.cs" />
+    <Compile Include="Migrations\201612060548305_makingPolicyTotalCostNull.Designer.cs">
+      <DependentUpon>201612060548305_makingPolicyTotalCostNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612080441491_added_Transaction_Id_Field_To_AutomobilePolicy_Model.cs" />
+    <Compile Include="Migrations\201612080441491_added_Transaction_Id_Field_To_AutomobilePolicy_Model.Designer.cs">
+      <DependentUpon>201612080441491_added_Transaction_Id_Field_To_AutomobilePolicy_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612080708412_changed_Transaction_Id_Field_To_payPalTransactionId_in_AutomobilePolicy_Model.cs" />
+    <Compile Include="Migrations\201612080708412_changed_Transaction_Id_Field_To_payPalTransactionId_in_AutomobilePolicy_Model.Designer.cs">
+      <DependentUpon>201612080708412_changed_Transaction_Id_Field_To_payPalTransactionId_in_AutomobilePolicy_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612190331585_added_vehicleType_vehiclePlate.cs" />
+    <Compile Include="Migrations\201612190331585_added_vehicleType_vehiclePlate.Designer.cs">
+      <DependentUpon>201612190331585_added_vehicleType_vehiclePlate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -273,75 +301,6 @@
     <Content Include="asset\css\bootstrap.min.css" />
     <Content Include="asset\js\bootstrap.js" />
     <Content Include="asset\js\bootstrap.min.js" />
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
-    <Content Include="bin\log4net.dll" />
-    <Content Include="bin\log4net.xml" />
-    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
-    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
-    <Content Include="bin\Microsoft.AI.DependencyCollector.xml" />
-    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
-    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
-    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.xml" />
-    <Content Include="bin\Microsoft.AI.Web.dll" />
-    <Content Include="bin\Microsoft.AI.Web.xml" />
-    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
-    <Content Include="bin\Microsoft.AI.WindowsServer.xml" />
-    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Log4NetAppender.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Log4NetAppender.xml" />
-    <Content Include="bin\Microsoft.ApplicationInsights.xml" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
-    <Content Include="bin\Microsoft.Owin.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.xml" />
-    <Content Include="bin\Microsoft.Owin.xml" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\Owin.dll" />
-    <Content Include="bin\PayPal.dll" />
-    <Content Include="bin\PayPal.xml" />
-    <Content Include="bin\Portugal Insurance - PayPal.dll" />
-    <Content Include="bin\Portugal Insurance - PayPal.pdb" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -558,8 +517,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="bin\ApplicationInsights.config" />
-    <Content Include="bin\Portugal Insurance - PayPal.dll.config" />
     <None Include="Properties\PublishProfiles\Portugal Insurance - PayPal.pubxml" />
     <None Include="Properties\PublishProfiles\Seguros Portugal - SmarterASP.NET.pubxml" />
     <None Include="Properties\PublishProfiles\Seguros Portugal.pubxml" />
@@ -705,6 +662,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.resx">
       <DependentUpon>201611272143342_added_coverageType_FieldTo_AutoMobilePolicy_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612050857244_added_policyTotalCost_field_to_AutomobilePolicy_Controller.resx">
+      <DependentUpon>201612050857244_added_policyTotalCost_field_to_AutomobilePolicy_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612050909108_changed_policyTotalCost_field_from_double_to_decimal_AutomobilePolicy_Controller.resx">
+      <DependentUpon>201612050909108_changed_policyTotalCost_field_from_double_to_decimal_AutomobilePolicy_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052219381_changed_policyTocalCost_field_to_correct_name_policyTotalCost_in_AutomobilePolicy_Controller.resx">
+      <DependentUpon>201612052219381_changed_policyTocalCost_field_to_correct_name_policyTotalCost_in_AutomobilePolicy_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612060548305_makingPolicyTotalCostNull.resx">
+      <DependentUpon>201612060548305_makingPolicyTotalCostNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612080441491_added_Transaction_Id_Field_To_AutomobilePolicy_Model.resx">
+      <DependentUpon>201612080441491_added_Transaction_Id_Field_To_AutomobilePolicy_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612080708412_changed_Transaction_Id_Field_To_payPalTransactionId_in_AutomobilePolicy_Model.resx">
+      <DependentUpon>201612080708412_changed_Transaction_Id_Field_To_payPalTransactionId_in_AutomobilePolicy_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612190331585_added_vehicleType_vehiclePlate.resx">
+      <DependentUpon>201612190331585_added_vehicleType_vehiclePlate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

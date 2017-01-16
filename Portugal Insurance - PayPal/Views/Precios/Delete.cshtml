@@ -32,6 +32,24 @@
 
 </head>
 <body>
+
+    <!-- Start Page Banner -->
+    <div class="page-banner" style="padding:80px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Us</h2>
+                    <p>We Are Professional</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="form-actions no-color" style=" margin-left: 40%;" id="eliminarPrecioForm">
         <h3>Eliminar Precio? Cuidado Esto no se puede deshacer</h3>
     </div>
@@ -100,18 +118,18 @@
     </div>
 
 
-        @using (Html.BeginForm())
+    @using (Html.BeginForm())
             {
-            @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-            <div class="form-group" style=" margin-left: 33%;">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Eliminar Precio" class="btn btn-primary btn3d" />
-                </div>
-                <div style=" margin-left: 19.5%;">
-                    @Html.ActionLink("Back to List", "Index")
-                </div>
+        <div class="form-group" style=" margin-left: 33%;">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Eliminar Precio" class="btn btn-primary btn3d" />
             </div>
-            }
-    </body>
+            <div style=" margin-left: 19.5%;">
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    }
+</body>
 </html>
