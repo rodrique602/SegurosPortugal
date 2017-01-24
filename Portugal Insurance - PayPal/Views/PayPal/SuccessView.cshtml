@@ -145,6 +145,8 @@
                                 <p>ItemName: @confirmacion.ItemName</p>
                                 <p>Custom: @confirmacion.Custom</p>*@
 
+
+
                                 <div class="contact_form">
                                     <div class="form_subtitle">
                                         Thank you for your payment.
@@ -152,9 +154,12 @@
                                         You may log into your account at www.paypal.com to view details of this transaction.
                                         Order Information
                                     </div>
+
+
                                     @if (ViewBag.poliza != null)
                                     {
                                         <div class="dl-horizontal col-md-4">
+
                                             <fieldset class="form-group">
                                                 <label class="contact"><strong>Payment Status:</strong></label>
                                                 <div class="col-md-12">
@@ -163,7 +168,7 @@
                                                 </div>
                                             </fieldset>
                                             <fieldset class="form-group">
-                                                <label class="contact"><strong>Business Email:</strong></label>
+                                                <label class="contact"><strong></strong></label>
                                                 <div class="col-md-12">
                                                     <input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.BusinessEmail" readonly />
 
