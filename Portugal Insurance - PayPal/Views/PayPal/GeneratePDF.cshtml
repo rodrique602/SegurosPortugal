@@ -1,0 +1,22 @@
+﻿@model Portugal_Insurance___PayPal.Models.GeneratePDFModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GeneratePDF</title>
+</head>
+<body>
+    <div>
+        <img src="@Model.PDFLogo" alt="" />
+    </div>
+    <div>
+         @Html.Raw(Model.PDFContent)
+    </div>
+</body>
+</html>

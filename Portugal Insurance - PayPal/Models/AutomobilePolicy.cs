@@ -61,6 +61,14 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Vehicle Plate Number")]
         public string vehiclePlate { get; set; }
 
+        [Display(Name = "Payment Status")]
+        public String paymentStatus { get; set; }
+
+        [Display(Name = "Payer Email")]
+        public string payerEmail { get; set; }
+
+        [Display(Name = "Payment Fee")]
+        public decimal? paymentFee { get; set; }
 
         //To one movement correspond one user
         public String Id { get; set; }
