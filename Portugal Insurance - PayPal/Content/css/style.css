@@ -6865,4 +6865,14 @@ body{
 	font-weight: bold;
 }
 
+@media print{
+    nav, aside{
+        display:none; 
+    }   
+    #contact-form{
+        display:table; 
+    }
+
+}
+
 

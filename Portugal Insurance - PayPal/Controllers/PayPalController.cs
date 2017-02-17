@@ -11,6 +11,8 @@ using System.Web.Configuration;
 using System.IO;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Rotativa;
+using Newtonsoft.Json.Linq;
 
 //using Portugal_Insurance___PayPal.PayPal;
 //using PayPal.Api;
@@ -178,18 +180,6 @@ namespace Portugal_Insurance___PayPal.Controllers
                     //var currentUserId = User.Identity.GetUserId()
                     var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
                     var currentUser = manager.FindById(User.Identity.GetUserId());
-                    ViewBag.EmailID = currentUser.emailAddress;
-                    ViewBag.fullName = currentUser.fullName;
-                    ViewBag.address = currentUser.addressLine1;
-                    ViewBag.address2 = currentUser.addressLine2;
-                    ViewBag.city = currentUser.city;
-                    ViewBag.country = currentUser.country;
-                    ViewBag.license1 = currentUser.licenseNumber1;
-                    ViewBag.license2 = currentUser.licenseNumber2;
-                    ViewBag.phoneNumber = currentUser.PhoneNumber;
-                    ViewBag.state = currentUser.state;
-                    ViewBag.zipCode = currentUser.zipCode;
-
                     String customList = confirmacion.Custom.ToString();
                     splitCustom = customList.Split(',');
 
@@ -231,6 +221,9 @@ namespace Portugal_Insurance___PayPal.Controllers
                     poliza.coverageType = coverageType;
                     poliza.policyTotalCost = policyTotalCost;
                     poliza.payPalTransactionId = payPalTransactionId;
+                    poliza.paymentStatus = confirmacion.PaymentStatus;
+                    poliza.paymentFee = (decimal)confirmacion.PaymentFee;
+                    poliza.payerEmail = confirmacion.PayerEmail; 
                     db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -263,25 +256,169 @@ namespace Portugal_Insurance___PayPal.Controllers
             /*StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
             String strResponse = stIn.ReadToEnd();
             stIn.Close();*/
+            return View(poliza);
+        }
+        public ActionResult ViewPolicy(int policyID)
+        {
+            AutomobilePolicy poliza = db.AutomobilePolicies.Find(policyID);
+            return View(poliza); 
+        }
+        //DOWNLOAD PDF DEMO TO GENERATE PDF FROM VIEWS ETC. USING ROTATIVA
+        /// <summary>
+        /// Action Method using viewAsPdf class to create view as pdf
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult DownloadPDF(int policyID)
+        {
+            try
+            {
+                AutomobilePolicy poliza = db.AutomobilePolicies.Find(policyID);
+
+                //get the information to display in pdf from database
+                //for the time
+                //Hard coding values are here, these are the content to display in pdf 
+                //var content = "<h2>WOW Rotativa<h2>" +
+                // "<p>Ohh This is very easy to generate pdf using Rotativa <p>";
 
 
-            ViewBag.confirmacion = confirmacion;
-            ViewBag.vehicleValue = vehicleValue;
-            ViewBag.vinNumber = vinNumber;
-            ViewBag.carYear = carYear;
-            ViewBag.carMake = carMake;
-            ViewBag.carModel = carModel;
-            ViewBag.startDate = startDate.ToShortDateString();
-            ViewBag.endDate = endDate.ToShortDateString();
-            ViewBag.vehicleType = vehicleType;
-            ViewBag.vehiclePlate = vehiclePlate;
-            //ViewData["custom"] = splitCustom;
-            ViewBag.poliza = poliza;
-            ViewBag.policyFolio = poliza.policyFolio.ToString();
-            return View();
+                //var logoFile = @"/Images/logo.png";
+
+                //model.PDFContent = content;
+                //model.PDFLogo = Server.MapPath(logoFile);
+
+                // ViewAsPdf calls Rotativa.Extensions.ControllerContextExtensions.GetHtmlFromView
+                // Which generates the HTML inline instead of making a separate http request which CallDriver (wkhtmltopdf.exe) does.
+                //var a = new ViewAsPdf();
+                //a.ViewName = "SuccessView";
+                //a.Model = poliza;
+                //var pdfBytes = a.BuildPdf(ControllerContext);
+
+                //// Optionally save the PDF to server in a proper IIS location.
+                //var fileName = string.Format("my_file_{0}.pdf", policyID);
+                //var path = Server.MapPath("~/App_Data/" + fileName);
+                //System.IO.File.WriteAllBytes(path, pdfBytes);
+
+                //// return ActionResult
+                //MemoryStream ms = new MemoryStream(pdfBytes);
+                //return new FileStreamResult(ms, "application/pdf");
+
+                //Use ViewAsPdf Class to generate pdf using GeneratePDF.cshtml view
+                return new Rotativa.ViewAsPdf("ViewPolicy", poliza)
+                {
+                    FileName = "firstPdf.pdf"
+                };
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
-        public ActionResult PaymentWithPaypal()
+         //<summaroy>
+         //This method is using ActionAsPdf class to generate pdf
+        //</summary>
+        //<returns></returns>
+        public ActionResult DownloadActionAsPDF(int polizaID)
+{
+    try
+    {
+        //will take ActionMethod and generate the pdf
+                return new Rotativa.ActionAsPdf("ViewPolicy")
+                {
+                    FileName = "SecondPdf.pdf"
+                };
+    }
+    catch (Exception ex)
+    {
+
+        throw;
+    }
+}
+
+        /// <summary>
+        /// Action method to return view as pdf
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult GeneratePDF()
+{
+    try
+    {
+        var model = new GeneratePDFModel();
+        //Your data from db
+
+        //hard coded value for test purpose
+
+        var content = "<h2>PDF Created<h2>" +
+        "<p>Ohh This is very easy to generate pdf using Rotativa<p>";
+        var logoFile = @"/Images/logo.png";
+
+        model.PDFContent = content;
+        model.PDFLogo = Server.MapPath(logoFile);
+
+        //FileName = "Fee_Challan.pdf",
+        //        PageOrientation = Orientation.Landscape,
+        //        PageSize = Size.A4,
+        //        PageMargins = { Left = 10, Right = 10, Top = 15, Bottom = 22 },
+        //        MinimumFontSize = 7,
+        //        PageHeight = 40
+
+                return View(model);
+    }
+    catch (Exception ex)
+    {
+        throw;
+    }
+}
+
+        /// <summary>
+        /// using partial view for pdf generation
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult DownloadPartialViewPDF()
+{
+    var model = new GeneratePDFModel();
+
+    //hard coded value for test purpose
+
+    var content = "<h2>PDF Created<h2>" +
+    "<p>Ohh This is very easy to generate pdf using Rotativa<p>";
+    var logoFile = @"/Images/logo.png";
+
+    model.PDFContent = content;
+    model.PDFLogo = Server.MapPath(logoFile);
+
+    return new Rotativa.PartialViewAsPdf("_PartialViewTest", model) { FileName = "partialViewAsPdf.pdf" };
+}
+
+        /// <summary>
+        /// The method will geneate ulr content in pdf doc
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UrlAsPDF()
+{
+
+            //this will generate google home page to in a pdf doc
+
+            //THIS IS WORKING SO FAR BUT IT GENERATES THE WRONG VIEW IT GENERATES: http://segurosportugal-001-site1.atempurl.com/PayPal/iNDEX
+            //string url = new Uri(HttpContext.Request.Url.AbsoluteUri).ToString();
+            //string path = url.Substring(0, url.LastIndexOf("/"));
+            //return new Rotativa.UrlAsPdf(path)
+
+            string url = new Uri(HttpContext.Request.Url.AbsoluteUri).ToString();
+            string path = url.Substring(0, url.LastIndexOf("/"));
+            //string path = url.Substring(0, url.Length);
+            //Value of HttpContext.Current.Request.Url.AbsoluteUri
+            return new Rotativa.UrlAsPdf(path)
+            {
+        FileName = "urltest.pdf",
+        PageOrientation = Rotativa.Options.Orientation.Landscape,
+        PageSize = Rotativa.Options.Size.Letter
+
+    };
+}
+
+public ActionResult PaymentWithPaypal()
         {
             //getting the apiContext as earlier
             APIContext apiContext = Configuration.GetAPIContext();
@@ -429,5 +566,6 @@ namespace Portugal_Insurance___PayPal.Controllers
             //Create a payment using a APIContext
             return this.payment.Create(apiContext);
         }
+
     }
 }

@@ -41,62 +41,50 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights.Log4NetAppender, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.ApplicationInsights.Log4NetAppender.2.2.0\lib\net45\Microsoft.ApplicationInsights.Log4NetAppender.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -105,70 +93,60 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Scaffolding.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PayPal, Version=1.8.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PayPal.1.8.0\lib\net45\PayPal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -181,41 +159,30 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc.Extensions, Version=1.1.0.6, Culture=neutral, PublicKeyToken=d631f4e4b226a032, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Web.Mvc.Extensions.1.1.1.2\lib\net45\System.Web.Mvc.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -325,9 +292,14 @@
     <Compile Include="Migrations\201612190331585_added_vehicleType_vehiclePlate.Designer.cs">
       <DependentUpon>201612190331585_added_vehicleType_vehiclePlate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702122103385_updatedAutomobilePolicyModel.cs" />
+    <Compile Include="Migrations\201702122103385_updatedAutomobilePolicyModel.Designer.cs">
+      <DependentUpon>201702122103385_updatedAutomobilePolicyModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\GeneratePDFModel.cs" />
     <Compile Include="Models\HomeCondoPolicy.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ConfigurationModels.cs" />
@@ -346,55 +318,6 @@
     <Content Include="asset\css\bootstrap.min.css" />
     <Content Include="asset\js\bootstrap.js" />
     <Content Include="asset\js\bootstrap.min.js" />
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EnvDTE.dll" />
-    <Content Include="bin\EnvDTE80.dll" />
-    <Content Include="bin\log4net.dll" />
-    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
-    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
-    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
-    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
-    <Content Include="bin\Microsoft.AI.Web.dll" />
-    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Log4NetAppender.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="bin\Microsoft.AspNet.Scaffolding.12.0.dll" />
-    <Content Include="bin\Microsoft.MSXML.dll" />
-    <Content Include="bin\Microsoft.Owin.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="bin\Microsoft.VisualStudio.ComponentModelHost.dll" />
-    <Content Include="bin\Microsoft.VisualStudio.GraphModel.dll" />
-    <Content Include="bin\Microsoft.VisualStudio.VSHelp.dll" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Owin.dll" />
-    <Content Include="bin\PayPal.dll" />
-    <Content Include="bin\Portugal Insurance - PayPal.dll" />
-    <Content Include="bin\Portugal Insurance - PayPal.pdb" />
-    <Content Include="bin\stdole.dll" />
-    <Content Include="bin\System.Data.Entity.Repository.dll" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.Extensions.dll" />
-    <Content Include="bin\System.Web.Mvc.Extensions.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -416,6 +339,151 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\1.png" />
@@ -456,6 +524,7 @@
     <Content Include="Content\images\flickr-09.jpg" />
     <Content Include="Content\images\footer-margo.png" />
     <Content Include="Content\images\home %281%29.jpg" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\map.png" />
     <Content Include="Content\images\margo.png" />
     <Content Include="Content\images\member-01.jpg" />
@@ -612,20 +681,97 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="bin\Portugal Insurance - PayPal.dll.config" />
-    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Properties\PublishProfiles\Portugal Insurance - PayPal.pubxml" />
     <None Include="Properties\PublishProfiles\Seguros Portugal - SmarterASP.NET.pubxml" />
     <None Include="Properties\PublishProfiles\Seguros Portugal.pubxml" />
     <None Include="Properties\PublishProfiles\segurosPortugal.pubxml" />
     <None Include="Properties\PublishProfiles\spsonora.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\contact.js" />
     <Content Include="Scripts\count-to.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -721,8 +867,13 @@
     <Content Include="Views\PayPal\PaymentWithCreditCard.cshtml" />
     <Content Include="Views\PayPal\PaymentWithPaypal.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Home\GeneratePDF.cshtml" />
+    <Content Include="Views\Home\_PartialViewTest.cshtml" />
+    <Content Include="Views\PayPal\_PartialViewTest.cshtml" />
+    <Content Include="Views\PayPal\GeneratePDF.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\PayPal\ViewPolicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -787,9 +938,9 @@
     <EmbeddedResource Include="Migrations\201612190331585_added_vehicleType_vehiclePlate.resx">
       <DependentUpon>201612190331585_added_vehicleType_vehiclePlate.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <EmbeddedResource Include="Migrations\201702122103385_updatedAutomobilePolicyModel.resx">
+      <DependentUpon>201702122103385_updatedAutomobilePolicyModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,594 @@
+﻿@model Portugal_Insurance___PayPal.Models.AutomobilePolicy
+@using System.Configuration;
+@using Portugal_Insurance___PayPal.Models.ViewModels;
+@using Portugal_Insurance___PayPal.Models;
+@using Portugal_Insurance___PayPal.Controllers;
+@{
+    Layout = null;
+    AutomobilePolicy poliza = Model;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewPolicy</title>
+</head>
+<body>
+    <!-- Container -->
+    <div id="container">
+        <!-- Start Content -->
+        <div id="content" style="background-color: ghostwhite;">
+            <div id="successView" class="container">
+                <div class="page-content">
+
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+                            <!-- Classic Heading -->
+                            <h4 class="classic-title">
+                                <span>
+                                    Thank you for your payment.
+                                    Your transaction has been completed, and a receipt for your purchase has been emailed to you.
+                                    You may log into your account at www.paypal.com to view details of this transaction.
+                                    Order Information
+                                </span>
+                            </h4>
+
+                            <div>
+                                <div class="feat_prod_box_details">
+                                    @*<h2>@ViewBag.Title.</h2>
+                                        <h3>@ViewBag.Message</h3>
+
+
+                                        <h2>SuccessView</h2>
+
+                                        Thanks.
+                                        <br />
+                                        <p>TxToken: @confirmacion.TxToken</p>
+                                        <p>TransactionId: @confirmacion.TransactionId</p>
+                                        <p>GrossTotal: @confirmacion.GrossTotal</p>
+                                        <p>Currency: @confirmacion.Currency</p>
+                                        <p>BusinessEmail: @confirmacion.BusinessEmail</p>
+                                        <p>ReceiverEmail: @confirmacion.ReceiverEmail</p>
+                                        <p>PayerEmail: @confirmacion.PayerEmail</p>
+                                        <p>PayerFirstName: @confirmacion.PayerFirstName</p>
+                                        <p>PayerLastName: @confirmacion.PayerLastName</p>
+                                        <p>PaymentFee: @confirmacion.PaymentFee</p>
+                                        <p>PaymentStatus: @confirmacion.PaymentStatus</p>
+                                        <p>SubscriberId: @confirmacion.SubscriberId</p>
+                                        <p>InvoiceNumber: @confirmacion.InvoiceNumber</p>
+                                        <p>ItemName: @confirmacion.ItemName</p>
+                                        <p>Custom: @confirmacion.Custom</p>*@
+                                    <div class="contact_form">
+                                        <div class="col-md-12">
+                                            @if (poliza != null)
+                                            {
+                                                //<div id = "policyID" hidden>@poliza.automobilePolicyID</div>
+                                                        <!--START INVOICE TABLE-->
+                                                <table cellpadding="0" cellspacing="0" style="margin: 0px auto; border-top: 1px solid rgb(204, 204, 204); text-align: left;">
+                                                    <tbody style="" background-color: #dff0d8;>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;"></td>
+                                                            <td style="width: 200px; height: 100px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align: inherit; margin-top: 0px;" colspan="2">
+                                                                <img alt="" style="margin-top: 10px;" id="segurosHeaderLogo" src="/Content/images/segurosLogo2016_2016_400X129.png">
+                                                                <label class="contact">
+                                                                    <strong style="font-weight: 900;">
+                                                                        RECIBO DE PRIMAS
+                                                                        <br />
+                                                                        Sucursal/Oficina: HERMOSILLO
+                                                                        <br />
+                                                                    </strong>
+                                                                </label>
+                                                                <label class="contact">
+                                                                    <strong>
+                                                                        Blvd. Navarrete E I. Romero C.P 83200 Hermosillo, Sonora.
+                                                                        <br />
+                                                                        Tel. 289-29-00 289-29-05 FAX 289-29-10
+                                                                        <br />
+                                                                        lugar y fecha de expedicion: HERMOSILLO, SON.
+                                                                        <br />
+                                                                    </strong>
+                                                                </label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td style="width: 239px; height: 40px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="2">
+                                                                <label class="contact">
+                                                                    <strong>
+                                                                        AV. Patriotismo No. 266 Col. San Pedro de los Pinos, Mexico, D.F. C.P. 03800
+                                                                        <br />
+                                                                        Del. Benito Juarez, Tel. 52-78-80-00 Fax. 52-72-20-64
+                                                                        <br />
+                                                                        R.F.C.: GSE-720216-JJ6       www.generaldeseguros.com.mx
+                                                                        <br />
+                                                                    </strong>
+                                                                </label>
+                                                                <label class="contact">
+                                                                    <strong style="font-weight: 900;">
+                                                                        POLIZA SPECIAL TURISTAS
+                                                                        <br />
+                                                                        SPECIAL POLICY TOURIST
+                                                                        <br />
+                                                                    </strong>
+                                                                </label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td style="width: 239px; height: 40px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
+                                                                <label class="contact">
+                                                                    <strong style="font-weight: 900;">
+                                                                        POLIZA DEL SEGURO SOBRE AUTOMOVILES<br />
+                                                                        SPECIAL PARA TURISTAS<br />
+                                                                    </strong>
+
+                                                                </label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                </div>
+                                                                <br />
+                                                                <table cellpadding="0" cellspacing="0" style="border-top-style: solid; margin: 0px auto;">
+                                                                    <tbody></tbody>
+                                                                </table>
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px; text-align:center;">&nbsp;</td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                                <label class="contact"><strong style="font-weight: 900;">PAYER EMAIL</strong></label>
+                                                                @*<label class="contact"><strong>Email del Negocio: |</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.payerEmail" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.EmailID" readonly />*@
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                                <label class="contact"><strong style="font-weight: 900;">PAYMENT STATUS</strong></label>
+                                                                @*<label class="contact"><strong>Status de Pago: |</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.paymentStatus" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="2">
+                                                                <label class="contact"><strong style="font-weight: 900;">POLICY NAME</strong></label>
+                                                                @*<label class="contact"><strong>Nombre del Producto: |</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
+                                                                <label class="contact"><strong style="font-weight: 900;">TRANSACTION ID</strong></label>
+                                                                @*<label class="contact"><strong>ID DE TRANSACTION:</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.payPalTransactionId" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px; text-align:center;">&nbsp;</td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                                <label class="contact"><strong style="font-weight: 900;">BUSINESS EMAIL</strong></label>
+                                                                @*<label class="contact"><strong>EXPEDIDO POR: |</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="segurosportugal@gmail.com" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                                <label class="contact"><strong style="font-weight: 900;">TERM OF INSURANCE</strong></label>
+                                                                @*<label class="contact"><strong>FECHA</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="2">
+                                                                <label class="contact"><strong style="font-weight: 900;">COVERAGE DAYS</strong></label>
+                                                                @*<label class="contact"><strong>VIGENCIA DEL SEGURO</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
+                                                                <label class="contact"><strong style="font-weight: 900;">TRANSACTION DATE</strong></label>
+                                                                @*<label class="contact"><strong>DIAS</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;"></td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                                @*<label class="contact"><strong>PRIMA: |</strong></label>*@
+                                                                <label class="contact"><strong style="font-weight: 900;">PREMIUM</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                                @*<label class="contact"><strong>GASTOS DE EXPEDICION: |</strong></label>*@
+                                                                <label class="contact"><strong style="font-weight: 900;">POLICY FEE</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.paymentFee" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="2">
+                                                                @*<label class="contact"><strong>IMPUESTO: |</strong></label>*@
+                                                                <label class="contact"><strong style="font-weight: 900;">TAX</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine1" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
+                                                                <label class="contact"><strong style="font-weight: 900;">TOTAL USD</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyTotalCost" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.Currency" readonly />*@
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;" rowspan="5"></td>
+
+                                                            <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="4" rowspan="5">
+                                                                <div style="text-align:center !important;">
+                                                                    <label class="contact" style="text-align:center;"><strong style="font-weight:900;">INSURED POLICY HOLDER INFO</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                    </div>
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Insured Policy Holder Name</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.fullName" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Address</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine1" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Address Line 2</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>City</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.city" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>State</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.state" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Zip Code</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.zipCode" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Country</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.country" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+
+                                                            <td style="width: 226px; height: 5px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact" style="text-align: center"><strong>License Number</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.licenseNumber1" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.license2" readonly />*@
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;" rowspan="5"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td style="width: 226px; height: 5px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact" style="text-align: center"><strong>Phone Number</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.PhoneNumber" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 5px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>Email Address</strong></label>
+                                                                @*<label class="contact"><strong>TERM OF INSURANCE:</strong></label>*@
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.emailAddress" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.PayerEmail" readonly />*@
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 5px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>Placeholder</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 5px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>Placheholder</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;" rowspan="8"></td>
+                                                            <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="4" rowspan="8">
+                                                                <div style="text-align:center !important;">
+                                                                    <label class="contact" style=""><strong style="font-weight:900;">INSURED VEHICLE INFO</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                    </div>
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Vin Number</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleVin" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Value</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleValue" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Type</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleType" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Year</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carYear" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Make</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carMake" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Model</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carModel" readonly />
+                                                                </div>
+                                                                <br />
+                                                                <label class="contact"><strong>Vehicle Plate</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehiclePlate" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+
+                                                            <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+
+                                                                <div style="text-align:center;">
+                                                                    <label class="contact"><strong style="font-weight:900;">POLICY INFO</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                    </div>
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;" rowspan="8"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" colspan="3">
+                                                                <label class="contact"><strong>POLICY NAME</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>POLICY FOLIO #</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyFolio" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>TERM OF INSURANCE POLICY</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>DATE ISSUED</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyStartingDate" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>COVERAGE DAYS</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>POLICY START DATE</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyStartingDate" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
+                                                                <label class="contact"><strong>POLICY END DATE</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyEndingDate" readonly />
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 680px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="7">
+                                                                <label class="contact">
+                                                                    <strong>
+                                                                        General de Seguros S.A.B., (denominada en adelante la institucion),
+                                                                        de acuerdo con las Condiciones Generales anexas, asegura a favor de la persona arriba citada
+                                                                        (denominada en adelante el Asegurado), los riesgos que aqui se mencionan, durante la vigencia
+                                                                        y hasta los limites maximos de responsabilidad contratados.
+                                                                        <br>
+                                                                        Articulo 25 de la Ley Sobre el Contrato del Seguro: "Si el contenido de la poliza o de sus modificaciones
+                                                                        no concordaran con la oferta, el Asegurado podra pedir la rectificacion correspondente dentro de los
+                                                                        treinta dias que sigan el dia en que reciba la Poliza.
+                                                                        <br>
+                                                                        Transcurrido este plazo se consideran aceptadas las estipulaciones de la Poliza o de sus modificationes".
+                                                                        <br>
+                                                                        Se Invita al Asegurado a conocer los alcances reales de su Cobertura, las Exclusiones que le aplican y si
+                                                                        el producto cuenta con restricciones en las Condiciones Generales.
+                                                                        <br>
+                                                                        Anexo a a la presente caratula de Poliza, se entrega al Asegurado las Condiciones Generales y demas documentacion
+                                                                        contratual que forma parte integral del Contrado de Seguro celebrado con General de Seguros S.A.B.
+                                                                        Adicionalmente, el asegurado puede descargar dichas Condiciones de la pagina www.generaldeseguros.com.mx"
+                                                                        <br>
+                                                                    </strong>
+                                                                </label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    @*"@ViewBag.country"*@
+                                                                </div>
+                                                                <br />
+                                                            </td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border-left-width: 5px; border-left-style: solid; width: 20px; height: 15px;">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 400px; height: 15px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 180px; height: 15px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 100px; height: 15px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">&nbsp;</td>
+                                                            <td style="border-right-width: 5px; border-right-style: solid; width: 20px; height: 15px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border-left-width: 5px; border-left-style: solid; width: 20px; height: 15px;">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 400px; height: 15px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 180px; height: 15px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 100px; height: 15px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">&nbsp;</td>
+                                                            <td style="border-right-width: 5px; border-right-style: solid; width: 20px; height: 15px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border-left-width: 5px; border-left-style: solid; width: 20px; height: 15px;">&nbsp;</td>
+                                                            <td style="text-align: justify; width: 400px; height: 15px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="7">&nbsp;</td>
+                                                            <td style="border-right-width: 5px; border-right-style: solid; width: 20px; height: 15px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td style="width: 340px; height: 40px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 340px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="5">&nbsp;</td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border-left-width: 5px; border-left-style: solid; width: 20px; height: 10px;">&nbsp;</td>
+                                                            <td style="width: 340px; height: 10px;" colspan="7">&nbsp;</td>
+                                                            <td style="border-right-width: 5px; border-right-style: solid; width: 20px; height: 10px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">&nbsp;</td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(127, 127, 127);" colspan="3">&nbsp;</td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="2">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 113px; border-color: rgb(127, 127, 127);" colspan="3">&nbsp;</td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
+                                                            <td height="40" style="text-align: justify; width: 400px;" colspan="7">&nbsp;</td>
+                                                            <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            }
+                                            else
+                                            {
+                                                @ViewBag.error
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Container -->
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+</body>
+</html>
