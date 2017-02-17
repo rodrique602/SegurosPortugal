@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Portugal_Insurance___PayPal.Models;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
+using System.Diagnostics;
+using System.Linq;
 //using SendGrid;
 using System.Net;
-using System.Configuration;
-using System.Diagnostics;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web;
 
 namespace Portugal_Insurance___PayPal.App_Start
 {
