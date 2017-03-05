@@ -68,13 +68,12 @@
     <!-- Container -->
     <div id="container">
 
-
         <!-- Start Page Banner -->
         <div class="page-banner" style="padding:80px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>About Us</h2>
+                        <h2>Your Invoice</h2>
                         <p>We Are Professional</p>
                     </div>
                     <div class="col-md-6">
@@ -98,10 +97,14 @@
                         <div class="col-md-12">
 
                             <!-- Classic Heading -->
-                            <h4 class="classic-title"><span>Thank you for your payment.
-                                            Your transaction has been completed, and a receipt for your purchase has been emailed to you.
-                                            You may log into your account at www.paypal.com to view details of this transaction.
-                                            Order Information </span></h4>
+                            <h4 class="classic-title">
+                                <span>
+                                    Thank you for your payment.
+                                    Your transaction has been completed, and a receipt for your purchase has been emailed to you.
+                                    You may log into your account at www.paypal.com to view details of this transaction.
+                                    Order Information
+                                </span>
+                            </h4>
 
                             <div>
 
@@ -223,7 +226,8 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">PAYER EMAIL</strong></label>
                                                                 @*<label class="contact"><strong>Email del Negocio: |</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.payerEmail" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.payerEmail" readonly />*@
+                                                                    <label class="contact">@poliza.payerEmail</label>
                                                                     @*<input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.EmailID" readonly />*@
                                                                 </div>
                                                                 <br />
@@ -232,7 +236,9 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">PAYMENT STATUS</strong></label>
                                                                 @*<label class="contact"><strong>Status de Pago: |</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.paymentStatus" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.paymentStatus" readonly />*@
+                                                                    <label class="contact">@poliza.paymentStatus</label>
+
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -240,7 +246,8 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">POLICY NAME</strong></label>
                                                                 @*<label class="contact"><strong>Nombre del Producto: |</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />*@
+                                                                    <label class="contact">@poliza.coverageType</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -248,7 +255,8 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">TRANSACTION ID</strong></label>
                                                                 @*<label class="contact"><strong>ID DE TRANSACTION:</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.payPalTransactionId" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.payPalTransactionId" readonly />*@
+                                                                    <label class="contact">@poliza.payPalTransactionId</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -261,7 +269,8 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">BUSINESS EMAIL</strong></label>
                                                                 @*<label class="contact"><strong>EXPEDIDO POR: |</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="segurosportugal@gmail.com" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="segurosportugal@gmail.com" readonly />*@
+                                                                    <label class="contact">segurosportugal@gmail.com</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -269,7 +278,8 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">TERM OF INSURANCE</strong></label>
                                                                 @*<label class="contact"><strong>FECHA</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.addressLine2</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -277,16 +287,16 @@
                                                                 <label class="contact"><strong style="font-weight: 900;">COVERAGE DAYS</strong></label>
                                                                 @*<label class="contact"><strong>VIGENCIA DEL SEGURO</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
-                                                                </div>
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.addressLine2</label>                                                                </div>
                                                                 <br />
                                                             </td>
                                                             <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
                                                                 <label class="contact"><strong style="font-weight: 900;">TRANSACTION DATE</strong></label>
                                                                 @*<label class="contact"><strong>DIAS</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
-                                                                </div>
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.addressLine2</label>                                                                                                    </div>
                                                                 <br />
                                                             </td>
                                                             <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;">&nbsp;</td>
@@ -298,7 +308,8 @@
                                                                 @*<label class="contact"><strong>PRIMA: |</strong></label>*@
                                                                 <label class="contact"><strong style="font-weight: 900;">PREMIUM</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />*@
+                                                                    <label class="contact">$</label>                                    
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -306,7 +317,8 @@
                                                                 @*<label class="contact"><strong>GASTOS DE EXPEDICION: |</strong></label>*@
                                                                 <label class="contact"><strong style="font-weight: 900;">POLICY FEE</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.paymentFee" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.paymentFee" readonly />*@
+                                                                    <label class="contact">@poliza.paymentFee</label>                                    
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -314,15 +326,17 @@
                                                                 @*<label class="contact"><strong>IMPUESTO: |</strong></label>*@
                                                                 <label class="contact"><strong style="font-weight: 900;">TAX</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine1" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine1" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.addressLine1</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
                                                             <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
                                                                 <label class="contact"><strong style="font-weight: 900;">TOTAL USD</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyTotalCost" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyTotalCost" readonly />*@
                                                                     @*<input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.Currency" readonly />*@
+                                                                    <label class="contact">@poliza.policyTotalCost</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -339,48 +353,55 @@
                                                                     </div>
                                                                 </div>
                                                                 <br />
-                                                                <label class="contact"><strong>Insured Policy Holder Name</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.fullName" readonly />
-                                                                </div>
-                                                                <br />
-                                                                <label class="contact"><strong>Address</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine1" readonly />
-                                                                </div>
-                                                                <br />
-                                                                <label class="contact"><strong>Address Line 2</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />
-                                                                </div>
-                                                                <br />
-                                                                <label class="contact"><strong>City</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.city" readonly />
-                                                                </div>
-                                                                <br />
-                                                                <label class="contact"><strong>State</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.state" readonly />
-                                                                </div>
-                                                                <br />
-                                                                <label class="contact"><strong>Zip Code</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.zipCode" readonly />
-                                                                </div>
-                                                                <br />
-                                                                <label class="contact"><strong>Country</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.country" readonly />
-                                                                </div>
-                                                                <br />
+                                                                    <label class="contact"><strong>Insured Policy Holder Name</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.fullName" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.fullName</label>
+                                                                    </div>
+                                                                    <br />
+                                                                    <label class="contact"><strong>Address</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine1" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.addressLine1</label>
+                                                                    </div>
+                                                                    <br />
+                                                                    <label class="contact"><strong>Address Line 2</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.addressLine2</label>
+                                                                    </div>
+                                                                    <br />
+                                                                    <label class="contact"><strong>City</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.city" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.city</label>
+                                                                    </div>
+                                                                    <br />
+                                                                    <label class="contact"><strong>State</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.state" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.state</label>
+                                                                    </div>
+                                                                    <br />
+                                                                    <label class="contact"><strong>Zip Code</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.zipCode" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.zipCode</label>
+                                                                    </div>
+                                                                    <br />
+                                                                    <label class="contact"><strong>Country</strong></label>
+                                                                    <div class="col-md-12" id="legalName" name="legalName">
+                                                                        @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.country" readonly />*@
+                                                                        <label class="contact">@poliza.ApplicationUser.country</label>
+                                                                    </div>
+                                                                    <br />
                                                             </td>
-
                                                             <td style="width: 226px; height: 5px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact" style="text-align: center"><strong>License Number</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.licenseNumber1" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.licenseNumber1" readonly />*@
                                                                     @*<input type="text" id="legalName" name="legalName" class="form-control" value="@ViewBag.license2" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.licenseNumber1</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -391,7 +412,8 @@
                                                             <td style="width: 226px; height: 5px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact" style="text-align: center"><strong>Phone Number</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.PhoneNumber" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.PhoneNumber" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.PhoneNumber</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -401,8 +423,9 @@
                                                                 <label class="contact"><strong>Email Address</strong></label>
                                                                 @*<label class="contact"><strong>TERM OF INSURANCE:</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.emailAddress" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.emailAddress" readonly />*@
                                                                     @*<input type="text" id="legalName" name="legalName" class="form-control" value="@confirmacion.PayerEmail" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.emailAddress</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -411,7 +434,8 @@
                                                             <td style="width: 226px; height: 5px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>Placeholder</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />*@
+                                                                    <label class="contact"><strong>Placeholder</strong></label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -420,7 +444,8 @@
                                                             <td style="width: 226px; height: 5px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>Placheholder</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />*@
+                                                                    <label class="contact"><strong>Placeholder</strong></label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -436,37 +461,45 @@
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Vin Number</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleVin" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleVin" readonly />*@
+                                                                    <label class="contact">@poliza.vehicleVin</label>
                                                                 </div>
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Value</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleValue" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleValue" readonly />*@
+                                                                    <label class="contact">@poliza.vehicleVin</label>
                                                                 </div>
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Type</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleType" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehicleType" readonly />*@
+                                                                    <label class="contact">@poliza.vehicleType</label>
                                                                 </div>
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Year</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carYear" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carYear" readonly />*@
+                                                                    <label class="contact">@poliza.carYear</label>
                                                                 </div>
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Make</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carMake" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carMake" readonly />*@
+                                                                    <label class="contact">@poliza.carMake</label>
                                                                 </div>
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Model</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carModel" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.carModel" readonly />*@
+                                                                    <label class="contact">@poliza.carModel</label>
                                                                 </div>
                                                                 <br />
                                                                 <label class="contact"><strong>Vehicle Plate</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehiclePlate" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.vehiclePlate" readonly />*@
+                                                                    <label class="contact">@poliza.vehiclePlate</label>
+
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -486,7 +519,8 @@
                                                             <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0);" colspan="3">
                                                                 <label class="contact"><strong>POLICY NAME</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />*@
+                                                                    <label class="contact">@poliza.coverageType</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -495,7 +529,8 @@
                                                             <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>POLICY FOLIO #</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyFolio" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyFolio" readonly />*@
+                                                                    <label class="contact">@poliza.policyFolio</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -504,7 +539,8 @@
                                                             <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>TERM OF INSURANCE POLICY</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />*@
+                                                                    <label class="contact">@poliza.policyStartingDate TO @poliza.policyEndingDate</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -513,7 +549,8 @@
                                                             <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>DATE ISSUED</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyStartingDate" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyStartingDate" readonly />*@
+                                                                    <label class="contact">@poliza.policyStartingDate</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -522,7 +559,9 @@
                                                             <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>COVERAGE DAYS</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />*@
+                                                                    @*<label class="contact">@poliza.policyCoverageDays</label>*@
+                                                                    <label class="contact">@poliza.policyCoverageDays</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -531,7 +570,8 @@
                                                             <td style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>POLICY START DATE</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyStartingDate" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyStartingDate" readonly />*@
+                                                                    <label class="contact">@poliza.policyStartingDate</label>
                                                                 </div>
                                                                 <br />
                                                             </td>
@@ -540,7 +580,8 @@
                                                             <td style="width: 226px; height: 10px; background-color: rgb(191, 191, 191); border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid;" colspan="3">
                                                                 <label class="contact"><strong>POLICY END DATE</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
-                                                                    <input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyEndingDate" readonly />
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyEndingDate" readonly />*@
+                                                                    <label class="contact">@poliza.policyEndingDate</label>
                                                                 </div>
                                                                 <br />
                                                             </td>

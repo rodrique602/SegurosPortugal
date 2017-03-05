@@ -38,6 +38,7 @@ namespace Portugal_Insurance___PayPal.Models.ViewModels
                 this.carModels = customData[4].ToString();
                 this.startingDate = DateTime.Parse(customData[5]);
                 this.endingDate = DateTime.Parse(customData[6]);
+                this.diasDeCobertura = int.Parse(customData[7]);
                 //this.coverageType = customData[7];
             }
 

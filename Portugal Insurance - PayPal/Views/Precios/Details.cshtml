@@ -753,11 +753,12 @@
                                             string carYear = info.carYears.ToString();
                                             string carMake = info.carMakes;
                                             string carModel = info.carModels.Replace(" ", "-");
+                                            string days = info.diasDeCobertura.ToString(); 
                                             //string coverageType = info.coverageType;
                                             string startDate = info.startingDate.ToShortDateString();
                                             string endDate = info.endingDate.ToShortDateString();
                                             String customField = vehicleCost + "," + vinNumber + "," + carYear + "," +
-                                                   carMake + "," + carModel + "," + startDate + "," + endDate + "," + vehicleType + "," + vehiclePlate;
+                                                   carMake + "," + carModel + "," + startDate + "," + endDate + "," + vehicleType + "," + vehiclePlate + "," + days;
                                         }
                                         <div id="#customerInfoModalBuyNowBtn">
                                             <input type="submit" value="Create" class="btn btn-default" />

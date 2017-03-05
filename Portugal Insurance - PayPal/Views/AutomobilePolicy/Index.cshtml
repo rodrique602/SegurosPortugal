@@ -82,21 +82,27 @@
 </head>
 
 <body>
-   
-        <!-- Start Page Banner -->
-        @*<div class="page-banner" style="padding:30px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Automobile Policies</h2>
-                    </div>
+    <!-- Start Page Banner-->
+    <div class="page-bannerr" style="padding:59px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Automobile Policies</h2>
+                </div>
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li>Your Instant Quote!!</li>
+                    </ul>
                 </div>
             </div>
-        </div>*@
+        </div>
+    </div>
+    <!-- End Page Banner -->
     <!-- Container -->
     <div id="container">
         <div class="panel panel-primary">
-            <div class="panel-heading">Fractional Contracts</div>
+            <div class="panel-heading">Automobile Policies</div>
             @using (Html.BeginForm("Index", "AutomobilePolicy", FormMethod.Get, new { @class = "panel-body filter hidden-print" }))
             {
                 <div class="col-xs-8">
@@ -106,31 +112,46 @@
                 <button name="buscadorClientes" class="btn btn-primary">Search</button>
             }
 
-            <table class="table table-bordered table-hover">
+            <table class="table table-striped table-hover table-responsive table-bordered" style="text-align: center">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.ApplicationUser.fullName)
                     </th>
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.payerEmail)
+                </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.vehicleValue)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.vehicleVin)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.carYear)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.carMake)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.carModel)
-                    </th>
+                    @*<th>
+                   @Html.DisplayNameFor(model => model.carYear)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.carMake)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.carModel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.vehicleType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.vehiclePlate)
+                </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.policyFolio)
                     </th>
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.policySold)
+                </th>*@
                     <th>
-                        @Html.DisplayNameFor(model => model.policySold)
+                        @Html.DisplayNameFor(model => model.payPalTransactionId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.paymentStatus)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.policySoldDate)
@@ -141,6 +162,18 @@
                     <th>
                         @Html.DisplayNameFor(model => model.policyEndingDate)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.policyCoverageDays)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.coverageType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.paymentFee)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.policyTotalCost)
+                    </th>
                     <th></th>
                 </tr>
 
@@ -150,26 +183,42 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ApplicationUser.fullName)
                         </td>
+
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.payerEmail)
+                    </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.vehicleValue)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.vehicleVin)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carYear)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carMake)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.carModel)
-                        </td>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.carYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.carMake)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.carModel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.vehicleType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.vehiclePlate)
+                    </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.policyFolio)
                         </td>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.policySold)
+                    </td>*@
                         <td>
-                            @Html.DisplayFor(modelItem => item.policySold)
+                            @Html.DisplayFor(modelItem => item.payPalTransactionId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.paymentStatus)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.policySoldDate)
@@ -181,13 +230,25 @@
                             @Html.DisplayFor(modelItem => item.policyEndingDate)
                         </td>
                         <td>
+                            @Html.DisplayFor(modelItem => item.policyCoverageDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.coverageType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.paymentFee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.policyTotalCost)
+                        </td>
+                        <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
 
-                                    <li>@Html.ActionLink("Details", "Details", new { id = item.automobilePolicyID }, new { data_modal = "" })</li>
+                                    <li>@Html.ActionLink("Details", "ViewPolicy","PayPal", new { policyID = item.automobilePolicyID }, null)</li>
 
                                     @if (User.IsInRole(AccountRolesNames.ADMINISTRATOR) || User.IsInRole(AccountRolesNames.SALESMANAGER))
                                     {

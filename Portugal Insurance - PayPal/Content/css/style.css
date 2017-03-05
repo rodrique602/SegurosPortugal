@@ -6865,7 +6865,7 @@ body{
 	font-weight: bold;
 }
 
-@media print{
+/*@media print{
     nav, aside{
         display:none; 
     }   
@@ -6873,6 +6873,6 @@ body{
         display:table; 
     }
 
-}
+}*/
 
 

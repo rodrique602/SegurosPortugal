@@ -82,115 +82,340 @@
 
 <body>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>AutomobilePolicy</h4>
-            <hr />
-            @Html.ValidationSummary(true)
-            @Html.HiddenFor(model => model.automobilePolicyID)
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.vehicleValue, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.vehicleValue)
-                    @Html.ValidationMessageFor(model => model.vehicleValue)
+    <!-- Start Page Banner-->
+    <div class="page-bannerr" style="padding:59px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Automobile Policies</h2>
                 </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.vehicleVin, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.vehicleVin)
-                    @Html.ValidationMessageFor(model => model.vehicleVin)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.carYear, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.carYear)
-                    @Html.ValidationMessageFor(model => model.carYear)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.carMake, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.carMake)
-                    @Html.ValidationMessageFor(model => model.carMake)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.carModel, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.carModel)
-                    @Html.ValidationMessageFor(model => model.carModel)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.policyFolio, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.policyFolio)
-                    @Html.ValidationMessageFor(model => model.policyFolio)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.policySold, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.policySold)
-                    @Html.ValidationMessageFor(model => model.policySold)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.policySoldDate, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.policySoldDate)
-                    @Html.ValidationMessageFor(model => model.policySoldDate)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.policyStartingDate, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.policyStartingDate)
-                    @Html.ValidationMessageFor(model => model.policyStartingDate)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.policyEndingDate, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.policyEndingDate)
-                    @Html.ValidationMessageFor(model => model.policyEndingDate)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.UserID, "clientID", new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("clientID", String.Empty)
-                    @Html.ValidationMessageFor(model => model.UserID)
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                <div class="col-md-6">
+                    <ul class="breadcrumbs">
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li>Your Instant Quote!!</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
+    <!-- End Page Banner -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">Automobile Policies</div>
+    </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>AutomobilePolicy</h4>
+                <hr />
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.automobilePolicyID)
+                <div class="dl-horizontal col-md-4">
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.UserName, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.UserName, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.UserName)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.fullName, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.fullName, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.fullName)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.Email, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.Email, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.Email)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.emailAddress, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.emailAddress, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.emailAddress)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.licenseNumber1, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.licenseNumber1, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.licenseNumber1)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.licenseNumber2, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.licenseNumber2, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.licenseNumber2)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.PhoneNumber, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.PhoneNumber, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.PhoneNumber)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.addressLine1, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.addressLine1, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.addressLine1)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.addressLine2, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.addressLine2, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.addressLine2)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.city, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.city, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.city)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="dl-horizontal col-md-4">
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.state, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.state, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.state)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.zipCode, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.zipCode, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.zipCode)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.country, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(model => model.ApplicationUser.country, new { @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.country)
+                            </div>
+                        </div>
+                    </fieldset>
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.ApplicationUser.AutomobilePolicies, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ApplicationUser.AutomobilePolicies)
+                                @Html.ValidationMessageFor(model => model.ApplicationUser.AutomobilePolicies)
+                            </div>
+                        </div>*@
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.vehicleValue, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.vehicleValue)
+                                @Html.ValidationMessageFor(model => model.vehicleValue)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.vehicleVin, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.vehicleVin)
+                                @Html.ValidationMessageFor(model => model.vehicleVin)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.carYear, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.carYear)
+                                @Html.ValidationMessageFor(model => model.carYear)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.carMake, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.carMake)
+                                @Html.ValidationMessageFor(model => model.carMake)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.carModel, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.carModel)
+                                @Html.ValidationMessageFor(model => model.carModel)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.policyFolio, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.policyFolio)
+                                @Html.ValidationMessageFor(model => model.policyFolio)
+                            </div>
+                        </div>
+                    </fieldset>
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.policySold, "policySold", new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("policySold", String.Empty)
+                                @Html.ValidationMessageFor(model => model.policySold)
+                            </div>
+                        </div>*@
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.paymentStatus, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.paymentStatus)
+                                @Html.ValidationMessageFor(model => model.paymentStatus)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.policySoldDate, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.policySoldDate)
+                                @Html.ValidationMessageFor(model => model.policySoldDate)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="dl-horizontal col-md-4">
+
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.policyStartingDate, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.policyStartingDate)
+                                @Html.ValidationMessageFor(model => model.policyStartingDate)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.policyEndingDate, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.policyEndingDate)
+                                @Html.ValidationMessageFor(model => model.policyEndingDate)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.coverageType, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.coverageType)
+                                @Html.ValidationMessageFor(model => model.coverageType)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.policyTotalCost, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.policyTotalCost)
+                                @Html.ValidationMessageFor(model => model.policyTotalCost)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.payPalTransactionId, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.payPalTransactionId)
+                                @Html.ValidationMessageFor(model => model.payPalTransactionId)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.vehicleType, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.vehicleType)
+                                @Html.ValidationMessageFor(model => model.vehicleType)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.vehiclePlate, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.vehiclePlate)
+                                @Html.ValidationMessageFor(model => model.vehiclePlate)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.paymentFee, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.paymentFee)
+                                @Html.ValidationMessageFor(model => model.paymentFee)
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.policyCoverageDays, new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.policyCoverageDays)
+                                @Html.ValidationMessageFor(model => model.policyCoverageDays)
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
 
 
 </body>

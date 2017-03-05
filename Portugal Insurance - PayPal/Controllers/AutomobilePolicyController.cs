@@ -88,11 +88,14 @@ namespace Portugal_Insurance___PayPal.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
-        public ActionResult Edit([Bind(Include= "automobilePolicyID,vehicleValue,vehicleVin,carYear,carMake,carModel,policyFolio,policySold,policySoldDate,policyStartingDate,policyEndingDate,clientID")] AutomobilePolicy automobilepolicy)
+        public ActionResult Edit(AutomobilePolicy automobilepolicy)
         {
             if (ModelState.IsValid)
             {
+                //var manager = project.Manager;
+                //project.Manager = null;
                 db.Entry(automobilepolicy).State = EntityState.Modified;
+                //project.Manager = manager;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

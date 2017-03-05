@@ -296,6 +296,10 @@
     <Compile Include="Migrations\201702122103385_updatedAutomobilePolicyModel.Designer.cs">
       <DependentUpon>201702122103385_updatedAutomobilePolicyModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702250511220_added_policyCoverageDays_to_AutomobilePolicy.cs" />
+    <Compile Include="Migrations\201702250511220_added_policyCoverageDays_to_AutomobilePolicy.Designer.cs">
+      <DependentUpon>201702250511220_added_policyCoverageDays_to_AutomobilePolicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -940,6 +944,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702122103385_updatedAutomobilePolicyModel.resx">
       <DependentUpon>201702122103385_updatedAutomobilePolicyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250511220_added_policyCoverageDays_to_AutomobilePolicy.resx">
+      <DependentUpon>201702250511220_added_policyCoverageDays_to_AutomobilePolicy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

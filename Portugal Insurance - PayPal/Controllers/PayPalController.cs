@@ -5,14 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Net;
-using System.Web.Configuration;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
+using System.Web.Mvc;
+using System.Web.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Rotativa;
 using Newtonsoft.Json.Linq;
+using Rotativa.Options;
+using System.Net.Mime;
 
 //using Portugal_Insurance___PayPal.PayPal;
 //using PayPal.Api;
@@ -165,6 +170,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             PDTHolder confirmacion = PDTHolder.RequestPDTToPayPal(txToken);
             string[] splitCustom = {};
             int vehicleValue = 0;
+            int totalPolicyCoverageDays = 0;
             string vinNumber = "", carYear = "", carMake = "", carModel = "", coverageType = "", payPalTransactionId = "", vehicleType = "", vehiclePlate = "";
             decimal policyTotalCost = 0;
             DateTime startDate = DateTime.Now, endDate = DateTime.Now;
@@ -172,10 +178,13 @@ namespace Portugal_Insurance___PayPal.Controllers
             if (confirmacion != null)
             {
                 //var poliza = db.AutomobilePolicies.Find(db.AutomobilePolicies.Where( pol => pol.clientID == null));
-                //AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
-                 poliza = db.AutomobilePolicies.FirstOrDefault(pol => pol.Id == null);
-
-                if(poliza != null)
+                ////AutomobilePolicy poliza = db.AutomobilePolicies.SingleOrDefault(pol => pol.Id == null);
+                //if (poliza.payPalTransactionId != confirmacion.TransactionId)
+                //{
+                   
+                //}
+                poliza = db.AutomobilePolicies.FirstOrDefault(pol => pol.Id == null);
+                if (poliza != null)
                 {
                     //var currentUserId = User.Identity.GetUserId()
                     var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new Portugal_Insurance___PayPalContextDB()));
@@ -197,10 +206,13 @@ namespace Portugal_Insurance___PayPal.Controllers
                         endDate = DateTime.Parse(splitCustom[6]);
                         vehicleType = splitCustom[7].ToString();
                         vehiclePlate = splitCustom[8].ToString();
+                        //totalPolicyCoverageDays = int.Parse(splitCustom[9]);
                         //coverageType = confirmacion.ItemName;
 
                     }
+                    totalPolicyCoverageDays = (int)endDate.Subtract(startDate).TotalDays;
                     coverageType = confirmacion.ItemName;//We get converage type from paypal response
+
                     policyTotalCost = (decimal)confirmacion.GrossTotal;//We get GrossTotal from paypal response
                     payPalTransactionId = confirmacion.TransactionId;
                     //Se le asigna a una poliza el cliente logeado que acaba de pagar
@@ -214,6 +226,7 @@ namespace Portugal_Insurance___PayPal.Controllers
                     poliza.policySold = true;
                     poliza.policySoldDate = DateTime.Now;
                     poliza.policyStartingDate = startDate;
+                    poliza.policyCoverageDays = totalPolicyCoverageDays;
                     poliza.vehicleValue = vehicleValue;
                     poliza.vehicleVin = vinNumber;
                     poliza.vehicleType = vehicleType;
@@ -223,14 +236,16 @@ namespace Portugal_Insurance___PayPal.Controllers
                     poliza.payPalTransactionId = payPalTransactionId;
                     poliza.paymentStatus = confirmacion.PaymentStatus;
                     poliza.paymentFee = (decimal)confirmacion.PaymentFee;
-                    poliza.payerEmail = confirmacion.PayerEmail; 
+                    poliza.payerEmail = confirmacion.PayerEmail;
                     db.Entry(poliza).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
+
+
                 }
                 else
                 {
-                    ViewBag.error = "Please call us at: (###)###-####, there was a problem processing your order. /n"+
-                        "We apologize for the inconvinience." ;
+                    ViewBag.error = "Please call us at: (###)###-####, there was a problem processing your order. /n" +
+                        "We apologize for the inconvinience.";
                 }
             }
             /*
@@ -256,6 +271,7 @@ namespace Portugal_Insurance___PayPal.Controllers
             /*StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
             String strResponse = stIn.ReadToEnd();
             stIn.Close();*/
+            SendPDF(poliza.automobilePolicyID); 
             return View(poliza);
         }
         public ActionResult ViewPolicy(int policyID)
@@ -268,45 +284,69 @@ namespace Portugal_Insurance___PayPal.Controllers
         /// Action Method using viewAsPdf class to create view as pdf
         /// </summary>
         /// <returns></returns>
+        public ActionResult SendPDF(int policyID)
+        {
+            try
+            {
+                AutomobilePolicy poliza = db.AutomobilePolicies.Find(policyID);
+                var a = new ViewAsPdf();
+                a.ViewName = "ViewPolicy";
+                a.Model = poliza;
+                var pdfBytes = a.BuildPdf(ControllerContext);
+
+                // Optionally save the PDF to server in a proper IIS location.
+                var fileName = string.Format("policy_folio_{0}.pdf", poliza.policyFolio);
+                var path = Server.MapPath("~/App_Data/" + fileName);
+                System.IO.File.WriteAllBytes(path, pdfBytes);
+
+                // return ActionResult
+                MemoryStream ms = new MemoryStream(pdfBytes);
+                try
+                {
+                    var mensaje = new MailMessage();
+                    var smtp = new SmtpClient();
+                    mensaje.From = new MailAddress("deisyeliii@gmail.com");
+                    mensaje.To.Add("rodriquez602@gmail.com, deisyeliii@gmail.com"/*poliza.ApplicationUser.emailAddress*/);
+                    mensaje.Subject = "Seguros Portugal Insurance";
+                    mensaje.IsBodyHtml = true;
+                    mensaje.Body = "This is a test email, confirming the mock purchase of a insurance policy";
+                    mensaje.Attachments.Add(new Attachment(path));
+                    smtp.Host = "smtp.gmail.com";
+                    //smtp.UseDefaultCredentials = false;
+                    smtp.Port = 587;
+                    //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential("deisyeliii@gmail.com", "Hnbjm@6381075459");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mensaje);
+                    Response.Write("Email Sent Succesfully");
+
+                }
+                catch(Exception ex)
+                {
+                    Response.Write(ex.Message); 
+                }
+
+                return new FileStreamResult(ms, "application/pdf");
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
         public ActionResult DownloadPDF(int policyID)
         {
             try
             {
                 AutomobilePolicy poliza = db.AutomobilePolicies.Find(policyID);
-
-                //get the information to display in pdf from database
-                //for the time
-                //Hard coding values are here, these are the content to display in pdf 
-                //var content = "<h2>WOW Rotativa<h2>" +
-                // "<p>Ohh This is very easy to generate pdf using Rotativa <p>";
-
-
-                //var logoFile = @"/Images/logo.png";
-
-                //model.PDFContent = content;
-                //model.PDFLogo = Server.MapPath(logoFile);
-
-                // ViewAsPdf calls Rotativa.Extensions.ControllerContextExtensions.GetHtmlFromView
-                // Which generates the HTML inline instead of making a separate http request which CallDriver (wkhtmltopdf.exe) does.
-                //var a = new ViewAsPdf();
-                //a.ViewName = "SuccessView";
-                //a.Model = poliza;
-                //var pdfBytes = a.BuildPdf(ControllerContext);
-
-                //// Optionally save the PDF to server in a proper IIS location.
-                //var fileName = string.Format("my_file_{0}.pdf", policyID);
-                //var path = Server.MapPath("~/App_Data/" + fileName);
-                //System.IO.File.WriteAllBytes(path, pdfBytes);
-
-                //// return ActionResult
-                //MemoryStream ms = new MemoryStream(pdfBytes);
-                //return new FileStreamResult(ms, "application/pdf");
-
+                
+                //THIS IS TO DOWNLOAD THE PDF DIRECTLY TO CLIENTS PC WHEN THEY CLICK ON DOWNLOADPDF LINK
                 //Use ViewAsPdf Class to generate pdf using GeneratePDF.cshtml view
                 return new Rotativa.ViewAsPdf("ViewPolicy", poliza)
                 {
-                    FileName = "firstPdf.pdf"
-                };
+                    FileName = string.Format("policy_folio_{0}.pdf", poliza.policyFolio)
+
+            };
             }
             catch (Exception ex)
             {
@@ -315,8 +355,9 @@ namespace Portugal_Insurance___PayPal.Controllers
             }
         }
 
-         //<summaroy>
-         //This method is using ActionAsPdf class to generate pdf
+
+        //<summaroy>
+        //This method is using ActionAsPdf class to generate pdf
         //</summary>
         //<returns></returns>
         public ActionResult DownloadActionAsPDF(int polizaID)

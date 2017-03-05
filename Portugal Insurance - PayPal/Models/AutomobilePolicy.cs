@@ -17,17 +17,23 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Vehicle Value")]
         public int? vehicleValue { get; set; }
 
-        [Display(Name = "Vehicle VIN")]
+        [Display(Name = "Type")]
+        public string vehicleType { get; set; }
+
+        [Display(Name = "VIN #")]
         public String vehicleVin { get; set; }
 
-        [Display(Name = "Car Year")]
+        [Display(Name = "Year")]
         public String carYear { get; set; }
 
-        [Display(Name = "Car Make")]
+        [Display(Name = "Make")]
         public String carMake { get; set; }
 
-        [Display(Name = "Car Model")]
+        [Display(Name = "Model")]
         public String carModel { get; set; }
+
+        [Display(Name = "Plate Number")]
+        public string vehiclePlate { get; set; }
 
         [Display(Name = "Policy Folio")]
         public String policyFolio { get; set; }
@@ -38,28 +44,24 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Policy Sold Date")]
         public DateTime? policySoldDate { get; set; }
 
-        [Display(Name = "Policy Starting Date")]
+        [Display(Name = "Coverage Days")]
+        public int? policyCoverageDays { get; set; }
+
+        [Display(Name = "Starting Date")]
         public DateTime? policyStartingDate { get; set; }
 
-        [Display(Name = "Policy Ending Date")]
+        [Display(Name = "Ending Date")]
         public DateTime? policyEndingDate { get; set; }
 
-
-        [Display(Name = "Policy Coverage Type ")]
+        [Display(Name = "Coverage Type ")]
         public String coverageType { get; set; }
 
-        [Display(Name = "Policy Total Cost ")]
+        [Display(Name = "Total")]
         public decimal? policyTotalCost { get; set; }
 
 
         [Display(Name = "PayPal Transaction Id ")]
         public string payPalTransactionId { get; set; }
-
-        [Display(Name = "Vehicle Type")]
-        public string vehicleType { get; set; }
-
-        [Display(Name = "Vehicle Plate Number")]
-        public string vehiclePlate { get; set; }
 
         [Display(Name = "Payment Status")]
         public String paymentStatus { get; set; }
