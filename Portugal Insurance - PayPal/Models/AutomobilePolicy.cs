@@ -35,12 +35,18 @@ namespace Portugal_Insurance___PayPal.Models
         [Display(Name = "Policy Sold")]
         public Boolean? policySold { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         [Display(Name = "Policy Sold Date")]
         public DateTime? policySoldDate { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         [Display(Name = "Policy Starting Date")]
         public DateTime? policyStartingDate { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         [Display(Name = "Policy Ending Date")]
         public DateTime? policyEndingDate { get; set; }
 

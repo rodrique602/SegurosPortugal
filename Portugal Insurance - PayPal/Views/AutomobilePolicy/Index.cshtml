@@ -7,12 +7,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
 <!--<h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>-->
 
-<!DOCTYPE html>3
+<!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
@@ -94,13 +93,13 @@
             </div>
         </div>*@
     <!-- Container -->
-    <div id="container">
+    <div id="container" style="margin-right:90px; margin-left:50px; margin-top:150px">
         <div class="panel panel-primary">
             <div class="panel-heading">Fractional Contracts</div>
             @using (Html.BeginForm("Index", "AutomobilePolicy", FormMethod.Get, new { @class = "panel-body filter hidden-print" }))
             {
                 <div class="col-xs-8">
-                    <input type="text" id="buscadorPolizas" name="buscadorPolizas"
+                    <input type="text" id="buscador" name="buscador"
                            class="form-control" value="" placeholder="Policy # or Client Name" />
                 </div>
                 <button name="buscadorClientes" class="btn btn-primary">Search</button>
@@ -129,9 +128,9 @@
                     <th>
                         @Html.DisplayNameFor(model => model.policyFolio)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.policySold)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.policySoldDate)
                     </th>
@@ -168,9 +167,9 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.policyFolio)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.policySold)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.policySoldDate)
                         </td>
