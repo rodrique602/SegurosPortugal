@@ -7,12 +7,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
 <!--<h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>-->
 
-<!DOCTYPE html>3
+<!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
 <html lang="en">
@@ -83,8 +81,7 @@
 
 <body>
     <!-- Start Page Banner-->
-    <div class="page-bannerr" style="padding:59px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;">
-        <div class="container">
+    <div class="page-bannerr" style="padding:59px 0; background: url(/Content/images/slide-02-bg.jpg) center #f9f9f9;margin-top:50px">
             <div class="row">
                 <div class="col-md-6">
                     <h2>Automobile Policies</h2>
@@ -96,18 +93,24 @@
                     </ul>
                 </div>
             </div>
-        </div>
     </div>
     <!-- End Page Banner -->
     <!-- Container -->
-    <div id="container">
+    <div id="container" style="margin-right:80px; margin-left:20px; ">
         <div class="panel panel-primary">
             <div class="panel-heading">Automobile Policies</div>
             @using (Html.BeginForm("Index", "AutomobilePolicy", FormMethod.Get, new { @class = "panel-body filter hidden-print" }))
             {
                 <div class="col-xs-8">
-                    <input type="text" id="buscadorPolizas" name="buscadorPolizas"
+                    <input type="text" id="buscador" name="buscador"
                            class="form-control" value="" placeholder="Policy # or Client Name" />
+                </div>
+                <div class="col-xs-3">
+                    <select onchange="((this.options[this.selectedIndex].value).Split('|')[0]) && ((window.location = (this.options[this.selectedIndex].value).Split('|')[0]));" class="form-control" @*style="width:160px"*@ name="tipoPoliza" id="tipoPolizaDropDown">
+                        <option value="todasLasPolizas">Todas Las Polizas</option>
+                        <option value="polizasVendidas">Polizas Vendidas</option>
+                        <option value="polizasNoVendidas">Polizas No Vendidas</option>
+                    </select>
                 </div>
                 <button name="buscadorClientes" class="btn btn-primary">Search</button>
             }

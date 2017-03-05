@@ -19,6 +19,7 @@ namespace Portugal_Insurance___PayPal.Controllers
         public ActionResult Index(String buscador)
         {
             var automobilepolicies = db.AutomobilePolicies;
+            String policyType = Request["tipoPoliza"];
             if(!String.IsNullOrEmpty(buscador))
             {
                 var result = from p in automobilepolicies
@@ -27,14 +28,34 @@ namespace Portugal_Insurance___PayPal.Controllers
                              p.ApplicationUser.fullName.Contains(buscador)
                              select p;
                 result = result.OrderByDescending(p => p.policySoldDate);
+                if(policyType == "todasLasPolizas")
+                {
+                    result = result.Where(p => p.policyFolio != null); 
+                }else if(policyType == "polizasVendidas")
+                {
+                    result = result.Where(p => p.vehicleVin != null); 
+                }else if(policyType == "polizasNoVendidas")
+                {
+                    result = result.Where(p => p.vehicleVin == null); 
+                }
                 return View(result.ToList().Take(50));
             }
             else
             {
                 var result = from p in automobilepolicies
-                             where
-                             !String.IsNullOrEmpty(p.vehicleVin)
                              select p;
+                if (policyType == "todasLasPolizas")
+                {
+                    result = result.Where(p => p.policyFolio != null);
+                }
+                else if (policyType == "polizasVendidas")
+                {
+                    result = result.Where(p => p.vehicleVin != null);
+                }
+                else if (policyType == "polizasNoVendidas")
+                {
+                    result = result.Where(p => String.IsNullOrEmpty(p.vehicleVin));
+                }
                 return View(result.ToList().Take(50)); 
             }
             //return View(automobilepolicies.ToList());
