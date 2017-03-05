@@ -16,10 +16,28 @@ namespace Portugal_Insurance___PayPal.Controllers
 
         // GET: /AutomobilePolicy/
         [Authorize(Roles = AccountRolesNames.ADMINISTRATOR + "," + AccountRolesNames.SALESMANAGER)]
-        public ActionResult Index()
+        public ActionResult Index(String buscador)
         {
             var automobilepolicies = db.AutomobilePolicies;
-            return View(automobilepolicies.ToList());
+            if(!String.IsNullOrEmpty(buscador))
+            {
+                var result = from p in automobilepolicies
+                             where
+                             p.policyFolio.Contains(buscador) ||
+                             p.ApplicationUser.fullName.Contains(buscador)
+                             select p;
+                result = result.OrderByDescending(p => p.policySoldDate);
+                return View(result.ToList().Take(50));
+            }
+            else
+            {
+                var result = from p in automobilepolicies
+                             where
+                             !String.IsNullOrEmpty(p.vehicleVin)
+                             select p;
+                return View(result.ToList().Take(50)); 
+            }
+            //return View(automobilepolicies.ToList());
         }
 
         // GET: /AutomobilePolicy/Details/5
