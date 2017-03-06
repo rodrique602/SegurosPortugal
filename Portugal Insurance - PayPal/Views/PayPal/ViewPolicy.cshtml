@@ -5,6 +5,9 @@
     .auto-style2 {
         height: 10px;
     }
+    .auto-style3 {
+        height: 100px;
+    }
     </style>
 @model Portugal_Insurance___PayPal.Models.AutomobilePolicy
 @using System.Configuration;
@@ -79,18 +82,19 @@
                                                     <tbody style="" background-color: #dff0d8;>
                                                         <tr>
                                                             <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;"></td>
-                                                            <td style="width: 200px; height: 100px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align: inherit; margin-top: 0px;" colspan="2">
+                                                            <td style="border: 1px solid rgb(0, 0, 0); border-right-style: none; text-align: inherit; margin-top: 0px;" colspan="2" class="auto-style3">
                                                                 <img alt="" style="margin-top: 10px;" id="segurosHeaderLogo" src="/Content/images/segurosLogo2016_2016_400X129.png">
+                                                                <br />
                                                                 <label class="contact">
                                                                     <strong style="font-weight: 900;">
                                                                         RECIBO DE PRIMAS
                                                                         <br />
-                                                                        Sucursal/Oficina: HERMOSILLO
-                                                                        <br />
                                                                     </strong>
                                                                 </label>
-                                                                <label class="contact">
+                                                                <!--<label class="contact">
                                                                     <strong>
+                                                                        Sucursal/Oficina: HERMOSILLO
+                                                                        <br />
                                                                         Blvd. Navarrete E I. Romero C.P 83200 Hermosillo, Sonora.
                                                                         <br />
                                                                         Tel. 289-29-00 289-29-05 FAX 289-29-10
@@ -101,9 +105,7 @@
                                                                 </label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
                                                                 </div>
-                                                                <br />
-                                                            </td>
-                                                            <td style="width: 239px; height: 40px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="2">
+                                                                <br />-->
                                                                 <label class="contact">
                                                                     <strong>
                                                                         AV. Patriotismo No. 266 Col. San Pedro de los Pinos, Mexico, D.F. C.P. 03800
@@ -114,7 +116,10 @@
                                                                         <br />
                                                                     </strong>
                                                                 </label>
-                                                                <label class="contact">
+                                                            <br />
+                                                            </td>
+                                                            <td style="width: 239px; height: 40px; padding-top: 180px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-left-style: none; border-right-style: none; text-align:center;" colspan="2" class="auto-style3">
+                                                               <label class="contact">
                                                                     <strong style="font-weight: 900;">
                                                                         POLIZA SPECIAL TURISTAS
                                                                         <br />
@@ -122,11 +127,9 @@
                                                                         <br />
                                                                     </strong>
                                                                 </label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                </div>
                                                                 <br />
                                                             </td>
-                                                            <td style="width: 239px; height: 40px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
+                                                            <td style="width: 239px; height: 40px; padding-top: 90px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
                                                                 <label class="contact">
                                                                     <strong style="font-weight: 900;">
                                                                         POLIZA DEL SEGURO SOBRE AUTOMOVILES<br />
@@ -135,11 +138,21 @@
 
                                                                 </label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
+                                                                                                                                   <br />
+                                                                <label class="contact"><strong>POLICY NAME</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.coverageType" readonly />*@
+                                                                    <label class="contact">@poliza.coverageType</label>
                                                                 </div>
                                                                 <br />
-                                                                <table cellpadding="0" cellspacing="0" style="border-top-style: solid; margin: 0px auto;">
-                                                                    <tbody></tbody>
-                                                                </table>
+                                                                <label class="contact"><strong>POLICY FOLIO #</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyFolio" readonly />*@
+                                                                    <label class="contact">@poliza.policyFolio</label>
+                                                                </div>
+                                                                <br />
+                                                                </div>
+                                                                <br />
                                                             </td>
                                                             <td height="40" style="border-right-width: 5px; border-right-style: solid; width: 20px;"></td>
                                                         </tr>
@@ -188,7 +201,7 @@
 
                                                         <tr>
                                                             <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;"></td>
-                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-right-style: none; text-align:center;">
                                                                 @*<label class="contact"><strong>PRIMA: |</strong></label>*@
                                                                 <label class="contact"><strong style="font-weight: 900;">PREMIUM</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
@@ -197,7 +210,7 @@
                                                                 </div>
                                                                 <br />
                                                             </td>
-                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;">
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-left-style: none; border-right-style: none; text-align:center;">
                                                                 @*<label class="contact"><strong>GASTOS DE EXPEDICION: |</strong></label>*@
                                                                 <label class="contact"><strong style="font-weight: 900;">POLICY FEE</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
@@ -206,7 +219,7 @@
                                                                 </div>
                                                                 <br />
                                                             </td>
-                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="2">
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-left-style: none; border-right-style: none; text-align:center;" colspan="2">
                                                                 @*<label class="contact"><strong>IMPUESTO: |</strong></label>*@
                                                                 <label class="contact"><strong style="font-weight: 900;">TAX</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
@@ -215,7 +228,7 @@
                                                                 </div>
                                                                 <br />
                                                             </td>
-                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; text-align:center;" colspan="3">
+                                                            <td class="success" style="width: 226px; height: 10px; border-color: rgb(0, 0, 0); border-width: 1px; border-style: solid; border-left-style: none; text-align:center;" colspan="3">
                                                                 <label class="contact"><strong style="font-weight: 900;">TOTAL USD</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
                                                                     @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.policyTotalCost" readonly />*@
@@ -229,7 +242,7 @@
 
                                                         <tr>
                                                             <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;">&nbsp;</td>
-                                                            <td class="auto-style2" style="border: 1px solid rgb(0, 0, 0); text-align:center;" colspan="7">
+                                                            <td class="auto-style2" style="border: 1px solid rgb(0, 0, 0); border-bottom-style:none; text-align:center;" colspan="7">
                                                                 <div style="text-align:center;" class="auto-style1">
                                                                     <label class="contact" style="text-align:center;"><strong style="font-weight:900;">INSURED POLICY HOLDER INFO</strong></label>
                                                                     <div class="col-md-12" id="legalName" name="legalName">
@@ -242,7 +255,7 @@
                                                         <tr>
                                                             <td height="40" style="border-left-width: 5px; border-left-style: solid; width: 20px;"></td>
 
-                                                            <td style="border: 1px solid rgb(0, 0, 0); text-align:center; " colspan="7" class="">
+                                                            <td style="border: 1px solid rgb(0, 0, 0); border-top-style: none; text-align:center; " colspan="7" class="">
                                                                 <br />
                                                                 <div style="width: 33%; float:left; height:inherit; background:inherit; margin: initial; text-align:center;">
                                                                     <label class="contact"><strong>Insured Policy Holder Name</strong></label>
@@ -257,12 +270,12 @@
                                                                         <label class="contact">@poliza.ApplicationUser.addressLine1</label>
                                                                     </div>
                                                                     <br />
-                                                                    <label class="contact"><strong>Address Line 2</strong></label>
+                                                                    <!--<label class="contact"><strong>Address Line 2</strong></label>
                                                                     <div class="col-md-6" id="legalName" name="legalName">
                                                                         @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.addressLine2" readonly />*@
                                                                         <label class="contact">@poliza.ApplicationUser.addressLine2</label>
                                                                     </div>
-                                                                    <br />
+                                                                    <br />-->
                                                                     <label class="contact"><strong>City</strong></label>
                                                                     <div class="col-md-6" id="legalName" name="legalName">
                                                                         @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.city" readonly />*@
@@ -298,12 +311,6 @@
                                                                     <label class="contact">@poliza.ApplicationUser.licenseNumber1</label>
                                                                 </div>
                                                                 <br />
-                                                                <label class="contact" style="text-align: center"><strong>Phone Number</strong></label>
-                                                                <div class="col-md-12" id="legalName" name="legalName">
-                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.PhoneNumber" readonly />*@
-                                                                    <label class="contact">@poliza.ApplicationUser.PhoneNumber</label>
-                                                                </div>
-                                                                <br />
                                                                 <label class="contact"><strong>Email Address</strong></label>
                                                                 @*<label class="contact"><strong>TERM OF INSURANCE:</strong></label>*@
                                                                 <div class="col-md-12" id="legalName" name="legalName">
@@ -312,10 +319,16 @@
                                                                     <label class="contact">@poliza.ApplicationUser.emailAddress</label>
                                                                 </div>
                                                                 <br />
+                                                                <label class="contact" style="text-align: center"><strong>Phone Number</strong></label>
+                                                                <div class="col-md-12" id="legalName" name="legalName">
+                                                                    @*<input type="text" id="legalName" name="legalName" class="form-control" value="@poliza.ApplicationUser.PhoneNumber" readonly />*@
+                                                                    <label class="contact">@poliza.ApplicationUser.PhoneNumber</label>
+                                                                </div>
+                                                                <!--<br />
                                                                 <label class="contact"><strong>Placeholder</strong></label>
                                                                 <div class="col-md-12" id="legalName" name="legalName">
                                                                     @*<input type="text" id="legalName" name="legalName" class="form-control" value="" readonly />*@
-                                                                </div>
+                                                                </div>-->
                                                                 <br />
                                                                 </div>
                                                             </td>
